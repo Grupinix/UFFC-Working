@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>349831741296-knjdp4u5b30222f5h3k5ie6c99j72pke.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.349831741296-knjdp4u5b30222f5h3k5ie6c99j72pke</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDC0c6hTYRTj1jjlPfErJOq7X6WGiOLyjA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>349831741296</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>br.uff.ic.grupinix.uffc.grupoverde20211</string>
+	<key>PROJECT_ID</key>
+	<string>ultra-federal-fluminense-f1211</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ultra-federal-fluminense-f1211.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:349831741296:ios:2b8aa0b8cf86169f6199b5</string>
+	<key>DATABASE_URL</key>
+	<string>https://ultra-federal-fluminense-f1211-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
