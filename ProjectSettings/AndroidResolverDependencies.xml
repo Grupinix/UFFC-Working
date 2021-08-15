@@ -77,8 +77,8 @@
     <setting name="installAndroidPackages" value="True" />
     <setting name="localMavenRepoDir" value="Assets/GeneratedLocalRepo" />
     <setting name="packageDir" value="Assets/Plugins/Android" />
-    <setting name="patchAndroidManifest" value="True" />
-    <setting name="patchMainTemplateGradle" value="True" />
+    <setting name="patchAndroidManifest" value="False" />
+    <setting name="patchMainTemplateGradle" value="False" />
     <setting name="projectExportEnabled" value="False" />
     <setting name="useJetifier" value="True" />
   </settings>
