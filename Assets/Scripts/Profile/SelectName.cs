@@ -1,8 +1,4 @@
-using System.Threading.Tasks;
-
 using APIs;
-
-using Firebase.Database;
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,7 +10,7 @@ namespace Profile {
 
         [SerializeField] private string nextScene;
     
-        [SerializeField] private InputField inputField;
+        [SerializeField] private InputField iField;
         [SerializeField] private Button button;
         
         private void Start() {
@@ -24,19 +20,17 @@ namespace Profile {
         }
 
         private void buttonClickEvent() {
+            InputField inputField = iField.GetComponent<InputField>();
             string nameOfPlayer = DatabaseAPI.slugify(inputField.text);
+            
             PlayerPrefs.SetString("playerName", inputField.text);
             PlayerPrefs.Save();
+            
             PlayerPrefs.SetString("playerName_slug", nameOfPlayer);
             PlayerPrefs.Save();
-            checkName(DatabaseAPI.getAsyncData("player/" + nameOfPlayer), nameOfPlayer, nextScene);
-        }
-
-        private static async void checkName(Task<DataSnapshot> data, string nameOfPlayer, string scene) {
-            await Task.WhenAll(data);
             
             DatabaseAPI.setAsyncData("player/" + nameOfPlayer, false);
-            SceneManager.LoadScene(scene);
+            SceneManager.LoadScene(nextScene);
         }
     }
 }

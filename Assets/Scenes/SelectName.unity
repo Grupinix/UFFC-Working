@@ -791,7 +791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextScene: Lobby
-  inputField: {fileID: 1100529239}
+  iField: {fileID: 1100529239}
   button: {fileID: 2053070064}
 --- !u!1 &1880968038
 GameObject:

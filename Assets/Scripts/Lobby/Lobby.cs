@@ -36,7 +36,9 @@ namespace Lobby {
         }
 
         private void enterClickEvent() {
-            string nameOfRoom = DatabaseAPI.slugify(inputField.text);
+            InputField fieldInput = inputField.GetComponent<InputField>();
+
+            string nameOfRoom = DatabaseAPI.slugify(fieldInput.text);
             checkRoom(DatabaseAPI.getAsyncData("room/" + nameOfRoom + "/" + "room"), nameOfRoom, panelReturn, roomSceneName);
         }
         
@@ -57,7 +59,9 @@ namespace Lobby {
         }
 
         private void createClickEvent() {
-            string nameOfRoom = DatabaseAPI.slugify(inputField.text);
+            InputField fieldInput = inputField.GetComponent<InputField>();
+
+            string nameOfRoom = DatabaseAPI.slugify(fieldInput.text);
             string playerName = PlayerPrefs.GetString("playerName_slug", "error");
 
             PlayerPrefs.SetString("room", nameOfRoom);
