@@ -50,7 +50,7 @@ namespace Lobby {
             
             string playerName = PlayerPrefs.GetString("playerName_slug", "error");
             PlayerPrefs.SetString("room", nameOfRoom);
-            DatabaseAPI.setAsyncData("room/" + nameOfRoom + "player_2", playerName);
+            DatabaseAPI.setAsyncData("room/" + nameOfRoom + "/" + "player_2", playerName);
             DatabaseAPI.setAsyncData("room/" + nameOfRoom, true);
             SceneManager.LoadScene(roomScene);
         }
@@ -61,7 +61,7 @@ namespace Lobby {
 
             PlayerPrefs.SetString("room", nameOfRoom);
             DatabaseAPI.setAsyncData("room/" + nameOfRoom, false);
-            DatabaseAPI.setAsyncData("room/" + nameOfRoom + "player_1", playerName);
+            DatabaseAPI.setAsyncData("room/" + nameOfRoom + "/" +  "player_1", playerName);
             SceneManager.LoadScene(waitingSceneName);
         }
 
