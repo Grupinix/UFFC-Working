@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Firebase.Database;
 
@@ -6,6 +7,17 @@ namespace APIs  {
     public static class DatabaseAPI {
         private static DatabaseReference _reference;
 
+        public static string slugify(string str) {
+            byte[] bytes = System.Text.Encoding.GetEncoding("Cyrillic").GetBytes(str);
+            str = System.Text.Encoding.ASCII.GetString(bytes);
+            str = str.ToLower();
+
+            str = Regex.Replace(str, @"[^a-z0-9\s-]", "");
+            str = Regex.Replace(str, @"\s+", " ").Trim();
+            str = str.Substring(0, str.Length <= 45 ? str.Length : 45).Trim();
+            return Regex.Replace(str, @"\s", "-");
+        }
+        
         private static DatabaseReference getDatabase() {
             if (_reference != null) {
                 return _reference;

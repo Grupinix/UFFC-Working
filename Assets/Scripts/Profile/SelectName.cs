@@ -1,4 +1,3 @@
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 using APIs;
@@ -13,10 +12,10 @@ using Button = UnityEngine.UI.Button;
 namespace Profile {
     public class SelectName : MonoBehaviour {
 
-        public string nextScene;
+        [SerializeField] private string nextScene;
     
-        public InputField inputField;
-        public Button button;
+        [SerializeField] private InputField inputField;
+        [SerializeField] private Button button;
         
         private void Start() {
             Button btn = button.GetComponent<Button>();
@@ -25,21 +24,10 @@ namespace Profile {
         }
 
         private void buttonClickEvent() {
-            string nameOfPlayer = slugify(inputField.text);
+            string nameOfPlayer = DatabaseAPI.slugify(inputField.text);
             PlayerPrefs.SetString("playerName", inputField.text);
             PlayerPrefs.SetString("playerName_slug", nameOfPlayer);
             checkName(DatabaseAPI.getAsyncData("player/" + nameOfPlayer), nameOfPlayer, nextScene);
-        }
-    
-        private static string slugify(string str) {
-            byte[] bytes = System.Text.Encoding.GetEncoding("Cyrillic").GetBytes(str);
-            str = System.Text.Encoding.ASCII.GetString(bytes);
-            str = str.ToLower();
-
-            str = Regex.Replace(str, @"[^a-z0-9\s-]", "");
-            str = Regex.Replace(str, @"\s+", " ").Trim();
-            str = str.Substring(0, str.Length <= 45 ? str.Length : 45).Trim();
-            return Regex.Replace(str, @"\s", "-");
         }
 
         private static async void checkName(Task<DataSnapshot> data, string nameOfPlayer, string scene) {

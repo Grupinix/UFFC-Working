@@ -7,17 +7,17 @@ using Button = UnityEngine.UI.Button;
 namespace Menu {
     public class SettingsMenu : MonoBehaviour {
 
-        public string selectNameScene;
+        [SerializeField] private string selectNameScene;
 
-        public GameObject settingsPanel;
-        public GameObject menuPanel;
+        [SerializeField] private GameObject settingsPanel;
+        [SerializeField] private GameObject menuPanel;
 
-        public Slider soundSlider;
+        [SerializeField] private Slider soundSlider;
     
-        public Button playButton;
-        public Button settingsButton;
-        public Button exitButton;
-        public Button backButton;
+        [SerializeField] private Button playButton;
+        [SerializeField] private Button settingsButton;
+        [SerializeField] private Button exitButton;
+        [SerializeField] private Button backButton;
 
         private void Start() {
             Button buttonPlay = playButton.GetComponent<Button>();
