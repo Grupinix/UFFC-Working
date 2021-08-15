@@ -17,24 +17,17 @@ public class SelectName : MonoBehaviour {
     public InputField inputField;
     public Button button;
 
-    public GameObject panelChoose;
-    public Button alreadyChoose;
 
     private void Start() {
         Button btn = button.GetComponent<Button>();
-        Button btnChoose = alreadyChoose.GetComponent<Button>();
 
         btn.onClick.AddListener(buttonClickEvent);
-        btnChoose.onClick.AddListener(buttonChooseEvent);
     }
 
-    private void buttonChooseEvent() {
-        panelChoose.SetActive(false);
-    }
-    
     private void buttonClickEvent() {
         string nameOfPlayer = slugify(inputField.text);
-        checkName(DatabaseAPI.getAsyncData("player/" + nameOfPlayer), nameOfPlayer, panelChoose, nextScene);
+        PlayerPrefs.SetString("playerName", inputField.text);
+        checkName(DatabaseAPI.getAsyncData("player/" + nameOfPlayer), nameOfPlayer, nextScene);
     }
     
     private static string slugify(string str) {
@@ -48,16 +41,9 @@ public class SelectName : MonoBehaviour {
         return Regex.Replace(str, @"\s", "-");
     }
 
-    private static async void checkName(Task<DataSnapshot> data, string nameOfPlayer, GameObject panel, string scene) {
+    private static async void checkName(Task<DataSnapshot> data, string nameOfPlayer, string scene) {
         await Task.WhenAll(data);
-
-        if (data.Result.Exists) {
-            panel.SetActive(true);
-            return;
-        }
-
         DatabaseAPI.setAsyncData("player/" + nameOfPlayer, false);
-        PlayerPrefs.SetString("playerName", nameOfPlayer);
         SceneManager.LoadScene(scene);
     }
 }

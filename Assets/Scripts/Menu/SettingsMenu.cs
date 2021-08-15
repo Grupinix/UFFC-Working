@@ -34,13 +34,7 @@ public class SettingsMenu : MonoBehaviour {
     }
 
     private void playEvent() {
-        string playerName = PlayerPrefs.GetString("playerName", null);
-        
-        if (playerName == null) {
-            SceneManager.LoadScene(selectNameScene);
-            return;
-        }
-        SceneManager.LoadScene(lobbyScene);
+        SceneManager.LoadScene(selectNameScene);
     }
 
     private void soundEvent(float value) {
