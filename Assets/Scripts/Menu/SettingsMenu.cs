@@ -39,6 +39,7 @@ namespace Menu {
 
         private void soundEvent(float value) {
             PlayerPrefs.SetFloat("gameSound", value);
+            PlayerPrefs.Save();
         }
 
         private void settingsEvent() {

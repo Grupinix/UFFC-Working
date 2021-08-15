@@ -26,7 +26,9 @@ namespace Profile {
         private void buttonClickEvent() {
             string nameOfPlayer = DatabaseAPI.slugify(inputField.text);
             PlayerPrefs.SetString("playerName", inputField.text);
+            PlayerPrefs.Save();
             PlayerPrefs.SetString("playerName_slug", nameOfPlayer);
+            PlayerPrefs.Save();
             checkName(DatabaseAPI.getAsyncData("player/" + nameOfPlayer), nameOfPlayer, nextScene);
         }
 

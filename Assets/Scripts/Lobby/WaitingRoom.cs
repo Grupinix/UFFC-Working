@@ -18,7 +18,7 @@ namespace Lobby {
                 return;
             }
             
-            Task<DataSnapshot> data = DatabaseAPI.getAsyncData("room/" + nameOfRoom);
+            Task<DataSnapshot> data = DatabaseAPI.getAsyncData("room/" + nameOfRoom + "/" + "room");
             await Task.WhenAll(data);
             if (!data.Result.Exists) {
                 return;

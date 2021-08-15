@@ -37,7 +37,7 @@ namespace Lobby {
 
         private void enterClickEvent() {
             string nameOfRoom = DatabaseAPI.slugify(inputField.text);
-            checkRoom(DatabaseAPI.getAsyncData("room/" + nameOfRoom), nameOfRoom, panelReturn, roomSceneName);
+            checkRoom(DatabaseAPI.getAsyncData("room/" + nameOfRoom + "/" + "room"), nameOfRoom, panelReturn, roomSceneName);
         }
         
         private static async void checkRoom(Task<DataSnapshot> data, string nameOfRoom, GameObject panelReturn, string roomScene) {
@@ -50,8 +50,9 @@ namespace Lobby {
             
             string playerName = PlayerPrefs.GetString("playerName_slug", "error");
             PlayerPrefs.SetString("room", nameOfRoom);
+            PlayerPrefs.Save();
             DatabaseAPI.setAsyncData("room/" + nameOfRoom + "/" + "player_2", playerName);
-            DatabaseAPI.setAsyncData("room/" + nameOfRoom, true);
+            DatabaseAPI.setAsyncData("room/" + nameOfRoom + "/" + "room", true);
             SceneManager.LoadScene(roomScene);
         }
 
@@ -60,7 +61,8 @@ namespace Lobby {
             string playerName = PlayerPrefs.GetString("playerName_slug", "error");
 
             PlayerPrefs.SetString("room", nameOfRoom);
-            DatabaseAPI.setAsyncData("room/" + nameOfRoom, false);
+            PlayerPrefs.Save();
+            DatabaseAPI.setAsyncData("room/" + nameOfRoom + "/" + "room", false);
             DatabaseAPI.setAsyncData("room/" + nameOfRoom + "/" +  "player_1", playerName);
             SceneManager.LoadScene(waitingSceneName);
         }
