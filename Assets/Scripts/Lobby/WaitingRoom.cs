@@ -24,7 +24,7 @@ namespace Lobby {
                 return;
             }
 
-            if (data.Result.Value.ToString().Equals("true")) {
+            if (data.Result.Value.ToString().Equals("True")) {
                 SceneManager.LoadScene(roomSceneName);
             }
             else {
