@@ -17,7 +17,7 @@ namespace Profile {
         }
 
         private void buttonClickEvent() {
-            string nameOfPlayer = DatabaseAPI.slugify(iField.text);
+            string nameOfPlayer = iField.text;
 
             PlayerPrefs.SetString("playerName", iField.text);
             PlayerPrefs.Save();

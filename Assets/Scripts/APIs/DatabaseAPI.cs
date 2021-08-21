@@ -9,8 +9,6 @@ namespace APIs  {
         private static DatabaseReference _reference;
 
         public static string slugify(string str) {
-            byte[] bytes = System.Text.Encoding.GetEncoding("Cyrillic").GetBytes(str);
-            str = System.Text.Encoding.ASCII.GetString(bytes);
             str = str.ToLower();
 
             str = Regex.Replace(str, @"[^a-z0-9\s-]", "");
