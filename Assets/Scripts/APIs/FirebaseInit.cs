@@ -1,22 +1,22 @@
-using System.Threading.Tasks;
 using Firebase;
 using Firebase.Analytics;
-using Firebase.Database;
+using Firebase.Extensions;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace APIs {
     public class FirebaseInit : MonoBehaviour {
+
+        public UnityEvent OnFirebaseInitialized = new UnityEvent();
+        
         private void Start() {
-            Task asyncTask = FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => { 
-                FirebaseAnalytics.SetAnalyticsCollectionEnabled(true); 
+            FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task => {
+                if (DependencyStatus.Available != task.Result) {
+                    return;
+                }
+                FirebaseAnalytics.SetAnalyticsCollectionEnabled(true);
+                OnFirebaseInitialized.Invoke();
             });
-            setUpDatabase(asyncTask);
-        }
-
-        private async void setUpDatabase(Task asyncTask) {
-            await Task.WhenAll(asyncTask);
-
-            DatabaseAPI.setDefaultDatabase(FirebaseDatabase.DefaultInstance.RootReference);
         }
     }
 }

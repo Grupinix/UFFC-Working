@@ -25,7 +25,7 @@ namespace Profile {
             PlayerPrefs.SetString("playerName_slug", nameOfPlayer);
             PlayerPrefs.Save();
 
-            DatabaseAPI.setAsyncData("player/" + nameOfPlayer, false);
+            DatabaseAPI.setAsyncData("players/" + nameOfPlayer, false);
             SceneManager.LoadScene(nextScene);
         }
     }

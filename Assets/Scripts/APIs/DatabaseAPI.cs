@@ -5,12 +5,9 @@ using Firebase.Database;
 
 namespace APIs  {
     public static class DatabaseAPI {
+        private static FirebaseDatabase _database;
         private static DatabaseReference _reference;
 
-        public static void setDefaultDatabase(DatabaseReference databaseReference) {
-            _reference = databaseReference;
-        }
-        
         public static string slugify(string str) {
             byte[] bytes = System.Text.Encoding.GetEncoding("Cyrillic").GetBytes(str);
             str = System.Text.Encoding.ASCII.GetString(bytes);
@@ -23,6 +20,11 @@ namespace APIs  {
         }
         
         private static DatabaseReference getDatabase() {
+            if (_reference != null) {
+                return _reference;
+            }
+
+            _reference = FirebaseDatabase.DefaultInstance.RootReference;
             return _reference;
         }
 
