@@ -7,6 +7,10 @@ namespace APIs  {
     public static class DatabaseAPI {
         private static DatabaseReference _reference;
 
+        public static void setDefaultDatabase(DatabaseReference databaseReference) {
+            _reference = databaseReference;
+        }
+        
         public static string slugify(string str) {
             byte[] bytes = System.Text.Encoding.GetEncoding("Cyrillic").GetBytes(str);
             str = System.Text.Encoding.ASCII.GetString(bytes);
@@ -19,10 +23,7 @@ namespace APIs  {
         }
         
         private static DatabaseReference getDatabase() {
-            if (_reference != null) {
-                return _reference;
-            }
-            return _reference = FirebaseDatabase.DefaultInstance.RootReference;
+            return _reference;
         }
 
         public static void setAsyncData(string path, object value) {
@@ -35,7 +36,7 @@ namespace APIs  {
             Task<DataSnapshot> task = customReference.GetValueAsync();
             return task;
         }
-        
+
         private static DatabaseReference getReferenceFromPath(string path) {
             var splitPath = path.Split('/');
             return splitPath.Aggregate(getDatabase(), (current, child) => current.Child(child));
