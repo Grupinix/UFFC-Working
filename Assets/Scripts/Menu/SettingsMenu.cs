@@ -1,4 +1,3 @@
-using Firebase;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -21,13 +20,6 @@ namespace Menu {
         [SerializeField] private Button backButton;
 
         private void Start() {
-            FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
-                DependencyStatus dependencyStatus = task.Result;
-                if (task.Result != DependencyStatus.Available) {
-                    Debug.LogError(System.String.Format("Could not resolve all Firebase dependencies: {0}", dependencyStatus));
-                }
-            });
-        
             Button buttonPlay = playButton.GetComponent<Button>();
             Button buttonSettings = settingsButton.GetComponent<Button>();
             Button buttonExit = exitButton.GetComponent<Button>();
