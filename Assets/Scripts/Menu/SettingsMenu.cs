@@ -7,7 +7,7 @@ using Button = UnityEngine.UI.Button;
 namespace Menu {
     public class SettingsMenu : MonoBehaviour {
 
-        [SerializeField] private string selectNameScene;
+        [SerializeField] private string authScene;
 
         [SerializeField] private GameObject settingsPanel;
         [SerializeField] private GameObject menuPanel;
@@ -34,7 +34,7 @@ namespace Menu {
         }
 
         private void playEvent() {
-            SceneManager.LoadScene(selectNameScene);
+            SceneManager.LoadScene(authScene);
         }
 
         private void soundEvent(float value) {

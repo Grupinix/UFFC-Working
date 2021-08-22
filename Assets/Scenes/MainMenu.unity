@@ -1743,7 +1743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de57ee481729036f9eaf408f7333b37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectNameScene: SelectName
+  authScene: Login
   settingsPanel: {fileID: 231073079}
   menuPanel: {fileID: 166891229}
   soundSlider: {fileID: 790049508}

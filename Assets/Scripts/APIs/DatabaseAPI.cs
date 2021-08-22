@@ -1,12 +1,15 @@
 ﻿using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Firebase.Auth;
 using Firebase.Database;
 
 namespace APIs  {
     public static class DatabaseAPI {
-        private static FirebaseDatabase _database;
         private static DatabaseReference _reference;
+        private static FirebaseAuth _auth;
+        
+        public static FirebaseUser user;
 
         public static string slugify(string str) {
             str = str.ToLower();
@@ -15,6 +18,14 @@ namespace APIs  {
             str = Regex.Replace(str, @"\s+", " ").Trim();
             str = str.Substring(0, str.Length <= 45 ? str.Length : 45).Trim();
             return Regex.Replace(str, @"\s", "-");
+        }
+
+        public static FirebaseAuth getAuth() {
+            if (_auth != null) {
+                return _auth;
+            }
+            _auth = FirebaseAuth.DefaultInstance;
+            return _auth;
         }
         
         private static DatabaseReference getDatabase() {
