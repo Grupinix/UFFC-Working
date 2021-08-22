@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="... Ódio">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/APIs/DatabaseAPI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/APIs/DatabaseAPI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Profile/SelectName.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Profile/SelectName.cs" afterDir="false" />
-    </list>
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Corrigido essa merda de C#" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +13,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/APIs/DatabaseAPI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/APIs/DatabaseAPI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Menu/SettingsMenu.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -80,7 +77,7 @@
       <workItem from="1629057760238" duration="324000" />
       <workItem from="1629079348505" duration="3254000" />
       <workItem from="1629574959902" duration="1536000" />
-      <workItem from="1629580568197" duration="7745000" />
+      <workItem from="1629580568197" duration="8046000" />
     </task>
     <task id="LOCAL-00001" summary="Remove check if name already exists (we will resolve this latter)">
       <created>1629046890016</created>
@@ -187,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629587980963</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Corrigido essa merda de C#">
+      <created>1629588784010</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1629588784010</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +228,7 @@
     <MESSAGE value="Try other things" />
     <MESSAGE value="Fix" />
     <MESSAGE value="... Ódio" />
-    <option name="LAST_COMMIT_MESSAGE" value="... Ódio" />
+    <MESSAGE value="Corrigido essa merda de C#" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrigido essa merda de C#" />
   </component>
 </project>
