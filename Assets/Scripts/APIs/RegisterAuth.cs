@@ -87,6 +87,7 @@ namespace APIs {
                     warningRegisterText.text = "Erro ao define nome";
                 }
                 else {
+                    PlayerPrefs.SetString("playerName", displayName);
                     SceneManager.LoadScene(lobbySceneName);
                 }
             }
