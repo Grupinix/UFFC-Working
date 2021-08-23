@@ -18,13 +18,13 @@ namespace Lobby {
                 return;
             }
             
-            Task<DataSnapshot> data = DatabaseAPI.getAsyncData("room/" + nameOfRoom + "/" + "room");
+            Task<DataSnapshot> data = DatabaseAPI.getAsyncData("rooms/" + nameOfRoom + "/" + "read");
             await Task.WhenAll(data);
             if (!data.Result.Exists) {
                 return;
             }
 
-            if (data.Result.Value.ToString().Equals("True")) {
+            if (data.Result.Value.ToString().Equals("true")) {
                 SceneManager.LoadScene(roomSceneName);
             }
             else {
