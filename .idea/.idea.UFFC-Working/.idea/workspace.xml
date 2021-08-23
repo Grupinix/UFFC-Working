@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Creating login and register">
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UserData.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UserData/ProfileManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UserData/ProfileManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/APIs/DatabaseAPI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/APIs/DatabaseAPI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/APIs/LoginAuth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/APIs/LoginAuth.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/APIs/RegisterAuth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/APIs/RegisterAuth.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -12,15 +18,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/APIs/DatabaseAPI.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/APIs/DatabaseAPI.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scenes/MainMenu.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/APIs/DatabaseAPI.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Menu/SettingsMenu.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" />
@@ -28,10 +25,11 @@
       <option value="$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml" />
       <option value="$PROJECT_DIR$/Assets/Scripts/APIs/FirebaseInit.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Profile/SelectName.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/APIs/DatabaseAPI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/APIs/LoginAuth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Menu/SettingsMenu.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/APIs/DatabaseAPI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UserData/ProfileManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/APIs/RegisterAuth.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/APIs/LoginAuth.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1wltYnnA7EhfGjsRsbHHzOYdSqg" />
@@ -83,7 +81,8 @@
       <workItem from="1629057760238" duration="324000" />
       <workItem from="1629079348505" duration="3254000" />
       <workItem from="1629574959902" duration="1536000" />
-      <workItem from="1629580568197" duration="19631000" />
+      <workItem from="1629580568197" duration="19749000" />
+      <workItem from="1629687682012" duration="2566000" />
     </task>
     <task id="LOCAL-00001" summary="Remove check if name already exists (we will resolve this latter)">
       <created>1629046890016</created>
@@ -211,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629602404839</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Adjusts">
+      <created>1629602679836</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1629602679836</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,6 +257,7 @@
     <MESSAGE value="Corrigido essa merda de C#" />
     <MESSAGE value="Update MainMenu.unity" />
     <MESSAGE value="Creating login and register" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating login and register" />
+    <MESSAGE value="Adjusts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjusts" />
   </component>
 </project>

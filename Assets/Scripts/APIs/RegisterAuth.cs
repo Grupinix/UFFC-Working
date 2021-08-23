@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using Firebase;
 using Firebase.Auth;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UserData;
 
 namespace APIs {
     
@@ -87,7 +89,13 @@ namespace APIs {
                     warningRegisterText.text = "Erro ao define nome";
                 }
                 else {
-                    PlayerPrefs.SetString("playerName", displayName);
+                    Dictionary<string, string> data = new Dictionary<string, string> {
+                        {"playerName", displayName},
+                        {"email", DatabaseAPI.user.Email},
+                        {"lastDataSeen", DateTime.Now.ToString("dd/MM/yyyy")},
+                        {"registerData", DateTime.Now.ToString("dd/MM/yyyy")}
+                    };
+                    ProfileManager.updateUserFields(data);
                     SceneManager.LoadScene(lobbySceneName);
                 }
             }

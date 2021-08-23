@@ -1,10 +1,13 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using Firebase;
 using Firebase.Auth;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UserData;
 
 namespace APIs {
     
@@ -48,6 +51,10 @@ namespace APIs {
         }
 
         private IEnumerator goToLoged() {
+            Dictionary<string, string> data = new Dictionary<string, string> {
+                {"lastDataSeen", DateTime.Now.ToString("dd/MM/yyyy")}
+            };
+            ProfileManager.updateUserFields(data);
             yield return new WaitForSeconds(2);
             
             SceneManager.LoadScene(lobbyScene);

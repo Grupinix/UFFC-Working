@@ -28,7 +28,7 @@ namespace APIs  {
             return _auth;
         }
         
-        private static DatabaseReference getDatabase() {
+        public static DatabaseReference getDatabase() {
             if (_reference != null) {
                 return _reference;
             }
