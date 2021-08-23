@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Firebase.Auth;
 using Firebase.Database;
@@ -10,16 +9,7 @@ namespace APIs  {
         private static FirebaseAuth _auth;
         
         public static FirebaseUser user;
-
-        public static string slugify(string str) {
-            str = str.ToLower();
-
-            str = Regex.Replace(str, @"[^a-z0-9\s-]", "");
-            str = Regex.Replace(str, @"\s+", " ").Trim();
-            str = str.Substring(0, str.Length <= 45 ? str.Length : 45).Trim();
-            return Regex.Replace(str, @"\s", "-");
-        }
-
+        
         public static FirebaseAuth getAuth() {
             if (_auth != null) {
                 return _auth;

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="ProfileManager">
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Finalizado a criação de salas">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/APIs/DatabaseAPI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/APIs/DatabaseAPI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +15,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/APIs/DatabaseAPI.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Lobby/Lobby.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/APIs/LoginAuth.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/APIs/RegisterAuth.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -26,12 +25,12 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/APIs/FirebaseInit.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Profile/SelectName.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Menu/SettingsMenu.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/APIs/DatabaseAPI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UserData/ProfileManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/APIs/RegisterAuth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/APIs/LoginAuth.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/APIs/DatabaseAPI.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1wltYnnA7EhfGjsRsbHHzOYdSqg" />
@@ -84,7 +83,7 @@
       <workItem from="1629079348505" duration="3254000" />
       <workItem from="1629574959902" duration="1536000" />
       <workItem from="1629580568197" duration="19749000" />
-      <workItem from="1629687682012" duration="6633000" />
+      <workItem from="1629687682012" duration="10438000" />
     </task>
     <task id="LOCAL-00001" summary="Remove check if name already exists (we will resolve this latter)">
       <created>1629046890016</created>
@@ -226,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629690266233</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Finalizado a criação de salas">
+      <created>1629696229016</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1629696229016</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,6 +274,7 @@
     <MESSAGE value="Creating login and register" />
     <MESSAGE value="Adjusts" />
     <MESSAGE value="ProfileManager" />
-    <option name="LAST_COMMIT_MESSAGE" value="ProfileManager" />
+    <MESSAGE value="Finalizado a criação de salas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalizado a criação de salas" />
   </component>
 </project>
