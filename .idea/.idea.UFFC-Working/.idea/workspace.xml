@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Removendo função não utilizada">
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/APIs/DatabaseAPI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/APIs/DatabaseAPI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Room.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,13 +12,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/APIs/DatabaseAPI.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Lobby/Lobby.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/APIs/LoginAuth.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/APIs/RegisterAuth.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/APIs/DatabaseAPI.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -30,9 +22,10 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UserData/ProfileManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/APIs/RegisterAuth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/APIs/LoginAuth.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/APIs/DatabaseAPI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Deck/CardPrefab.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1wltYnnA7EhfGjsRsbHHzOYdSqg" />
@@ -85,7 +78,10 @@
       <workItem from="1629079348505" duration="3254000" />
       <workItem from="1629574959902" duration="1536000" />
       <workItem from="1629580568197" duration="19749000" />
-      <workItem from="1629687682012" duration="10773000" />
+      <workItem from="1629687682012" duration="12791000" />
+      <workItem from="1629725215131" duration="1773000" />
+      <workItem from="1629772219674" duration="1203000" />
+      <workItem from="1629836086873" duration="3072000" />
     </task>
     <task id="LOCAL-00001" summary="Remove check if name already exists (we will resolve this latter)">
       <created>1629046890016</created>
@@ -241,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629700555657</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Removendo outras funções inúteis.">
+      <created>1629700898965</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1629700898965</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,6 +288,7 @@
     <MESSAGE value="ProfileManager" />
     <MESSAGE value="Finalizado a criação de salas" />
     <MESSAGE value="Removendo função não utilizada" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removendo função não utilizada" />
+    <MESSAGE value="Removendo outras funções inúteis." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removendo outras funções inúteis." />
   </component>
 </project>
