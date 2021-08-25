@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="">
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Add deep_in_mind">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Room/RandomTerrain.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Room/RandomTerrain.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Room.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/SettingsMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/SettingsMenu.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,14 +25,18 @@
       <option value="$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml" />
       <option value="$PROJECT_DIR$/Assets/Scripts/APIs/FirebaseInit.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Profile/SelectName.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Menu/SettingsMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UserData/ProfileManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/APIs/RegisterAuth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/APIs/LoginAuth.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/APIs/DatabaseAPI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Deck/CardPrefab.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Room/RandomTerrain.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Menu/SettingsMenu.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Menu/Turns.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Menu/Turn.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1wltYnnA7EhfGjsRsbHHzOYdSqg" />
@@ -81,7 +92,7 @@
       <workItem from="1629687682012" duration="12791000" />
       <workItem from="1629725215131" duration="1773000" />
       <workItem from="1629772219674" duration="1203000" />
-      <workItem from="1629836086873" duration="3072000" />
+      <workItem from="1629836086873" duration="11339000" />
     </task>
     <task id="LOCAL-00001" summary="Remove check if name already exists (we will resolve this latter)">
       <created>1629046890016</created>
@@ -244,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629700898965</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Add deep_in_mind">
+      <created>1629840115567</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1629840115568</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,6 +307,7 @@
     <MESSAGE value="Finalizado a criação de salas" />
     <MESSAGE value="Removendo função não utilizada" />
     <MESSAGE value="Removendo outras funções inúteis." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removendo outras funções inúteis." />
+    <MESSAGE value="Add deep_in_mind" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add deep_in_mind" />
   </component>
 </project>

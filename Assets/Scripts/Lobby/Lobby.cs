@@ -44,13 +44,14 @@ namespace Lobby {
         }
 
         private async void createRoomOnDatabase(string uid, string roomName, string waitScene) {
-            Task taskSet = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("uid").SetValueAsync(uid);
+            Task taskSetZero = DatabaseAPI.getDatabase().Child("rooms").Child(uid).RemoveValueAsync();
+            Task taskSetOne = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("uid").SetValueAsync(uid);
             Task taskSetTwo = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("read").SetValueAsync("false");
             Task taskSetTree = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("roomName").SetValueAsync(roomName);
-            
-            await Task.WhenAll(taskSet, taskSetTwo, taskSetTree);
+            Task taskSetFour = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("turn").SetValueAsync("playerOne");
 
-            
+            await Task.WhenAll(taskSetZero, taskSetOne, taskSetTwo, taskSetTree, taskSetFour);
+
             PlayerPrefs.SetString("room", uid);
             PlayerPrefs.Save();
             SceneManager.LoadScene(waitScene);
@@ -64,6 +65,10 @@ namespace Lobby {
             DataSnapshot snapshot = task.Result;
 
             foreach (DataSnapshot childSnapshot in snapshot.Children.Reverse()) {
+                if (childSnapshot.Child("read").Value.ToString() == "true") {
+                    continue;
+                }
+                
                 string roomName = childSnapshot.Child("roomName").Value.ToString();
                 string uid = childSnapshot.Child("uid").Value.ToString();
 

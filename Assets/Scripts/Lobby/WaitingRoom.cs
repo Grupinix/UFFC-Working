@@ -18,7 +18,7 @@ namespace Lobby {
                 return;
             }
             
-            Task<DataSnapshot> data = DatabaseAPI.getDatabase().Child("rooms").Child("nameOfRoom").Child("read").GetValueAsync();
+            Task<DataSnapshot> data = DatabaseAPI.getDatabase().Child("rooms").Child(nameOfRoom).Child("read").GetValueAsync();
 
             await Task.WhenAll(data);
             if (!data.Result.Exists) {

@@ -20,17 +20,13 @@ namespace Menu {
         [SerializeField] private Button backButton;
 
         private void Start() {
-            Button buttonPlay = playButton.GetComponent<Button>();
-            Button buttonSettings = settingsButton.GetComponent<Button>();
-            Button buttonExit = exitButton.GetComponent<Button>();
-            Button buttonBack = backButton.GetComponent<Button>();
-            Slider sliderSound = soundSlider.GetComponent<Slider>();
+            soundSlider.value = PlayerPrefs.GetFloat("gameSound", soundSlider.value);
 
-            buttonPlay.onClick.AddListener(playEvent);
-            buttonSettings.onClick.AddListener(settingsEvent);
-            buttonExit.onClick.AddListener(exitEvent);
-            buttonBack.onClick.AddListener(backEvent);
-            sliderSound.onValueChanged.AddListener(soundEvent);
+            playButton.onClick.AddListener(playEvent);
+            settingsButton.onClick.AddListener(settingsEvent);
+            exitButton.onClick.AddListener(exitEvent);
+            backButton.onClick.AddListener(backEvent);
+            soundSlider.onValueChanged.AddListener(soundEvent);
         }
 
         private void playEvent() {
