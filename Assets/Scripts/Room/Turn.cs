@@ -2,7 +2,6 @@ using System.Threading.Tasks;
 using APIs;
 using Firebase.Database;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Room {
