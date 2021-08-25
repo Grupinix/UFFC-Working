@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Threading.Tasks;
 using APIs;
 using Firebase.Database;
@@ -9,70 +10,39 @@ namespace Room {
 
         [SerializeField] private Button turno;
         
+        private string _oldPlayerTurn;
         private string _nameOfRoom;
-        private bool _playerOne;
-        private string _stage;
-        private bool _myTime;
         
         private void Start() { 
             _nameOfRoom = PlayerPrefs.GetString("room", null);
-            _playerOne = _nameOfRoom == DatabaseAPI.user.UserId;
-            _myTime = _playerOne;
-
-            turno.onClick.AddListener(executeTurn);
-
-            verifyTurn();
+            
+            StartCoroutine(turnCheckEvent());
         }
 
-        private void executeTurn() {
-            if (!_myTime) {
-                return;
-            }
-
-            if (_stage == "MAIN") {
-                _stage = "BATTLE";
-                turno.GetComponentInChildren<Text>().text = "BATTLE";
-            }
-            else if (_stage == "BATTLE") {
-                _stage = "MAIN";
-                _myTime = false;
-                passTurn();
-            }
+        private void turnEvent(bool isTurn) {
+            
         }
 
-        private async void passTurn() {
-            string nextPlayer = _playerOne ? "playerTwo" : "playerOne";
-            Task task = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("turn").SetValueAsync(nextPlayer);
-            await Task.WhenAll(task);
-            verifyTurn();
-        }
-
-        private async void verifyTurn() {
+        private IEnumerator turnCheckEvent() {
             Task<DataSnapshot> turn = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("turn").GetValueAsync();
 
-            await Task.WhenAll(turn);
+            yield return new WaitUntil(() => turn.IsCompleted);
             if (!turn.Result.Exists) {
-                return;
+                yield break;
+            }
+            
+            string playerTurn = turn.Result.Value.ToString();
+            if (playerTurn != _oldPlayerTurn) {
+                _oldPlayerTurn = playerTurn;
+                turnEvent(turnDecodificate(playerTurn));
             }
 
-            string playerTurn = turn.Result.Value.ToString();
-            if (playerTurn == "playerOne" && _playerOne || playerTurn != "playerOne" && !_playerOne) {
-                runTurn();
-            }
-            else {
-                turno.interactable = false;
-                turno.GetComponentInChildren<Text>().text = "TURNO DO OPONENTE";
-                
-                await Task.Delay(1000);
-                verifyTurn();
-            }
+            yield return new WaitForSeconds(1);
+            StartCoroutine(turnCheckEvent());
         }
 
-        private void runTurn() {
-            _myTime = true;
-
-            turno.interactable = true;
-            turno.GetComponentInChildren<Text>().text = "MAIN";
+        private bool turnDecodificate(string playerUid) {
+            return playerUid == DatabaseAPI.user.UserId;
         }
     }
 }
