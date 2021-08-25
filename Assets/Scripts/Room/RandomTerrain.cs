@@ -5,12 +5,11 @@ using Random = System.Random;
 
 namespace Room {
     public class RandomTerrain : MonoBehaviour {
-        [SerializeField] private List<TerrainData> terrains;
+        [SerializeField] private List<Terrain> terrains;
 
         private void Start() {
             Random random = new Random(DateTime.Now.Millisecond);
-            TerrainData terrain = terrains[random.Next(terrains.Count)];
-            Terrain.CreateTerrainGameObject(terrain);
+            terrains[random.Next(terrains.Count)].gameObject.layer = LayerMask.NameToLayer("TerrainActive");
         }
     }
 }

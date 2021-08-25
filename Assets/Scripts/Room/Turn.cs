@@ -31,7 +31,7 @@ namespace Room {
 
             if (_stage == "MAIN") {
                 _stage = "BATTLE";
-                turno.GetComponent<Text>().text = "BATTLE";
+                turno.GetComponentInChildren<Text>().text = "BATTLE";
             }
             else if (_stage == "BATTLE") {
                 _stage = "MAIN";
@@ -61,7 +61,7 @@ namespace Room {
             }
             else {
                 turno.interactable = false;
-                turno.GetComponent<Text>().text = "TURNO DO OPONENTE";
+                turno.GetComponentInChildren<Text>().text = "TURNO DO OPONENTE";
                 
                 await Task.Delay(1000);
                 verifyTurn();
@@ -72,7 +72,7 @@ namespace Room {
             _myTime = true;
 
             turno.interactable = true;
-            turno.GetComponent<Text>().text = "MAIN";
+            turno.GetComponentInChildren<Text>().text = "MAIN";
         }
     }
 }

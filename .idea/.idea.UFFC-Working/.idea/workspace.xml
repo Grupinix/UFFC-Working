@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Remove dependency">
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TemplateButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TemplateButton.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/New Lighting Settings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/New Lighting Settings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Room.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/RandomTerrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/RandomTerrain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/DeepInMind.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Terrains/DeepInMind.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,10 +20,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Lobby/Lobby.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Room/Turn.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -26,13 +31,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/APIs/LoginAuth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/APIs/DatabaseAPI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Deck/CardPrefab.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Room/RandomTerrain.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Menu/SettingsMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Menu/Turns.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Menu/Turn.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Room/RandomTerrain.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1wltYnnA7EhfGjsRsbHHzOYdSqg" />
@@ -88,7 +93,8 @@
       <workItem from="1629687682012" duration="12791000" />
       <workItem from="1629725215131" duration="1773000" />
       <workItem from="1629772219674" duration="1203000" />
-      <workItem from="1629836086873" duration="12346000" />
+      <workItem from="1629836086873" duration="14012000" />
+      <workItem from="1629865181690" duration="1213000" />
     </task>
     <task id="LOCAL-00001" summary="Remove check if name already exists (we will resolve this latter)">
       <created>1629046890016</created>
@@ -279,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629849722046</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Update">
+      <created>1629851241300</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1629851241300</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,7 +314,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="SelectScene" />
     <MESSAGE value="Fix error" />
     <MESSAGE value="Trying to fix some PlayerPrefs error in Android" />
     <MESSAGE value="Padronizando." />
@@ -326,6 +338,7 @@
     <MESSAGE value="Start turn syste," />
     <MESSAGE value="Ops" />
     <MESSAGE value="Remove dependency" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove dependency" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
 </project>
