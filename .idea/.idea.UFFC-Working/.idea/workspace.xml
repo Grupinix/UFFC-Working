@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Fix terrain problems">
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/JsonClasses.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/FieldProperties.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/FieldProperties.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,9 +16,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Terrains/DeepInMind.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -32,8 +32,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Menu/Turn.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Room/RandomTerrain.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Serializables/properties.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Serializables/CardProperties.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/SerializablesScripts/CardProperties.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/FieldProperties.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1wltYnnA7EhfGjsRsbHHzOYdSqg" />
@@ -90,7 +95,10 @@
       <workItem from="1629725215131" duration="1773000" />
       <workItem from="1629772219674" duration="1203000" />
       <workItem from="1629836086873" duration="14012000" />
-      <workItem from="1629865181690" duration="4843000" />
+      <workItem from="1629865181690" duration="6453000" />
+      <workItem from="1629912061316" duration="940000" />
+      <workItem from="1629917009013" duration="5075000" />
+      <workItem from="1630002286250" duration="1002000" />
     </task>
     <task id="LOCAL-00001" summary="Remove check if name already exists (we will resolve this latter)">
       <created>1629046890016</created>
@@ -295,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629866700052</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Redo turn system">
+      <created>1629870127943</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1629870127943</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,7 +332,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Trying to fix some PlayerPrefs error in Android" />
     <MESSAGE value="Padronizando." />
     <MESSAGE value="fix?" />
     <MESSAGE value="Setup default check..." />
@@ -342,6 +356,7 @@
     <MESSAGE value="Remove dependency" />
     <MESSAGE value="Update" />
     <MESSAGE value="Fix terrain problems" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix terrain problems" />
+    <MESSAGE value="Redo turn system" />
+    <option name="LAST_COMMIT_MESSAGE" value="Redo turn system" />
   </component>
 </project>
