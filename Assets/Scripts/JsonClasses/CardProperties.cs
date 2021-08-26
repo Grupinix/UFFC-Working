@@ -8,14 +8,18 @@ namespace JsonClasses {
     [Serializable]
     public class CardProperties : MonoBehaviour, ISerializable {
 
+        public int cardId;
+
         [SerializeField] private List<Material> materials;
         
-        [SerializeField] private int cardId;
         [SerializeField] private int cardPower;
         [SerializeField] private int cardDefense;
+        
+        [SerializeField] private GameObject carta;
 
-        public void Start() {
-            throw new NotImplementedException();
+        public void setMaterial(){
+            Renderer img = carta.GetComponent<Renderer>();
+            img.material = materials[cardId];
         }
         
         public CardProperties(SerializationInfo info, StreamingContext streamingContext) {
