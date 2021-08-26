@@ -223,7 +223,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PROXIMO TURNO
+  m_Text: ' PROXIMO TURNO '
 --- !u!222 &37460837
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1193,6 +1193,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1080225132}
+  - component: {fileID: 1080225133}
   m_Layer: 0
   m_Name: EnemyCards
   m_TagString: Untagged
@@ -1216,6 +1217,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1080225133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080225131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5123457d066c4be7bb0f64767d621899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardsPositions:
+  - {fileID: 1343558017}
+  - {fileID: 671294379}
+  - {fileID: 1033889542}
+  - {fileID: 1459630212}
+  - {fileID: 2137512489}
+  - {fileID: 1858740758}
+  - {fileID: 785634589}
+  terrainsPositions:
+  - {fileID: 777895049}
+  - {fileID: 13239067}
+  - {fileID: 1052364884}
+  - {fileID: 533423183}
+  - {fileID: 1038172338}
+  - {fileID: 1739503398}
+  - {fileID: 1865896845}
+  cards:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  terrains:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1144873876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,6 +1300,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1202157742}
+  - component: {fileID: 1202157743}
   m_Layer: 0
   m_Name: CardPositions
   m_TagString: Untagged
@@ -1278,6 +1324,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1202157743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202157741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5123457d066c4be7bb0f64767d621899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardsPositions:
+  - {fileID: 1039462705}
+  - {fileID: 112236201}
+  - {fileID: 1983324491}
+  - {fileID: 1288560921}
+  - {fileID: 278800026}
+  - {fileID: 690638352}
+  - {fileID: 1259590517}
+  terrainsPositions:
+  - {fileID: 1598465237}
+  - {fileID: 128896942}
+  - {fileID: 59736689}
+  - {fileID: 1939694340}
+  - {fileID: 1144873877}
+  - {fileID: 812573248}
+  - {fileID: 2051474536}
+  cards:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  terrains:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1259590516
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,17 +1455,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288883139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 37460835}
   m_Father: {fileID: 105162459}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 500, y: -270}
-  m_SizeDelta: {x: 160, y: 50}
+  m_AnchorMin: {x: 0.73350406, y: 0.027281787}
+  m_AnchorMax: {x: 0.98433065, y: 0.113563575}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1288883141
 MonoBehaviour:
