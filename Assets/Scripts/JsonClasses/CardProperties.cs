@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 using UnityEngine;
 
 namespace JsonClasses {
-    
+
     [Serializable]
     public class CardProperties : MonoBehaviour, ISerializable {
 

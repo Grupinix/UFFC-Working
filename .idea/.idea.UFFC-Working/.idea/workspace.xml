@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="" />
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Focus on generic workspace.xml">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/FieldProperties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/FieldProperties.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,9 +13,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/JsonClasses/CardProperties.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -33,8 +34,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Serializables/properties.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Serializables/CardProperties.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SerializablesScripts/CardProperties.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/FieldProperties.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/FieldProperties.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1wltYnnA7EhfGjsRsbHHzOYdSqg" />
@@ -96,6 +97,7 @@
       <workItem from="1629917009013" duration="5075000" />
       <workItem from="1630002286250" duration="1626000" />
       <workItem from="1630016106767" duration="1382000" />
+      <workItem from="1630018432967" duration="773000" />
     </task>
     <task id="LOCAL-00001" summary="Remove check if name already exists (we will resolve this latter)">
       <created>1629046890016</created>
@@ -321,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630018292655</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Focus on generic workspace.xml">
+      <created>1630018513961</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1630018513961</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,7 +352,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Setup default check..." />
     <MESSAGE value="Upload new cards" />
     <MESSAGE value="I think that it fix" />
     <MESSAGE value="Trying to do something" />
@@ -368,6 +376,7 @@
     <MESSAGE value="Redo turn system" />
     <MESSAGE value="Change .gitignore and start serializers" />
     <MESSAGE value="First step to turn system" />
-    <option name="LAST_COMMIT_MESSAGE" value="First step to turn system" />
+    <MESSAGE value="Focus on generic workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Focus on generic workspace.xml" />
   </component>
 </project>
