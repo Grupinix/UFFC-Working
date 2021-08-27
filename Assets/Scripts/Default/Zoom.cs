@@ -20,7 +20,7 @@ namespace Default {
 
                 float difference = currentMagnitude - prevMagnitude;
 
-                zoom(difference * 0.01f);
+                zoom(difference * -0.01f);
             }
 
             zoom(Input.GetAxis("Mouse ScrollWheel"));
