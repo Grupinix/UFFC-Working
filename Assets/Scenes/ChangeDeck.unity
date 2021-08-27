@@ -312,7 +312,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 100
+  m_Spacing: 5
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -867,7 +867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 256360766}
-  element: {fileID: 6459037710287963778, guid: 870fcce689d6bc61e9d3c848da39d60a, type: 3}
+  element: {fileID: 7282255695621484911, guid: 2cc739b8524fc35db80d6025781c72a3, type: 3}
 --- !u!4 &1779714642
 Transform:
   m_ObjectHideFlags: 0

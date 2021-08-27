@@ -148,7 +148,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardId: 0
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: cd4cefa6433d2f83ba1068d7b0e90213, type: 2}
+  - {fileID: 2100000, guid: 3cd9e9a1c98187db4afd44e343eaae26, type: 2}
+  - {fileID: 2100000, guid: 84f3f712735e64d4890bd530d6cfa142, type: 2}
+  - {fileID: 2100000, guid: b39a7a18df807d5229622a1826b9ee6d, type: 2}
+  - {fileID: 2100000, guid: da5f7e4c126254ff1b921e959698ef3b, type: 2}
+  - {fileID: 2100000, guid: 1436e6249f451c2a18ae636af3a0dc96, type: 2}
+  - {fileID: 2100000, guid: 36450b3a422348f57a7a2a5ff0d44605, type: 2}
+  - {fileID: 2100000, guid: fae25fede5b31eaf09ede3cf5f288692, type: 2}
+  - {fileID: 2100000, guid: 075b007f707767a56b204d71341e1198, type: 2}
   cardPower: 0
   cardDefense: 0
   carta: {fileID: 4940168142580653845}

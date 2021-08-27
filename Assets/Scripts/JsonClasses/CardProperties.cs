@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using Default;
 using UnityEngine;
+using UserData;
 
 namespace JsonClasses {
 
@@ -19,6 +21,9 @@ namespace JsonClasses {
         public void setMaterial(){
             Renderer img = carta.GetComponent<Renderer>();
             img.material = materials[cardId];
+            CardStatus cardStatus = UserDeck.getCardStatus(cardId);
+            cardPower = cardStatus.cardPower;
+            cardDefense = cardStatus.cardDefense;
         }
     }
 }

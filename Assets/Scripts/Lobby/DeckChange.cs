@@ -1,6 +1,8 @@
-using System;
+using Default;
+using JsonClasses;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UserData;
 
 namespace Lobby {
     public class DeckChange : MonoBehaviour {
@@ -13,10 +15,16 @@ namespace Lobby {
         }
 
         private void Start() {
-            for (int i = 0; i < 20; i++) {
+            for (int i = 0; i < UserDeck.getAmountOfCards(); i++) {
                 GameObject card = Instantiate(element, parent.transform);
-                card.transform.localScale = new Vector3(25, 1, 25);
-                card.transform.rotation = Quaternion.Euler(90, 0, 180);
+                
+                SetAmount setAmount = card.GetComponent<SetAmount>();
+                setAmount.cardId = i;
+                setAmount.setStatus();
+                
+                CardProperties cardProperties = card.GetComponentInChildren<CardProperties>();
+                cardProperties.cardId = i;
+                cardProperties.setMaterial();
             }
         }
     }
