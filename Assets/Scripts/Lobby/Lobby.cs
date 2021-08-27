@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using APIs;
 using Firebase.Database;
+using JsonClasses;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -49,8 +50,12 @@ namespace Lobby {
             Task taskSetTwo = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("read").SetValueAsync("false");
             Task taskSetTree = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("roomName").SetValueAsync(roomName);
             Task taskSetFour = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("turn").SetValueAsync(uid);
+            Task taskSetFive = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("cards").Child("0").Child("has").SetValueAsync("false");
+            Task taskSetSix = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("cards").Child("1").Child("has").SetValueAsync("false");
+            Task taskSetSeven = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("cards").Child("2").Child("has").SetValueAsync("false");
+            Task taskSetEight = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("event").SetValueAsync(JsonUtility.ToJson(new CardEvent(), false));
 
-            await Task.WhenAll(taskSetZero, taskSetOne, taskSetTwo, taskSetTree, taskSetFour);
+            await Task.WhenAll(taskSetZero, taskSetOne, taskSetTwo, taskSetTree, taskSetFour, taskSetFive, taskSetSix, taskSetSeven, taskSetEight);
 
             PlayerPrefs.SetString("room", uid);
             PlayerPrefs.Save();
