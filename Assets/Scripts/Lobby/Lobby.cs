@@ -25,6 +25,10 @@ namespace Lobby {
             reloadRooms();
         }
 
+        public void loadChangeDeckScene() {
+            SceneManager.LoadScene("ChangeDeck");
+        }
+
         public void reloadRooms() {
             foreach (Transform child in parent.transform) {
                 Destroy(child.gameObject);
@@ -53,7 +57,7 @@ namespace Lobby {
             Task taskSetFive = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("cards").Child("0").Child("has").SetValueAsync("false");
             Task taskSetSix = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("cards").Child("1").Child("has").SetValueAsync("false");
             Task taskSetSeven = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("cards").Child("2").Child("has").SetValueAsync("false");
-            Task taskSetEight = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("event").SetValueAsync(JsonUtility.ToJson(new CardEvent(), false));
+            Task taskSetEight = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("event").SetValueAsync(JsonUtility.ToJson(new CardEvent()));
 
             await Task.WhenAll(taskSetZero, taskSetOne, taskSetTwo, taskSetTree, taskSetFour, taskSetFive, taskSetSix, taskSetSeven, taskSetEight);
 
