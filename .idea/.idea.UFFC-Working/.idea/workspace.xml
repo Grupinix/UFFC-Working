@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Created CardDisplay prefab">
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Adjusts">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserData/UserDeck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserData/UserDeck.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/bandejao/bandejÆo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/bandejao/bandejÆo.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/disputa_pelo_poder/cardtemplate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/disputa_pelo_poder/cardtemplate.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/universidade_federal_fluminense.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/universidade_federal_fluminense/cardtemplate.xcf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/universidade_federal_fluminense/cardtemplate.xcf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/universidade_federal_fluminense/redondezas_do_instituto_de_fisica.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/universidade_federal_fluminense/redondezas_do_instituto_de_fisica.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/universidade_federal_fluminense/universidade_federal_fluminense.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/universidade_federal_fluminense/universidade_federal_fluminense.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/cade_o_slide/powerponto.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/cade_o_slide/powerponto.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/porta_de_direito/cardtemplate.xcf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/porta_de_direito/cardtemplate.xcf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/porta_de_direito/porta_de_direito.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/porta_de_direito/porta_de_direito.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +125,7 @@
       <workItem from="1630022566051" duration="1186000" />
       <workItem from="1630024688169" duration="2612000" />
       <workItem from="1630032981827" duration="1041000" />
-      <workItem from="1630070711966" duration="10791000" />
+      <workItem from="1630070711966" duration="12216000" />
     </task>
     <task id="LOCAL-00001" summary="Remove check if name already exists (we will resolve this latter)">
       <created>1629046890016</created>
@@ -398,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630088472864</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Adjusts">
+      <created>1630089115876</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1630089115876</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,7 +427,6 @@
     <MESSAGE value="Corrigido essa merda de C#" />
     <MESSAGE value="Update MainMenu.unity" />
     <MESSAGE value="Creating login and register" />
-    <MESSAGE value="Adjusts" />
     <MESSAGE value="ProfileManager" />
     <MESSAGE value="Finalizado a criação de salas" />
     <MESSAGE value="Removendo função não utilizada" />
@@ -445,6 +446,7 @@
     <MESSAGE value="Keys change" />
     <MESSAGE value="Start to generate card default settings" />
     <MESSAGE value="Created CardDisplay prefab" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created CardDisplay prefab" />
+    <MESSAGE value="Adjusts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjusts" />
   </component>
 </project>
