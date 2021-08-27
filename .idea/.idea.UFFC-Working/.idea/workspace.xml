@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Adjusts">
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Setup more materials">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Default/Zoom.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Default/Zoom.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ChangeDeck.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ChangeDeck.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Default/CardStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Default/CardStatus.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserData/UserDeck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserData/UserDeck.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/cade_o_slide/powerponto.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/cade_o_slide/powerponto.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/porta_de_direito/cardtemplate.xcf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/porta_de_direito/cardtemplate.xcf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/porta_de_direito/porta_de_direito.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/porta_de_direito/porta_de_direito.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +26,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Prefabs/Card.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Prefabs/Card.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Prefabs/Card.prefab" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -56,10 +55,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardEvent.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Default/CardStatus.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/DeckChange.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Default/SetAmount.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Default/CardStatus.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UserData/UserDeck.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Default/Zoom.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1wltYnnA7EhfGjsRsbHHzOYdSqg" />
@@ -125,7 +125,7 @@
       <workItem from="1630022566051" duration="1186000" />
       <workItem from="1630024688169" duration="2612000" />
       <workItem from="1630032981827" duration="1041000" />
-      <workItem from="1630070711966" duration="12216000" />
+      <workItem from="1630070711966" duration="17640000" />
     </task>
     <task id="LOCAL-00001" summary="Remove check if name already exists (we will resolve this latter)">
       <created>1629046890016</created>
@@ -400,7 +400,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630089115876</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Setup more materials">
+      <created>1630091003118</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1630091003118</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,7 +429,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Fix" />
     <MESSAGE value="... Ódio" />
     <MESSAGE value="Corrigido essa merda de C#" />
     <MESSAGE value="Update MainMenu.unity" />
@@ -447,6 +453,7 @@
     <MESSAGE value="Start to generate card default settings" />
     <MESSAGE value="Created CardDisplay prefab" />
     <MESSAGE value="Adjusts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjusts" />
+    <MESSAGE value="Setup more materials" />
+    <option name="LAST_COMMIT_MESSAGE" value="Setup more materials" />
   </component>
 </project>
