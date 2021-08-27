@@ -158,6 +158,10 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 36450b3a422348f57a7a2a5ff0d44605, type: 2}
   - {fileID: 2100000, guid: fae25fede5b31eaf09ede3cf5f288692, type: 2}
   - {fileID: 2100000, guid: 075b007f707767a56b204d71341e1198, type: 2}
+  - {fileID: 2100000, guid: bbf9c0170f6ca71088bf60410453e134, type: 2}
+  - {fileID: 2100000, guid: b2b9c446fc279f28fac66bdf0adbf890, type: 2}
+  - {fileID: 2100000, guid: 4c7520feb7a32a98297020ff3c291ec4, type: 2}
+  - {fileID: 2100000, guid: 4b69a7f1d992284e0a837c073faf1071, type: 2}
   cardPower: 0
   cardDefense: 0
   carta: {fileID: 4940168142580653845}

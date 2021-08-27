@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Start to generate card default settings">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Default/SetAmount.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Default/SetAmount.cs.meta" afterDir="false" />
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Created CardDisplay prefab">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ChangeDeck.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ChangeDeck.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Default/CardStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Default/CardStatus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/DeckChange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/DeckChange.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserData/UserDeck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserData/UserDeck.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/bandejao/bandejÆo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/bandejao/bandejÆo.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/disputa_pelo_poder/cardtemplate.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/disputa_pelo_poder/cardtemplate.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/universidade_federal_fluminense.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/universidade_federal_fluminense/cardtemplate.xcf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/universidade_federal_fluminense/cardtemplate.xcf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/universidade_federal_fluminense/redondezas_do_instituto_de_fisica.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/universidade_federal_fluminense/redondezas_do_instituto_de_fisica.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/universidade_federal_fluminense/universidade_federal_fluminense.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/universidade_federal_fluminense/universidade_federal_fluminense.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +31,10 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Prefabs/Card.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Prefabs/Card.prefab" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -123,7 +130,7 @@
       <workItem from="1630022566051" duration="1186000" />
       <workItem from="1630024688169" duration="2612000" />
       <workItem from="1630032981827" duration="1041000" />
-      <workItem from="1630070711966" duration="10180000" />
+      <workItem from="1630070711966" duration="10791000" />
     </task>
     <task id="LOCAL-00001" summary="Remove check if name already exists (we will resolve this latter)">
       <created>1629046890016</created>
@@ -384,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630080204751</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Created CardDisplay prefab">
+      <created>1630088472864</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1630088472864</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -406,7 +420,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Try other things" />
     <MESSAGE value="Fix" />
     <MESSAGE value="... Ódio" />
     <MESSAGE value="Corrigido essa merda de C#" />
@@ -431,6 +444,7 @@
     <MESSAGE value="Cards positions seteds" />
     <MESSAGE value="Keys change" />
     <MESSAGE value="Start to generate card default settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start to generate card default settings" />
+    <MESSAGE value="Created CardDisplay prefab" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created CardDisplay prefab" />
   </component>
 </project>
