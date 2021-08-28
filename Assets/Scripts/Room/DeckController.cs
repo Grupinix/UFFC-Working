@@ -65,10 +65,10 @@ namespace Room {
                 _tempCard.transform.position = Vector3.Lerp(_tempCard.transform.position, _targetPosition + new Vector3(0, 0.2f, 0), dumbGetCard * Time.deltaTime);
             }
 
-            if (canBuy && Input.touchCount == 1) {
+            if (Input.touchCount == 1) {
                 checkHit(_camera.ScreenPointToRay(Input.touches[0].position), false);
             }
-            else if (canBuy && Input.GetMouseButtonDown(0)) {
+            else if (Input.GetMouseButtonDown(0)) {
                 checkHit(_camera.ScreenPointToRay(Input.mousePosition), true);
             }
         }
@@ -76,7 +76,7 @@ namespace Room {
         private void checkHit(Ray ray, bool pc) {
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit)) {
-                if (hit.collider.gameObject.name == "Deck") {
+                if (canBuy && hit.collider.gameObject.name == "Deck") {
                     if (pc) {
                         getCard();
                         return;

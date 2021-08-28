@@ -54,12 +54,9 @@ namespace Lobby {
             Task taskSetTwo = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("read").SetValueAsync("false");
             Task taskSetTree = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("roomName").SetValueAsync(roomName);
             Task taskSetFour = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("turn").SetValueAsync(uid);
-            Task taskSetFive = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("cards").Child("0").Child("has").SetValueAsync("false");
-            Task taskSetSix = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("cards").Child("1").Child("has").SetValueAsync("false");
-            Task taskSetSeven = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("cards").Child("2").Child("has").SetValueAsync("false");
-            Task taskSetEight = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("event").SetValueAsync(JsonUtility.ToJson(new CardEvent()));
+            Task taskSetFive = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("event").SetValueAsync(JsonUtility.ToJson(new CardEvent()));
 
-            await Task.WhenAll(taskSetZero, taskSetOne, taskSetTwo, taskSetTree, taskSetFour, taskSetFive, taskSetSix, taskSetSeven, taskSetEight);
+            await Task.WhenAll(taskSetZero, taskSetOne, taskSetTwo, taskSetTree, taskSetFour, taskSetFive);
 
             PlayerPrefs.SetString("room", uid);
             PlayerPrefs.Save();
