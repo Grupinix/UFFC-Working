@@ -13,6 +13,7 @@ namespace Room {
         private int _totalInitialCards;
         private List<int> _deckListCards;
 
+        [SerializeField] private GameObject manager;
         [SerializeField] private GameObject enemyDeck;
         
         [SerializeField] private Vector3 rangeCardPosition;
@@ -26,6 +27,7 @@ namespace Room {
         [SerializeField] private float timeToShowPlayer;
         [SerializeField] private float dumbGetCard;
 
+        private UserInterface _userInterface;
         private float _currentTimeToShowPlayer;
         private Camera _camera;
 
@@ -40,6 +42,7 @@ namespace Room {
 
         private void Start() {
             _camera = camObj.GetComponent<Camera>();
+            _userInterface = manager.GetComponent<UserInterface>();
             _deckListCards = UserDeck.getDeckCards();
             _deckScale = transform.localScale;
             _totalInitialCards = _deckListCards.Count;
@@ -76,9 +79,21 @@ namespace Room {
                         getCard();
                         return;
                     }
+
                     Touch screenTouch = Input.GetTouch(0);
                     if (screenTouch.phase == TouchPhase.Ended) {
                         getCard();
+                    }
+                }
+                else if (hit.collider.gameObject.name == "Front") {
+                    if (pc) {
+                        _userInterface.openCardView(hit.collider.gameObject.GetComponentInParent<CardProperties>().cardId);
+                        return;
+                    }
+
+                    Touch screenTouch = Input.GetTouch(0);
+                    if (screenTouch.phase == TouchPhase.Ended) {
+                        _userInterface.openCardView(hit.collider.gameObject.GetComponentInParent<CardProperties>().cardId);
                     }
                 }
             }
