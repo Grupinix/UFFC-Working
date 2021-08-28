@@ -27,13 +27,16 @@ namespace Room {
         [SerializeField] private Text redMana;
         [SerializeField] private Text blueMana;
         [SerializeField] private Text greenMana;
+        [SerializeField] private Text errorText;
 
         [SerializeField] private GameObject deck;
 
         private DeckController _deckController;
+        private Turn _turn;
 
         private void Start() {
             _deckController = deck.GetComponent<DeckController>();
+            _turn = GetComponent<Turn>();
         }
 
         public void openCardView(int cardId) {
@@ -43,13 +46,13 @@ namespace Room {
         }
 
         public void castCard() {
-            if (!canDropMana) {
-                return;
-            }
-
-            canDropMana = false;
             CardStatus cardStatus = UserDeck.getCardStatus(_actualCardId);
             if (cardStatus.isTerrain) {
+                if (!canDropMana) {
+                    errorText.text = "Você já conjurou um terreno nesse turno.";
+                    return;
+                }
+                canDropMana = false;
                 if (cardStatus.manaGen[0] > 0) {
                     _redManaGen += cardStatus.manaGen[0];
                     _redManaInPool += cardStatus.manaGen[0];
@@ -65,9 +68,101 @@ namespace Room {
                     _greenManaInPool += cardStatus.manaGen[2];
                     greenMana.text = _greenManaInPool.ToString();
                 }
+                _deckController.removerCarta(_actualCardId);
+                cardInfoPanel.SetActive(false);
+                return;
             }
+
+            if (_turn.campoCheio()) {
+                errorText.text = "Seu campo já está cheio de criaturas!";
+                return;
+            }
+            
+            int[] newMana = hasMana(cardStatus);
+            if (newMana[0] == 0) {
+                errorText.text = "Você não possui mana suficiênte!";
+                return;
+            }
+
+            _redManaInPool = newMana[1];
+            _blueManaInPool = newMana[2];
+            _greenManaInPool = newMana[3];
+            
+            redMana.text = _redManaInPool.ToString();
+            blueMana.text = _blueManaInPool.ToString();
+            greenMana.text = _greenManaInPool.ToString();
+            
+            _turn.inserirCarta(_actualCardId);
             _deckController.removerCarta(_actualCardId);
             cardInfoPanel.SetActive(false);
+        }
+
+        private int[] hasMana(CardStatus cardStatus) {
+            int redManaActual = _redManaInPool;
+            int blueManaActual = _blueManaInPool;
+            int greenManaActual = _greenManaInPool;
+            redManaActual -= cardStatus.manaCost[0];
+            blueManaActual -= cardStatus.manaCost[1];
+            greenManaActual -= cardStatus.manaCost[2];
+            
+            if (redManaActual < 0 || blueManaActual < 0 || greenManaActual < 0) {
+                return new [] {0, 0, 0, 0};
+            }
+
+            if (cardStatus.manaCost[3] == 0) {
+                return new[] {
+                    1,
+                    redManaActual,
+                    blueManaActual,
+                    greenManaActual
+                };
+            }
+
+            int genericOriginal = cardStatus.manaCost[3];
+            if (redManaActual > 0) {
+                genericOriginal -= redManaActual;
+                if (genericOriginal < 0) {
+                    redManaActual = 0;
+                    redManaActual -= genericOriginal;
+                    genericOriginal = 0;
+                }
+                else {
+                    blueManaActual = 0;
+                }
+            }
+            if (blueManaActual > 0) {
+                genericOriginal -= blueManaActual;
+                if (genericOriginal < 0) {
+                    blueManaActual = 0;
+                    blueManaActual -= genericOriginal;
+                    genericOriginal = 0;
+                }
+                else {
+                    blueManaActual = 0;
+                }
+            }
+            if (greenManaActual > 0) {
+                genericOriginal -= greenManaActual;
+                if (genericOriginal < 0) {
+                    greenManaActual = 0;
+                    greenManaActual -= genericOriginal;
+                    genericOriginal = 0;
+                }
+                else {
+                    greenManaActual = 0;
+                }
+            }
+
+            if (genericOriginal > 0) {
+                return new[] {0, 0, 0, 0};
+            }
+
+            return new[] {
+                1,
+                redManaActual,
+                blueManaActual,
+                greenManaActual
+            };
         }
 
         public void resetMana() {

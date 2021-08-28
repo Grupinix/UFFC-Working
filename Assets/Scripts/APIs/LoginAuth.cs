@@ -55,12 +55,12 @@ namespace APIs {
                 {"lastDataSeen", DateTime.Now.ToString("dd/MM/yyyy")}
             };
             ProfileManager.updateUserFields(data);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
             
             SceneManager.LoadScene(lobbyScene);
         }
 
-        private void handleLoginErrors(System.AggregateException loginException) {
+        private void handleLoginErrors(AggregateException loginException) {
             FirebaseException firebaseException = loginException.GetBaseException() as FirebaseException;
             AuthError errorCode = (AuthError) firebaseException.ErrorCode;
 

@@ -9,28 +9,27 @@ using UnityEngine.UI;
 
 namespace Room {
     public class Turn : MonoBehaviour {
-
         [SerializeField] private Button turno;
         [SerializeField] private List<GameObject> allyCards;
         [SerializeField] private List<GameObject> enemyCards;
-        
-        private bool nextTurn;
+
+        private bool _nextTurn;
         private string _oldPlayerTurn;
         private string _nameOfRoom;
-        private string _playerTwoUID;
+        private string _playerTwoUid;
 
         private UserInterface _userInterface;
 
-        private void Start() { 
+        private void Start() {
             _nameOfRoom = PlayerPrefs.GetString("room", null);
             StartCoroutine(getSeccondPlayer());
-            
+
             StartCoroutine(turnCheckEvent());
             _userInterface = GetComponent<UserInterface>();
         }
 
         public void passarTurno() {
-            nextTurn = true;
+            _nextTurn = true;
         }
 
         public IEnumerator getSeccondPlayer() {
@@ -40,7 +39,7 @@ namespace Room {
                 yield break;
             }
 
-            _playerTwoUID = taskSet.Result.Value.ToString();
+            _playerTwoUid = taskSet.Result.Value.ToString();
         }
 
         private IEnumerator turnEvent(string playerTurn) {
@@ -58,15 +57,17 @@ namespace Room {
             CardEvent cardEvent = JsonUtility.FromJson<CardEvent>(turn.Result.Value.ToString());
             setField(cardEvent);
 
-            while (!nextTurn) {
-                yield return new WaitForSeconds(1);
-            }
+            yield return new WaitUntil(() => _nextTurn);
 
-            nextTurn = false;
+            _nextTurn = false;
             turno.gameObject.SetActive(false);
-            string nextPlayerUidTurn = playerTurn == _nameOfRoom ? _playerTwoUID : _nameOfRoom;
+            string nextPlayerUidTurn = playerTurn == _nameOfRoom ? _playerTwoUid : _nameOfRoom;
+
+
             Task taskOne = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("event").SetValueAsync(JsonUtility.ToJson(getField()));
             yield return new WaitUntil(() => taskOne.IsCompleted);
+
+
             Task taskTwo = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("turn").SetValueAsync(nextPlayerUidTurn);
             yield return new WaitUntil(() => taskTwo.IsCompleted);
         }
@@ -75,6 +76,7 @@ namespace Room {
             if (DatabaseAPI.user.UserId == _nameOfRoom) {
                 return generateCardEvent(allyCards, enemyCards);
             }
+
             return generateCardEvent(enemyCards, allyCards);
         }
 
@@ -99,6 +101,28 @@ namespace Room {
             cardEvent.cardsPlayerOne = cardsOne;
             cardEvent.cardsPlayerTwo = cardsTwo;
             return cardEvent;
+        }
+
+        public bool campoCheio() {
+            for (int i = 0; i < 3; i++) {
+                CardProperties cardProperties = allyCards[i].GetComponent<CardProperties>();
+                if (cardProperties.cardId == 9999) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        public void inserirCarta(int cardId) {
+            for (int i = 0; i < 3; i++) {
+                CardProperties cardProperties = allyCards[i].GetComponent<CardProperties>();
+                if (cardProperties.cardId == 9999) {
+                    cardProperties.cardId = cardId;
+                    cardProperties.setMaterial();
+                    break;
+                }
+            }
         }
 
         private void setField(CardEvent cardEvent) {
@@ -140,16 +164,15 @@ namespace Room {
             if (!turn.Result.Exists) {
                 yield break;
             }
-            
+
             string playerTurn = turn.Result.Value.ToString();
             if (playerTurn != _oldPlayerTurn) {
-                _oldPlayerTurn = playerTurn; 
+                _oldPlayerTurn = playerTurn;
                 StartCoroutine(turnEvent(playerTurn));
             }
 
             yield return new WaitForSeconds(1);
             StartCoroutine(turnCheckEvent());
         }
-
     }
 }
