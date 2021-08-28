@@ -137,6 +137,23 @@ namespace Room {
                 objTransform.GetComponent<Renderer>().enabled = false;
             }
         }
+
+        public void removerCarta(int cardId) {
+            int remove = 9999;
+            for (int i = 0; i < cards.Count; i++) {
+                if (cards[i].cardId == cardId) {
+                    remove = i;
+                }
+            }
+
+            if (remove == 9999) {
+                return;
+            }
+
+            CardProperties cardProperties = cards[remove];
+            cards.RemoveAt(remove);
+            Destroy(cardProperties.gameObject);
+        }
         
         private void reorganizeCards(){
             for(int i = 1; i < cards.Count; i++){

@@ -19,11 +19,14 @@ namespace Room {
         private string _nameOfRoom;
         private string _playerTwoUID;
 
+        private UserInterface _userInterface;
+
         private void Start() { 
             _nameOfRoom = PlayerPrefs.GetString("room", null);
             StartCoroutine(getSeccondPlayer());
             
             StartCoroutine(turnCheckEvent());
+            _userInterface = GetComponent<UserInterface>();
         }
 
         public void passarTurno() {
@@ -44,7 +47,9 @@ namespace Room {
             if (playerTurn != DatabaseAPI.user.UserId) {
                 yield break;
             }
-            
+
+            _userInterface.canDropMana = true;
+            _userInterface.resetMana();
             turno.gameObject.SetActive(true);
             DeckController.canBuy = true;
             Task<DataSnapshot> turn = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("event").GetValueAsync();
