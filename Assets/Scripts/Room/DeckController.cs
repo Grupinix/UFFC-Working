@@ -40,6 +40,8 @@ namespace Room {
 
         private List<CardProperties> cards = new List<CardProperties>();
 
+        public static bool canBuy;
+
         private void Start() {
             _camera = camObj.GetComponent<Camera>();
             _userInterface = manager.GetComponent<UserInterface>();
@@ -63,10 +65,10 @@ namespace Room {
                 _tempCard.transform.position = Vector3.Lerp(_tempCard.transform.position, _targetPosition + new Vector3(0, 0.2f, 0), dumbGetCard * Time.deltaTime);
             }
 
-            if (Input.touchCount == 1) {
+            if (canBuy && Input.touchCount == 1) {
                 checkHit(_camera.ScreenPointToRay(Input.touches[0].position), false);
             }
-            else if (Input.GetMouseButtonDown(0)) {
+            else if (canBuy && Input.GetMouseButtonDown(0)) {
                 checkHit(_camera.ScreenPointToRay(Input.mousePosition), true);
             }
         }
@@ -116,6 +118,7 @@ namespace Room {
                 _targetPosition = positionShowPlayer;
                 _currentTimeToShowPlayer = 0;
                 addCard(_tempCard.GetComponent<CardProperties>());
+                canBuy = false;
             }
         }
 

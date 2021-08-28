@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Resize oponent deck too">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs.meta" afterDir="false" />
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Fix position">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Room.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +37,8 @@
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Prefabs/Card.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Prefabs/Card.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Room/DeckController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -56,11 +60,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/SerializablesScripts/CardProperties.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/FieldProperties.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/Event.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UserData/UserCards.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardEvent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/DeckChange.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Default/SetAmount.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Default/CardStatus.cs" />
@@ -68,6 +69,9 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UserData/UserDeck.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardEvent.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1wltYnnA7EhfGjsRsbHHzOYdSqg" />
@@ -133,7 +137,7 @@
       <workItem from="1630022566051" duration="1186000" />
       <workItem from="1630024688169" duration="2612000" />
       <workItem from="1630032981827" duration="1041000" />
-      <workItem from="1630070711966" duration="32618000" />
+      <workItem from="1630070711966" duration="36570000" />
     </task>
     <task id="LOCAL-00001" summary="Remove check if name already exists (we will resolve this latter)">
       <created>1629046890016</created>
@@ -450,7 +454,21 @@
       <option name="project" value="LOCAL" />
       <updated>1630111496394</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Show card when click">
+      <created>1630117087847</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1630117087847</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Fix position">
+      <created>1630117696209</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1630117696209</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,8 +490,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Finalizado a criação de salas" />
-    <MESSAGE value="Removendo função não utilizada" />
     <MESSAGE value="Removendo outras funções inúteis." />
     <MESSAGE value="Add deep_in_mind" />
     <MESSAGE value="Start turn syste," />
@@ -497,6 +513,8 @@
     <MESSAGE value="Start merge" />
     <MESSAGE value="Deck" />
     <MESSAGE value="Resize oponent deck too" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resize oponent deck too" />
+    <MESSAGE value="Show card when click" />
+    <MESSAGE value="Fix position" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix position" />
   </component>
 </project>

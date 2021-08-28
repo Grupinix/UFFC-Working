@@ -7,12 +7,22 @@ namespace JsonClasses {
 
         public int id;
         public int type;
-        public int[] targets;
+        public int[,] cardsPlayerOne;
+        public int[,] cardsPlayerTwo;
 
         public CardEvent() {
             id = 0;
             type = 0;
-            targets = new[] {0, 0, 0};
+            cardsPlayerOne = new [,] {
+                {9999, 0, 0},
+                {9999, 0, 0},
+                {9999, 0, 0}
+            };
+            cardsPlayerTwo = new [,] {
+                {9999, 0, 0},
+                {9999, 0, 0},
+                {9999, 0, 0}
+            };
         }
     }
 }
