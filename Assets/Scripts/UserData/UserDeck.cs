@@ -39,6 +39,18 @@ namespace UserData {
             }
         }
 
+        public static List<int> getDeckCards() {
+            List<int> userDeck = new List<int>();
+
+            for (int i = 0; i < getAmountOfCards(); i++) {
+                for (int j = 0; j < DeckCardIds[i]; j++) {
+                    userDeck.Add(i);
+                }
+            }
+
+            return userDeck;
+        }
+
         public static CardStatus getCardStatus(int id) {
             return CardsAlmostMap[id];
         }
