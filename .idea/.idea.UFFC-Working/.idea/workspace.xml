@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Start merge">
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Deck">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Room.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +29,7 @@
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Prefabs/Card.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Prefabs/Card.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Prefabs/Card.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Prefabs/Card.prefab" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -128,7 +128,7 @@
       <workItem from="1630022566051" duration="1186000" />
       <workItem from="1630024688169" duration="2612000" />
       <workItem from="1630032981827" duration="1041000" />
-      <workItem from="1630070711966" duration="27601000" />
+      <workItem from="1630070711966" duration="28369000" />
     </task>
     <task id="LOCAL-00001" summary="Remove check if name already exists (we will resolve this latter)">
       <created>1629046890016</created>
@@ -431,7 +431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630110293124</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Deck">
+      <created>1630111024815</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1630111024815</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -453,7 +460,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Creating login and register" />
     <MESSAGE value="ProfileManager" />
     <MESSAGE value="Finalizado a criação de salas" />
     <MESSAGE value="Removendo função não utilizada" />
@@ -478,6 +484,7 @@
     <MESSAGE value="Zoom in zoom out to deck" />
     <MESSAGE value="Fix zoom in zoom out" />
     <MESSAGE value="Start merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start merge" />
+    <MESSAGE value="Deck" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deck" />
   </component>
 </project>

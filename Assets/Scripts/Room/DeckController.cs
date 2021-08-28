@@ -13,6 +13,8 @@ namespace Room {
         private int _totalInitialCards;
         private List<int> _deckListCards;
 
+        [SerializeField] private GameObject enemyDeck;
+        
         [SerializeField] private Vector3 rangeCardPosition;
         [SerializeField] private Vector3 positionShowPlayer;
         
@@ -103,13 +105,18 @@ namespace Room {
         }
 
         private void resizeDeck() {
-            Vector3 newSize = transform.localScale;
+            resizeBoxSize(transform);
+            resizeBoxSize(enemyDeck.transform);
+        }
+
+        private void resizeBoxSize(Transform objTransform) {
+            Vector3 newSize = objTransform.localScale;
 
             newSize.y = _deckListCards.Count * _deckScale.y / _totalInitialCards;
-            transform.localScale = newSize;
+            objTransform.localScale = newSize;
 
             if (_deckListCards.Count == 0) {
-                GetComponent<Renderer>().enabled = false;
+                objTransform.GetComponent<Renderer>().enabled = false;
             }
         }
         
