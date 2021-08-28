@@ -55,7 +55,7 @@ namespace Room {
         }
 
         private void Update() {
-            if (!ReferenceEquals(_tempCard, null)) {
+            if (_tempCard != null) {
                 _currentTimeToShowPlayer += Time.deltaTime;
                 if (_currentTimeToShowPlayer > timeToShowPlayer) {
                     _positionHand = _positionNextCard;
@@ -152,6 +152,9 @@ namespace Room {
 
             CardProperties cardProperties = cards[remove];
             cards.RemoveAt(remove);
+            if (_tempCard.Equals(cardProperties.gameObject)) {
+                _tempCard = null;
+            }
             Destroy(cardProperties.gameObject);
         }
         
