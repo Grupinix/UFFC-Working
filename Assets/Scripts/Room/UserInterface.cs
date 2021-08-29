@@ -18,18 +18,24 @@ namespace Room {
             
         private int _actualCardId;
 
-        [SerializeField] private int life = 20;
+        public int life = 20;
+        public int enemyLife = 20;
         [SerializeField] private List<Material> materials;
         [SerializeField] private GameObject cardInfoPanel;
         [SerializeField] private Image cardImage;
         [SerializeField] private Slider barraDeVida;
         [SerializeField] private Text textoVida;
+        [SerializeField] private Slider barraDeVidaInimiga;
+        [SerializeField] private Text textoVidaInimiga;
         [SerializeField] private Text redMana;
         [SerializeField] private Text blueMana;
         [SerializeField] private Text greenMana;
-        [SerializeField] private Text errorText;
 
         [SerializeField] private GameObject deck;
+
+        [SerializeField] private GameObject cardAttackPanel;
+        public Button cardAttackButton;
+        [SerializeField] private Image cardAttackImage;
 
         private DeckController _deckController;
         private Turn _turn;
@@ -37,6 +43,11 @@ namespace Room {
         private void Start() {
             _deckController = deck.GetComponent<DeckController>();
             _turn = GetComponent<Turn>();
+        }
+
+        public void openCardAttackView(int cardId) {
+            cardAttackPanel.SetActive(true);
+            cardAttackImage.material = materials[cardId];
         }
 
         public void openCardView(int cardId) {
@@ -49,7 +60,6 @@ namespace Room {
             CardStatus cardStatus = UserDeck.getCardStatus(_actualCardId);
             if (cardStatus.isTerrain) {
                 if (!canDropMana) {
-                    errorText.text = "Você já conjurou um terreno nesse turno.";
                     return;
                 }
                 canDropMana = false;
@@ -74,13 +84,11 @@ namespace Room {
             }
 
             if (_turn.campoCheio()) {
-                errorText.text = "Seu campo já está cheio de criaturas!";
                 return;
             }
             
             int[] newMana = hasMana(cardStatus);
             if (newMana[0] == 0) {
-                errorText.text = "Você não possui mana suficiênte!";
                 return;
             }
 
@@ -173,11 +181,12 @@ namespace Room {
             _greenManaInPool = _greenManaGen;
             greenMana.text = _greenManaInPool.ToString();
         }
-
-        public void removerVida(int amount) {
-            life -= amount;
+        
+        public void attVidaDisplay() {
             textoVida.text = life.ToString();
+            textoVidaInimiga.text = enemyLife.ToString();
             barraDeVida.value = life;
+            barraDeVidaInimiga.value = enemyLife;
         }
 
         public void closeGame() {
@@ -186,6 +195,10 @@ namespace Room {
 
         public void closePanel() {
             cardInfoPanel.SetActive(false);
+        }
+
+        public void closeAttackPanel() {
+            cardAttackPanel.SetActive(false);
         }
         
     }

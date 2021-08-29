@@ -171,10 +171,13 @@ MonoBehaviour:
   - {fileID: 2100000, guid: a993b9928fa0efb248fc37e6f6c527b4, type: 2}
   - {fileID: 2100000, guid: 66e52f5ecd34d163889b5a120f6c4c60, type: 2}
   - {fileID: 2100000, guid: 1767fa5c8e7b9033aa44408fe4fed4ad, type: 2}
-  cardPower: 0
-  cardDefense: 0
+  - {fileID: 2100000, guid: 8fe90a4d8c5c83146ac7885bf3672c69, type: 2}
+  - {fileID: 2100000, guid: 46bc57e44773d436fa158f18983d75e4, type: 2}
+  - {fileID: 2100000, guid: b1305c8d3b2c5487786100325e6956df, type: 2}
   carta: {fileID: 4940168142580653845}
   verse: {fileID: 2100000, guid: caf8a8c5786904fa4ba9f20e2e3da266, type: 2}
+  cardPower: 0
+  cardDefense: 0
 --- !u!114 &5042311059522811157
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -28,6 +28,9 @@ namespace UserData {
             new CardStatus(false, false, new[] {0, 0, 0}, new[] {0, 0, 0, 3}, 0, 8, 1),
             new CardStatus(false, false, new[] {0, 0, 0}, new[] {0, 2, 0, 3}, 9, 5, 1),
             new CardStatus(false, false, new[] {0, 0, 0}, new[] {2, 0, 0, 2}, 7, 5, 1),
+            new CardStatus(false, false, new[] {0, 0, 0}, new[] {0, 0, 0, 1}, 1, 2, 4),
+            new CardStatus(false, false, new[] {0, 0, 0}, new[] {0, 0, 1, 0}, 3, 1, 2),
+            new CardStatus(false, false, new[] {0, 0, 0}, new[] {0, 0, 2, 0}, 5, 4, 1),
         };
 
         public static readonly List<int> DeckCardIds = new List<int>();

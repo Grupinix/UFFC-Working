@@ -19,6 +19,8 @@ namespace JsonClasses {
         public int cardPower;
         public int cardDefense;
 
+        public bool ataque;
+
         public void setMaterial(){
             Renderer img = carta.GetComponent<Renderer>();
             
@@ -30,6 +32,12 @@ namespace JsonClasses {
             }
             
             img.material = materials[cardId];
+            CardStatus cardStatus = UserDeck.getCardStatus(cardId);
+            cardPower = cardStatus.cardPower;
+            cardDefense = cardStatus.cardDefense;
+        }
+
+        public void resetPower() {
             CardStatus cardStatus = UserDeck.getCardStatus(cardId);
             cardPower = cardStatus.cardPower;
             cardDefense = cardStatus.cardDefense;

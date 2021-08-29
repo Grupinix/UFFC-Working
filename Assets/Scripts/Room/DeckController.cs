@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using JsonClasses;
 using UnityEngine;
@@ -28,6 +29,7 @@ namespace Room {
         [SerializeField] private float dumbGetCard;
 
         private UserInterface _userInterface;
+        private Turn _turn;
         private float _currentTimeToShowPlayer;
         private Camera _camera;
 
@@ -45,6 +47,7 @@ namespace Room {
         private void Start() {
             _camera = camObj.GetComponent<Camera>();
             _userInterface = manager.GetComponent<UserInterface>();
+            _turn = manager.GetComponent<Turn>();
             _deckListCards = UserDeck.getDeckCards();
             _deckScale = transform.localScale;
             _totalInitialCards = _deckListCards.Count;
@@ -98,9 +101,85 @@ namespace Room {
                         _userInterface.openCardView(hit.collider.gameObject.GetComponentInParent<CardProperties>().cardId);
                     }
                 }
+                else if (hit.collider.gameObject.name == "FieldFront") {
+                    if (pc) {
+                        CardProperties cardProperties = hit.collider.gameObject.GetComponentInParent<CardProperties>();
+                        _userInterface.openCardAttackView(cardProperties.cardId);
+                        _userInterface.cardAttackButton.onClick.RemoveAllListeners();
+                        _userInterface.cardAttackButton.onClick.AddListener(() => {
+                            cardProperties.ataque = false;
+                            _userInterface.closeAttackPanel();
+                            int indice = -999;
+                            int maisFraca = Int32.MaxValue;
+                            for (int i = 0; i < 3; i++) {
+                                CardProperties cardP = _turn.enemyCards[i].GetComponent<CardProperties>();
+                                if (cardP.cardId != 9999 && cardP.cardDefense < maisFraca) {
+                                    indice = i;
+                                    maisFraca = cardP.cardDefense;
+                                }
+                            }
+
+                            if (indice == -999) {
+                                _userInterface.enemyLife -= cardProperties.cardPower;
+                                _userInterface.attVidaDisplay();
+                                return;
+                            }
+                            CardProperties cardEnemy = _turn.enemyCards[indice].GetComponent<CardProperties>();
+                            cardEnemy.cardDefense -= cardProperties.cardPower;
+                            cardProperties.cardDefense -= cardEnemy.cardPower;
+                            if (cardEnemy.cardDefense <= 0) {
+                                cardEnemy.cardId = 9999;
+                                cardEnemy.setMaterial();
+                            }
+
+                            if (cardProperties.cardDefense <= 0) {
+                                cardProperties.cardId = 9999;
+                                cardProperties.setMaterial();
+                            }
+                        });
+                        return;
+                    }
+                    
+                    Touch screenTouch = Input.GetTouch(0);
+                    if (screenTouch.phase == TouchPhase.Ended) {
+                        CardProperties cardProperties = hit.collider.gameObject.GetComponentInParent<CardProperties>();
+                        _userInterface.openCardAttackView(cardProperties.cardId);
+                        _userInterface.cardAttackButton.onClick.RemoveAllListeners();
+                        _userInterface.cardAttackButton.onClick.AddListener(() => {
+                            cardProperties.ataque = false;
+                            _userInterface.closeAttackPanel();
+                            int indice = -999;
+                            int maisFraca = Int32.MaxValue;
+                            for (int i = 0; i < 3; i++) {
+                                CardProperties cardP = _turn.enemyCards[i].GetComponent<CardProperties>();
+                                if (cardP.cardId != 9999 && cardP.cardDefense < maisFraca) {
+                                    indice = i;
+                                    maisFraca = cardP.cardDefense;
+                                }
+                            }
+
+                            if (indice == -999) {
+                                _userInterface.enemyLife -= cardProperties.cardPower;
+                                return;
+                            }
+                            CardProperties cardEnemy = _turn.enemyCards[indice].GetComponent<CardProperties>();
+                            cardEnemy.cardDefense -= cardProperties.cardPower;
+                            cardProperties.cardDefense -= cardEnemy.cardPower;
+                            if (cardEnemy.cardDefense <= 0) {
+                                cardEnemy.cardId = 9999;
+                                cardEnemy.setMaterial();
+                            }
+
+                            if (cardProperties.cardDefense <= 0) {
+                                cardProperties.cardId = 9999;
+                                cardProperties.setMaterial();
+                            }
+                        });
+                    }
+                }
             }
         }
-
+        
         private void getCard() {
             if (_deckListCards.Count > 0 && cards.Count < 5) {
                 int randCardIndex = Random.Range(0, _deckListCards.Count);

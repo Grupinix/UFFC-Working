@@ -10,8 +10,8 @@ using UnityEngine.UI;
 namespace Room {
     public class Turn : MonoBehaviour {
         [SerializeField] private Button turno;
-        [SerializeField] private List<GameObject> allyCards;
-        [SerializeField] private List<GameObject> enemyCards;
+        public List<GameObject> allyCards;
+        public List<GameObject> enemyCards;
 
         private bool _nextTurn;
         private string _oldPlayerTurn;
@@ -32,7 +32,7 @@ namespace Room {
             _nextTurn = true;
         }
 
-        public IEnumerator getSeccondPlayer() {
+        private IEnumerator getSeccondPlayer() {
             Task<DataSnapshot> taskSet = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("playerTwo").GetValueAsync();
             yield return new WaitUntil(() => taskSet.IsCompleted);
             if (!taskSet.Result.Exists) {
@@ -51,6 +51,19 @@ namespace Room {
             _userInterface.resetMana();
             turno.gameObject.SetActive(true);
             DeckController.canBuy = true;
+
+            for (int i = 0; i < 3; i++) {
+                CardProperties allycard = allyCards[i].GetComponent<CardProperties>();
+                CardProperties enemyCard = enemyCards[i].GetComponent<CardProperties>();
+                if (allycard.cardId != 9999) {
+                    allycard.resetPower();
+                    allycard.ataque = true;
+                }
+                if (enemyCard.cardId != 9999) {
+                    enemyCard.resetPower();
+                }
+            }
+            
             Task<DataSnapshot> turn = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("event").GetValueAsync();
             yield return new WaitUntil(() => turn.IsCompleted);
 
@@ -74,13 +87,13 @@ namespace Room {
 
         private CardEvent getField() {
             if (DatabaseAPI.user.UserId == _nameOfRoom) {
-                return generateCardEvent(allyCards, enemyCards);
+                return generateCardEvent(allyCards, enemyCards, _userInterface.life, _userInterface.enemyLife);
             }
 
-            return generateCardEvent(enemyCards, allyCards);
+            return generateCardEvent(enemyCards, allyCards, _userInterface.enemyLife, _userInterface.life);
         }
 
-        private CardEvent generateCardEvent(List<GameObject> listOne, List<GameObject> listTwo) {
+        private CardEvent generateCardEvent(List<GameObject> listOne, List<GameObject> listTwo, int lifeOne, int lifeTwo) {
             CardEvent cardEvent = new CardEvent();
             string cardsOne = "";
             string cardsTwo = "";
@@ -98,6 +111,8 @@ namespace Room {
                 }
             }
 
+            cardEvent.vidaPlayerOne = lifeOne;
+            cardEvent.vidaPlayerTwo = lifeTwo;
             cardEvent.cardsPlayerOne = cardsOne;
             cardEvent.cardsPlayerTwo = cardsTwo;
             return cardEvent;
@@ -127,14 +142,14 @@ namespace Room {
 
         private void setField(CardEvent cardEvent) {
             if (DatabaseAPI.user.UserId == _nameOfRoom) {
-                setCardToField(allyCards, enemyCards, cardEvent);
+                setCardToField(allyCards, enemyCards, cardEvent, cardEvent.vidaPlayerOne, cardEvent.vidaPlayerTwo);
             }
             else {
-                setCardToField(enemyCards, allyCards, cardEvent);
+                setCardToField(enemyCards, allyCards, cardEvent, cardEvent.vidaPlayerTwo, cardEvent.vidaPlayerOne);
             }
         }
 
-        private void setCardToField(List<GameObject> listOne, List<GameObject> listTwo, CardEvent cardEvent) {
+        private void setCardToField(List<GameObject> listOne, List<GameObject> listTwo, CardEvent cardEvent, int lifeOne, int lifeTwo) {
             string[] cardsOne = cardEvent.cardsPlayerOne.Split('x');
             string[] cardsTwo = cardEvent.cardsPlayerTwo.Split('x');
             for (int i = 0; i < 3; i++) {
@@ -155,6 +170,10 @@ namespace Room {
                 cardEnemy.cardPower = int.Parse(cardStatusTwo[1]);
                 cardEnemy.cardDefense = int.Parse(cardStatusTwo[2]);
             }
+
+            _userInterface.life = lifeOne;
+            _userInterface.enemyLife = lifeTwo;
+            _userInterface.attVidaDisplay();
         }
 
         private IEnumerator turnCheckEvent() {

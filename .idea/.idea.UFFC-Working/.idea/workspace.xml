@@ -1,12 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Fix small mistake">
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Turn system working">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Card.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Card.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Room.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/APIs/LoginAuth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/APIs/LoginAuth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserData/UserDeck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserData/UserDeck.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/bandejao/cardtemplate.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/bandejao/cardtemplate.xcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/centro_de_artes/cardtemplate.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/centro_de_artes/cardtemplate.xcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/centro_de_artes/centro_de_artes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/centro_de_artes/centro_de_artes.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/escola_de_engenharia/cardtemplate.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/escola_de_engenharia/cardtemplate.xcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/escola_de_engenharia/escola_de_engenharia.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/escola_de_engenharia/escola_de_engenharia.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/facvldade_de_direito/cardtemplate.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/facvldade_de_direito/cardtemplate.xcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/facvldade_de_direito/facvldade_de_direito.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/facvldade_de_direito/facvldade_de_direito.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/gragoata/cardtemplate.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/gragoata/cardtemplate.xcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/gragoata/gragoata.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/gragoata/gragoata.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/instituto_biomedico/cardtemplate.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/instituto_biomedico/cardtemplate.xcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/instituto_biomedico/instituto_biomedico.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/instituto_biomedico/instituto_biomedico.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/instituto_de_biologia/cardtemplate.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/instituto_de_biologia/cardtemplate.xcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/instituto_de_biologia/instituto_de_biologia.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/instituto_de_biologia/instituto_de_biologia.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/instituto_de_computacao/cardtemplate.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/instituto_de_computacao/cardtemplate.xcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/instituto_de_computacao/instituto_de_computacao.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/instituto_de_computacao/instituto_de_computacao.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/instituto_de_quimica/cardtemplate.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/instituto_de_quimica/cardtemplate.xcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/instituto_de_quimica/instituto_de_quimica.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/instituto_de_quimica/instituto_de_quimica.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/orla_da_uff/cardtemplate.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/orla_da_uff/cardtemplate.xcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/orla_da_uff/orla_da_uff.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/orla_da_uff/orla_da_uff.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/porta_de_direito.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/quintareira/cardtemplate.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/quintareira/cardtemplate.xcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/quintareira/quintareira.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/quintareira/quintareira.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/redondezas_do_instituto_de_fisica/cardtemplate.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/redondezas_do_instituto_de_fisica/cardtemplate.xcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/redondezas_do_instituto_de_fisica/redondezas_do_instituto_de_fisica.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/redondezas_do_instituto_de_fisica/redondezas_do_instituto_de_fisica.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/valonguinho_stories_i/cardtemplate.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/valonguinho_stories_i/cardtemplate.xcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/valonguinho_stories_i/valonguinho_stories_i.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/valonguinho_stories_i/valonguinho_stories_i.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +62,7 @@
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scenes/Room.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Room/DeckController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/APIs/LoginAuth.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Room/Turn.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -58,13 +89,13 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Default/SetAmount.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Default/CardStatus.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Default/Zoom.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/APIs/LoginAuth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UserData/UserDeck.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardEvent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/APIs/LoginAuth.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs" />
     </changedPaths>
   </component>
@@ -133,14 +164,7 @@
       <workItem from="1630032981827" duration="1041000" />
       <workItem from="1630070711966" duration="41245000" />
       <workItem from="1630130032550" duration="2904000" />
-      <workItem from="1630164639229" duration="11009000" />
-    </task>
-    <task id="LOCAL-00004" summary="Fix error">
-      <created>1629053082851</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1629053082851</updated>
+      <workItem from="1630164639229" duration="25203000" />
     </task>
     <task id="LOCAL-00005" summary="Trying to fix some PlayerPrefs error in Android">
       <created>1629053379017</created>
@@ -478,7 +502,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630168848532</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Turn system working">
+      <created>1630176724069</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1630176724069</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,7 +531,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Update" />
     <MESSAGE value="Fix terrain problems" />
     <MESSAGE value="Redo turn system" />
     <MESSAGE value="Change .gitignore and start serializers" />
@@ -525,6 +555,7 @@
     <MESSAGE value="Add logo and start to create battle system" />
     <MESSAGE value="Terrain settings" />
     <MESSAGE value="Fix small mistake" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix small mistake" />
+    <MESSAGE value="Turn system working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Turn system working" />
   </component>
 </project>
