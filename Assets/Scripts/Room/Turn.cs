@@ -215,7 +215,7 @@ namespace Room {
                 StartCoroutine(turnEvent(playerTurn));
             }
 
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
             StartCoroutine(turnCheckEvent());
         }
     }

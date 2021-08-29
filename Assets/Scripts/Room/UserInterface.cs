@@ -32,6 +32,7 @@ namespace Room {
         [SerializeField] private Text greenMana;
 
         [SerializeField] private GameObject deck;
+        [SerializeField] private GameObject enemyImage;
 
         [SerializeField] private GameObject cardAttackPanel;
         public Button cardAttackButton;
@@ -46,13 +47,33 @@ namespace Room {
         }
 
         public void openCardAttackView(int cardId) {
+            if (cardId == 9999) {
+                return;
+            }
             cardAttackPanel.SetActive(true);
+            cardInfoPanel.SetActive(false);
+            enemyImage.SetActive(false);
             cardAttackImage.material = materials[cardId];
         }
 
+        public void openCardEnemyView(int cardId) {
+            if (cardId == 9999) {
+                return;
+            }
+            enemyImage.SetActive(true);
+            cardInfoPanel.SetActive(false);
+            cardAttackPanel.SetActive(false);
+            enemyImage.GetComponent<Image>().material = materials[cardId];
+        }
+
         public void openCardView(int cardId) {
+            if (cardId == 9999) {
+                return;
+            }
             _actualCardId = cardId;
             cardInfoPanel.SetActive(true);
+            enemyImage.SetActive(false);
+            cardAttackPanel.SetActive(false);
             cardImage.material = materials[cardId];
         }
 

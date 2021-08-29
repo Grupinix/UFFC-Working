@@ -104,6 +104,17 @@ namespace Room {
                         _userInterface.openCardView(hit.collider.gameObject.GetComponentInParent<CardProperties>().cardId);
                     }
                 }
+                else if (hit.collider.gameObject.name == "FieldEnemyFront") {
+                    if (pc) {
+                        _userInterface.openCardEnemyView(hit.collider.gameObject.GetComponentInParent<CardProperties>().cardId);
+                        return;
+                    }
+
+                    Touch screenTouch = Input.GetTouch(0);
+                    if (screenTouch.phase == TouchPhase.Ended) {
+                        _userInterface.openCardEnemyView(hit.collider.gameObject.GetComponentInParent<CardProperties>().cardId);
+                    }
+                }
                 else if (hit.collider.gameObject.name == "FieldFront") {
                     CardProperties cardProperties = hit.collider.gameObject.GetComponentInParent<CardProperties>();
                     if (!cardProperties.ataque) {

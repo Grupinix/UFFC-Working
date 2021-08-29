@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Threading.Tasks;
 using APIs;
 using Firebase.Database;
@@ -9,20 +10,20 @@ namespace Lobby {
         [SerializeField] private string roomSceneName;
 
         private void Start() { 
-            verifyRoom();
+            StartCoroutine(verifyRoom());
         }
 
-        private async void verifyRoom() {
+        private IEnumerator verifyRoom() {
             string nameOfRoom = PlayerPrefs.GetString("room", null);
             if (nameOfRoom == null) {
-                return;
+                yield break;
             }
             
             Task<DataSnapshot> data = DatabaseAPI.getDatabase().Child("rooms").Child(nameOfRoom).Child("read").GetValueAsync();
 
-            await Task.WhenAll(data);
+            yield return new WaitUntil(() => data.IsCompleted);
             if (!data.Result.Exists) {
-                return;
+                yield break;
             }
 
             if (data.Result.Value.ToString().Equals("true")) {
@@ -31,8 +32,8 @@ namespace Lobby {
                 SceneManager.LoadScene(roomSceneName);
             }
             else {
-                await Task.Delay(1000);
-                verifyRoom();
+                yield return new WaitForSeconds(2);
+                StartCoroutine(verifyRoom());
             }
         }
     }
