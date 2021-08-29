@@ -56,6 +56,14 @@ namespace Room {
             cardImage.material = materials[cardId];
         }
 
+        public void descartar() {
+            if (!_turn.userTurn) {
+                return;
+            }
+            _deckController.removerCarta(_actualCardId);
+            cardInfoPanel.SetActive(false);
+        }
+        
         public void castCard() {
             if (!_turn.userTurn) {
                 return;
