@@ -13,7 +13,7 @@ namespace Room {
         public List<GameObject> allyCards;
         public List<GameObject> enemyCards;
 
-        private bool _nextTurn;
+        public bool _nextTurn;
         private string _oldPlayerTurn;
         private string _nameOfRoom;
         private string _playerTwoUid;

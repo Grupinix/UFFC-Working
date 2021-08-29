@@ -57,6 +57,9 @@ namespace Room {
         }
 
         public void castCard() {
+            if (!_turn._nextTurn) {
+                return;
+            }
             CardStatus cardStatus = UserDeck.getCardStatus(_actualCardId);
             if (cardStatus.isTerrain) {
                 if (!canDropMana) {
@@ -101,8 +104,8 @@ namespace Room {
             greenMana.text = _greenManaInPool.ToString();
             
             _turn.inserirCarta(_actualCardId);
-            _deckController.removerCarta(_actualCardId);
             cardInfoPanel.SetActive(false);
+            _deckController.removerCarta(_actualCardId);
         }
 
         private int[] hasMana(CardStatus cardStatus) {

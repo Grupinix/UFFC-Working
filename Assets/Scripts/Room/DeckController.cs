@@ -55,6 +55,9 @@ namespace Room {
             Vector3 handPosition = hand.transform.position;
             _minPosition = handPosition - rangeCardPosition;
             _maxPosition = handPosition + rangeCardPosition;
+            for (int i = 0; i < 4; i++) {
+                getCard();
+            }
         }
 
         private void Update() {
@@ -102,8 +105,11 @@ namespace Room {
                     }
                 }
                 else if (hit.collider.gameObject.name == "FieldFront") {
+                    CardProperties cardProperties = hit.collider.gameObject.GetComponentInParent<CardProperties>();
+                    if (!cardProperties.ataque) {
+                        return;
+                    }
                     if (pc) {
-                        CardProperties cardProperties = hit.collider.gameObject.GetComponentInParent<CardProperties>();
                         _userInterface.openCardAttackView(cardProperties.cardId);
                         _userInterface.cardAttackButton.onClick.RemoveAllListeners();
                         _userInterface.cardAttackButton.onClick.AddListener(() => {
@@ -142,7 +148,6 @@ namespace Room {
                     
                     Touch screenTouch = Input.GetTouch(0);
                     if (screenTouch.phase == TouchPhase.Ended) {
-                        CardProperties cardProperties = hit.collider.gameObject.GetComponentInParent<CardProperties>();
                         _userInterface.openCardAttackView(cardProperties.cardId);
                         _userInterface.cardAttackButton.onClick.RemoveAllListeners();
                         _userInterface.cardAttackButton.onClick.AddListener(() => {
@@ -230,11 +235,11 @@ namespace Room {
             }
 
             CardProperties cardProperties = cards[remove];
-            cards.RemoveAt(remove);
             if (_tempCard.Equals(cardProperties.gameObject)) {
                 _tempCard = null;
             }
             Destroy(cardProperties.gameObject);
+            cards.RemoveAt(remove);
         }
         
         private void reorganizeCards(){
