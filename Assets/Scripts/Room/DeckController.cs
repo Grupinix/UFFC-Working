@@ -228,6 +228,7 @@ namespace Room {
             for (int i = 0; i < cards.Count; i++) {
                 if (cards[i].cardId == cardId) {
                     remove = i;
+                    break;
                 }
             }
 
@@ -236,8 +237,10 @@ namespace Room {
             }
 
             CardProperties cardProperties = cards[remove];
-            if (_tempCard.Equals(cardProperties.gameObject)) {
-                _tempCard = null;
+            if (_tempCard != null) {
+                if (_tempCard.GetComponent<CardProperties>().cardId == cardProperties.cardId) {
+                    _tempCard = null;
+                }
             }
             Destroy(cardProperties.gameObject);
             cards.RemoveAt(remove);
