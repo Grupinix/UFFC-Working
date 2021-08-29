@@ -113,6 +113,9 @@ namespace Room {
                         _userInterface.openCardAttackView(cardProperties.cardId);
                         _userInterface.cardAttackButton.onClick.RemoveAllListeners();
                         _userInterface.cardAttackButton.onClick.AddListener(() => {
+                            if (!_turn.userTurn) {
+                                return;
+                            }
                             cardProperties.ataque = false;
                             _userInterface.closeAttackPanel();
                             int indice = -999;
@@ -151,6 +154,9 @@ namespace Room {
                         _userInterface.openCardAttackView(cardProperties.cardId);
                         _userInterface.cardAttackButton.onClick.RemoveAllListeners();
                         _userInterface.cardAttackButton.onClick.AddListener(() => {
+                            if (!_turn.userTurn) {
+                                return;
+                            }
                             cardProperties.ataque = false;
                             _userInterface.closeAttackPanel();
                             int indice = -999;

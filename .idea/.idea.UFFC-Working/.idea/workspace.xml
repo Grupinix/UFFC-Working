@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Corrigido bug na hora de pagar a quantia em mana.">
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Update lobby image and fix a bug">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/menu/ChoiceOfNameBackground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Images/menu/ChoiceOfNameBackground.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ChangeDeck.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/ChangeDeck.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Login.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Login.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Register.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Register.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Room.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,6 +27,7 @@
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Room/DeckController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Room/DeckController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Room/Turn.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scenes/ChangeDeck.unity" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -57,7 +53,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Default/SetAmount.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Default/CardStatus.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Default/Zoom.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/APIs/LoginAuth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UserData/UserDeck.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" />
@@ -65,6 +60,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1wltYnnA7EhfGjsRsbHHzOYdSqg" />
@@ -133,14 +129,7 @@
       <workItem from="1630070711966" duration="41245000" />
       <workItem from="1630130032550" duration="2904000" />
       <workItem from="1630164639229" duration="26864000" />
-      <workItem from="1630256744140" duration="6233000" />
-    </task>
-    <task id="LOCAL-00010" summary="I think that it fix">
-      <created>1629081507108</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1629081507109</updated>
+      <workItem from="1630256744140" duration="9146000" />
     </task>
     <task id="LOCAL-00011" summary="Trying to do something">
       <created>1629576650002</created>
@@ -478,7 +467,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630260319217</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Update lobby image and fix a bug">
+      <created>1630264158136</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1630264158136</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,7 +496,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Utilizing FieldProperties serialize" />
     <MESSAGE value="Cards positions seteds" />
     <MESSAGE value="Keys change" />
     <MESSAGE value="Start to generate card default settings" />
@@ -525,6 +520,7 @@
     <MESSAGE value="Try to make the code better" />
     <MESSAGE value="Set a win condition." />
     <MESSAGE value="Corrigido bug na hora de pagar a quantia em mana." />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrigido bug na hora de pagar a quantia em mana." />
+    <MESSAGE value="Update lobby image and fix a bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update lobby image and fix a bug" />
   </component>
 </project>

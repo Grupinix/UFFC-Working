@@ -14,14 +14,11 @@ namespace Lobby {
         [SerializeField] private string waitingSceneName;
         [SerializeField] private string roomSceneName;
         
-        [SerializeField] private Text textField;
-
         [SerializeField] private InputField inputField;
         [SerializeField] private GameObject parent;
         [SerializeField] private GameObject element;
 
         private void Start() {
-            textField.text = PlayerPrefs.GetString("playerName", "error");
             reloadRooms();
         }
 
@@ -35,6 +32,10 @@ namespace Lobby {
             }
 
             StartCoroutine(loadingRooms());
+        }
+
+        public void sairDoJogo() {
+            Application.Quit();
         }
 
         public void createRoom() {
