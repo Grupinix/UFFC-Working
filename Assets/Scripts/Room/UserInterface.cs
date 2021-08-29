@@ -138,7 +138,7 @@ namespace Room {
                     genericOriginal = 0;
                 }
                 else {
-                    blueManaActual = 0;
+                    redManaActual = 0;
                 }
             }
             if (blueManaActual > 0) {

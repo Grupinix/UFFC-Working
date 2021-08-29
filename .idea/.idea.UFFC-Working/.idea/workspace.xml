@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Try to make the code better">
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Set a win condition.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +23,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Room/DeckController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Room/Turn.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -54,9 +55,9 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UserData/UserDeck.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardEvent.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1wltYnnA7EhfGjsRsbHHzOYdSqg" />
@@ -125,14 +126,7 @@
       <workItem from="1630070711966" duration="41245000" />
       <workItem from="1630130032550" duration="2904000" />
       <workItem from="1630164639229" duration="26864000" />
-      <workItem from="1630256744140" duration="2249000" />
-    </task>
-    <task id="LOCAL-00008" summary="Setup default check...">
-      <created>1629058010608</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1629058010608</updated>
+      <workItem from="1630256744140" duration="3470000" />
     </task>
     <task id="LOCAL-00009" summary="Upload new cards">
       <created>1629079393336</created>
@@ -470,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630257695643</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Set a win condition.">
+      <created>1630259202647</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1630259202647</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +493,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="First step to turn system" />
     <MESSAGE value="Focus on generic workspace.xml" />
     <MESSAGE value="Utilizing FieldProperties serialize" />
     <MESSAGE value="Cards positions seteds" />
@@ -517,6 +517,7 @@
     <MESSAGE value="Ataque criado" />
     <MESSAGE value="Update" />
     <MESSAGE value="Try to make the code better" />
-    <option name="LAST_COMMIT_MESSAGE" value="Try to make the code better" />
+    <MESSAGE value="Set a win condition." />
+    <option name="LAST_COMMIT_MESSAGE" value="Set a win condition." />
   </component>
 </project>

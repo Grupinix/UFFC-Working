@@ -165,6 +165,7 @@ namespace Room {
 
                             if (indice == -999) {
                                 _userInterface.enemyLife -= cardProperties.cardPower;
+                                _userInterface.attVidaDisplay();
                                 return;
                             }
                             CardProperties cardEnemy = _turn.enemyCards[indice].GetComponent<CardProperties>();
