@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using APIs;
 using Firebase.Database;
@@ -38,13 +39,13 @@ namespace Lobby {
             
             register.text = $"Registrado em : {taskOne.Result.Value}";
 
-            Task<DataSnapshot> taskTwo = DatabaseAPI.getDatabase().Child("users").OrderByChild("wins").LimitToLast(3).GetValueAsync();
+            Task<DataSnapshot> taskTwo = DatabaseAPI.getDatabase().Child("users").OrderByChild("wins").GetValueAsync();
             yield return new WaitUntil(() => taskTwo.IsCompleted);
             
             DataSnapshot snapshot = taskTwo.Result;
 
             int i = 0;
-            foreach (DataSnapshot childSnapshot in snapshot.Children) {
+            foreach (DataSnapshot childSnapshot in snapshot.Children.Reverse()) {
                 ranks[i++].text = childSnapshot.Child("playerName").Value.ToString();
                 if (i == 3) {
                     break;
