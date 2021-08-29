@@ -26,6 +26,8 @@ namespace Lobby {
             }
 
             if (data.Result.Value.ToString().Equals("true")) {
+                PlayerPrefs.SetInt("games", PlayerPrefs.GetInt("games", 0) + 1);
+                PlayerPrefs.Save();
                 SceneManager.LoadScene(roomSceneName);
             }
             else {

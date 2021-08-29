@@ -93,7 +93,8 @@ namespace APIs {
                         {"playerName", displayName},
                         {"email", DatabaseAPI.user.Email},
                         {"lastDataSeen", DateTime.Now.ToString("dd/MM/yyyy")},
-                        {"registerData", DateTime.Now.ToString("dd/MM/yyyy")}
+                        {"registerData", DateTime.Now.ToString("dd/MM/yyyy")},
+                        {"wins", "0"}
                     };
                     ProfileManager.updateUserFields(data);
                     SceneManager.LoadScene(lobbySceneName);

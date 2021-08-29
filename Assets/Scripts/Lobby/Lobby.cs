@@ -34,6 +34,10 @@ namespace Lobby {
             StartCoroutine(loadingRooms());
         }
 
+        public void carregarPerfil() {
+            SceneManager.LoadScene("Perfil");
+        }
+
         public void sairDoJogo() {
             Application.Quit();
         }
@@ -97,6 +101,7 @@ namespace Lobby {
 
             PlayerPrefs.SetString("room", uid);
             PlayerPrefs.SetString("battleEnemy", uid);
+            PlayerPrefs.SetInt("games", PlayerPrefs.GetInt("games", 0) + 1);
             PlayerPrefs.Save();
             
             SceneManager.LoadScene(roomScene);

@@ -48,12 +48,13 @@ namespace Room {
             yield return new WaitUntil(() => taskTwo.IsCompleted);
 
             if (_userInterface.enemyLife <= 0) {
-                PlayerPrefs.SetInt("playerWins", PlayerPrefs.GetInt("playerWins", 0));
+                PlayerPrefs.SetInt("playerWins", PlayerPrefs.GetInt("playerWins", 0) + 1);
                 PlayerPrefs.Save();
+                DatabaseAPI.getDatabase().Child("users").Child(DatabaseAPI.user.UserId).Child("wins").SetValueAsync(PlayerPrefs.GetInt("playerWins").ToString());
                 SceneManager.LoadScene("Lobby");
             } 
             if (_userInterface.life <= 0) {
-                PlayerPrefs.SetInt("playerLoses", PlayerPrefs.GetInt("playerLoses", 0));
+                PlayerPrefs.SetInt("playerLoses", PlayerPrefs.GetInt("playerLoses", 0) + 1);
                 PlayerPrefs.Save();
                 SceneManager.LoadScene("Lobby");
             }
@@ -82,14 +83,14 @@ namespace Room {
             setField(cardEvent);
             
             if (_userInterface.enemyLife <= 0) {
-                PlayerPrefs.SetInt("playerWins", PlayerPrefs.GetInt("playerWins", 0));
+                PlayerPrefs.SetInt("playerWins", PlayerPrefs.GetInt("playerWins", 0) + 1);
                 PlayerPrefs.Save();
-
+                DatabaseAPI.getDatabase().Child("users").Child(DatabaseAPI.user.UserId).Child("wins").SetValueAsync(PlayerPrefs.GetInt("playerWins").ToString());
                 SceneManager.LoadScene("Lobby");
                 yield break;
             } 
             if (_userInterface.life <= 0) {
-                PlayerPrefs.SetInt("playerLoses", PlayerPrefs.GetInt("playerLoses", 0));
+                PlayerPrefs.SetInt("playerLoses", PlayerPrefs.GetInt("playerLoses", 0) + 1);
                 PlayerPrefs.Save();
 
                 SceneManager.LoadScene("Lobby");

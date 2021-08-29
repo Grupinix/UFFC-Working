@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: 46b629eab481c71da9c5689c3fbd6640
   - enabled: 1
+    path: Assets/Scenes/Perfil.unity
+    guid: 956d739e3e63eee499878c55a4eb7437
+  - enabled: 1
     path: Assets/Scenes/ChangeDeck.unity
     guid: 0071332571ce254f1a6bd08545622392
   - enabled: 1
