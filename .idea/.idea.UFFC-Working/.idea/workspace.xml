@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Adicionando a possibilidade de descartar uma carta">
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Add option to see enemy card and to descart card">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Room.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +31,7 @@
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scenes/ChangeDeck.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scenes/ChangeDeck.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scenes/Perfil.unity" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Room/DeckController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -69,6 +66,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs" />
+      <option value="$PROJECT_DIR$/README.md" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1wltYnnA7EhfGjsRsbHHzOYdSqg" />
@@ -137,14 +135,7 @@
       <workItem from="1630070711966" duration="41245000" />
       <workItem from="1630130032550" duration="2904000" />
       <workItem from="1630164639229" duration="26864000" />
-      <workItem from="1630256744140" duration="14211000" />
-    </task>
-    <task id="LOCAL-00016" summary="Corrigido essa merda de C#">
-      <created>1629588784010</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1629588784010</updated>
+      <workItem from="1630256744140" duration="16116000" />
     </task>
     <task id="LOCAL-00017" summary="Update MainMenu.unity">
       <created>1629590607008</created>
@@ -482,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630273728719</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Add option to see enemy card and to descart card">
+      <created>1630274933202</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1630274933203</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,7 +502,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Setup more materials" />
     <MESSAGE value="Zoom in zoom out to deck" />
     <MESSAGE value="Fix zoom in zoom out" />
     <MESSAGE value="Start merge" />
@@ -529,6 +526,7 @@
     <MESSAGE value="Fix order" />
     <MESSAGE value="Ajustando ordenação" />
     <MESSAGE value="Adicionando a possibilidade de descartar uma carta" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionando a possibilidade de descartar uma carta" />
+    <MESSAGE value="Add option to see enemy card and to descart card" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add option to see enemy card and to descart card" />
   </component>
 </project>
