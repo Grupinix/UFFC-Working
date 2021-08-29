@@ -5,6 +5,7 @@ using APIs;
 using Firebase.Database;
 using JsonClasses;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Room {
@@ -45,6 +46,17 @@ namespace Room {
 
             Task taskTwo = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("turn").SetValueAsync(nextPlayerUidTurn);
             yield return new WaitUntil(() => taskTwo.IsCompleted);
+
+            if (_userInterface.enemyLife <= 0) {
+                PlayerPrefs.SetInt("playerWins", PlayerPrefs.GetInt("playerWins", 0));
+                PlayerPrefs.Save();
+                SceneManager.LoadScene("Lobby");
+            } 
+            if (_userInterface.life <= 0) {
+                PlayerPrefs.SetInt("playerLoses", PlayerPrefs.GetInt("playerLoses", 0));
+                PlayerPrefs.Save();
+                SceneManager.LoadScene("Lobby");
+            }
         }
 
         private IEnumerator getSeccondPlayer() {
@@ -61,7 +73,6 @@ namespace Room {
             if (playerTurn != DatabaseAPI.user.UserId) {
                 yield break;
             }
-
             userTurn = true;
 
             Task<DataSnapshot> turn = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("event").GetValueAsync();
@@ -70,6 +81,21 @@ namespace Room {
             CardEvent cardEvent = JsonUtility.FromJson<CardEvent>(turn.Result.Value.ToString());
             setField(cardEvent);
             
+            if (_userInterface.enemyLife <= 0) {
+                PlayerPrefs.SetInt("playerWins", PlayerPrefs.GetInt("playerWins", 0));
+                PlayerPrefs.Save();
+
+                SceneManager.LoadScene("Lobby");
+                yield break;
+            } 
+            if (_userInterface.life <= 0) {
+                PlayerPrefs.SetInt("playerLoses", PlayerPrefs.GetInt("playerLoses", 0));
+                PlayerPrefs.Save();
+
+                SceneManager.LoadScene("Lobby");
+                yield break;
+            }
+
             for (int i = 0; i < 3; i++) {
                 CardProperties allycard = allyCards[i].GetComponent<CardProperties>();
                 if (allycard.cardId != 9999) {

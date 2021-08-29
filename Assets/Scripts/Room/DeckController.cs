@@ -240,6 +240,7 @@ namespace Room {
             }
             Destroy(cardProperties.gameObject);
             cards.RemoveAt(remove);
+            reorganizeCards();
         }
         
         private void reorganizeCards(){

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="">
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Try to make the code better">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +21,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Room/Turn.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -51,8 +54,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UserData/UserDeck.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardEvent.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" />
     </changedPaths>
   </component>
@@ -122,14 +125,7 @@
       <workItem from="1630070711966" duration="41245000" />
       <workItem from="1630130032550" duration="2904000" />
       <workItem from="1630164639229" duration="26864000" />
-      <workItem from="1630256744140" duration="942000" />
-    </task>
-    <task id="LOCAL-00007" summary="fix?">
-      <created>1629055617477</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1629055617477</updated>
+      <workItem from="1630256744140" duration="2249000" />
     </task>
     <task id="LOCAL-00008" summary="Setup default check...">
       <created>1629058010608</created>
@@ -467,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630213249417</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Try to make the code better">
+      <created>1630257695642</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1630257695643</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,7 +492,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Change .gitignore and start serializers" />
     <MESSAGE value="First step to turn system" />
     <MESSAGE value="Focus on generic workspace.xml" />
     <MESSAGE value="Utilizing FieldProperties serialize" />
@@ -514,6 +516,7 @@
     <MESSAGE value="Turn system working" />
     <MESSAGE value="Ataque criado" />
     <MESSAGE value="Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update" />
+    <MESSAGE value="Try to make the code better" />
+    <option name="LAST_COMMIT_MESSAGE" value="Try to make the code better" />
   </component>
 </project>
