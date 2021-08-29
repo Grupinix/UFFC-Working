@@ -13,12 +13,13 @@ namespace Room {
         public List<GameObject> allyCards;
         public List<GameObject> enemyCards;
 
-        public bool _nextTurn;
         private string _oldPlayerTurn;
         private string _nameOfRoom;
         private string _playerTwoUid;
 
         private UserInterface _userInterface;
+
+        public bool userTurn;
 
         private void Start() {
             _nameOfRoom = PlayerPrefs.GetString("room", null);
@@ -29,7 +30,21 @@ namespace Room {
         }
 
         public void passarTurno() {
-            _nextTurn = true;
+            turno.gameObject.SetActive(false);
+            userTurn = false;
+            StartCoroutine(goToNextTurn());
+        }
+
+        private IEnumerator goToNextTurn() {
+            string nextPlayerUidTurn = DatabaseAPI.user.UserId == _nameOfRoom ? _playerTwoUid : _nameOfRoom;
+
+
+            Task taskOne = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("event").SetValueAsync(JsonUtility.ToJson(getField()));
+            yield return new WaitUntil(() => taskOne.IsCompleted);
+
+
+            Task taskTwo = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("turn").SetValueAsync(nextPlayerUidTurn);
+            yield return new WaitUntil(() => taskTwo.IsCompleted);
         }
 
         private IEnumerator getSeccondPlayer() {
@@ -47,42 +62,25 @@ namespace Room {
                 yield break;
             }
 
-            _userInterface.canDropMana = true;
-            _userInterface.resetMana();
-            turno.gameObject.SetActive(true);
-            DeckController.canBuy = true;
+            userTurn = true;
 
-            for (int i = 0; i < 3; i++) {
-                CardProperties allycard = allyCards[i].GetComponent<CardProperties>();
-                CardProperties enemyCard = enemyCards[i].GetComponent<CardProperties>();
-                if (allycard.cardId != 9999) {
-                    allycard.resetPower();
-                    allycard.ataque = true;
-                }
-                if (enemyCard.cardId != 9999) {
-                    enemyCard.resetPower();
-                }
-            }
-            
             Task<DataSnapshot> turn = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("event").GetValueAsync();
             yield return new WaitUntil(() => turn.IsCompleted);
 
             CardEvent cardEvent = JsonUtility.FromJson<CardEvent>(turn.Result.Value.ToString());
             setField(cardEvent);
-
-            yield return new WaitUntil(() => _nextTurn);
-
-            _nextTurn = false;
-            turno.gameObject.SetActive(false);
-            string nextPlayerUidTurn = playerTurn == _nameOfRoom ? _playerTwoUid : _nameOfRoom;
-
-
-            Task taskOne = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("event").SetValueAsync(JsonUtility.ToJson(getField()));
-            yield return new WaitUntil(() => taskOne.IsCompleted);
-
-
-            Task taskTwo = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("turn").SetValueAsync(nextPlayerUidTurn);
-            yield return new WaitUntil(() => taskTwo.IsCompleted);
+            
+            for (int i = 0; i < 3; i++) {
+                CardProperties allycard = allyCards[i].GetComponent<CardProperties>();
+                if (allycard.cardId != 9999) {
+                    allycard.ataque = true;
+                }
+            }
+            
+            _userInterface.canDropMana = true;
+            _userInterface.resetMana();
+            turno.gameObject.SetActive(true);
+            DeckController.canBuy = true;
         }
 
         private CardEvent getField() {

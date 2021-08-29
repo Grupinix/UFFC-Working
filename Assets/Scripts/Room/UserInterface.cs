@@ -57,7 +57,7 @@ namespace Room {
         }
 
         public void castCard() {
-            if (!_turn._nextTurn) {
+            if (!_turn.userTurn) {
                 return;
             }
             CardStatus cardStatus = UserDeck.getCardStatus(_actualCardId);
