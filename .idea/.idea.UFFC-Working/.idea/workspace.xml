@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Add option to see enemy card and to descart card">
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/ProfileScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/ProfileScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserData/ProfileManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserData/ProfileManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,24 +23,11 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Room/DeckController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Room/DeckController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Room/Turn.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Room/DeckController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Lobby/ProfileScene.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scenes/ChangeDeck.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scenes/ChangeDeck.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scenes/Perfil.unity" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Room/DeckController.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Plugins/Android/AndroidManifest.xml" />
       <option value="$PROJECT_DIR$/Assets/Scripts/APIs/FirebaseInit.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Profile/SelectName.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UserData/ProfileManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/APIs/DatabaseAPI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Deck/CardPrefab.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Menu/SettingsMenu.cs" />
@@ -53,7 +42,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UserData/UserCards.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/DeckChange.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Default/SetAmount.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Default/CardStatus.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Default/Zoom.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/APIs/LoginAuth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UserData/UserDeck.cs" />
@@ -61,12 +49,14 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardEvent.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/APIs/RegisterAuth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/ProfileScene.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs" />
       <option value="$PROJECT_DIR$/README.md" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UserData/ProfileManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Default/CardStatus.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Lobby/ProfileScene.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1wltYnnA7EhfGjsRsbHHzOYdSqg" />
@@ -135,14 +125,8 @@
       <workItem from="1630070711966" duration="41245000" />
       <workItem from="1630130032550" duration="2904000" />
       <workItem from="1630164639229" duration="26864000" />
-      <workItem from="1630256744140" duration="16116000" />
-    </task>
-    <task id="LOCAL-00017" summary="Update MainMenu.unity">
-      <created>1629590607008</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1629590607008</updated>
+      <workItem from="1630256744140" duration="20648000" />
+      <workItem from="1630287970856" duration="1415000" />
     </task>
     <task id="LOCAL-00018" summary="Creating login and register">
       <created>1629602404839</created>
@@ -480,7 +464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630274933203</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Update README.md">
+      <created>1630277234652</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1630277234652</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -502,7 +493,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Zoom in zoom out to deck" />
     <MESSAGE value="Fix zoom in zoom out" />
     <MESSAGE value="Start merge" />
     <MESSAGE value="Deck" />
@@ -527,6 +517,7 @@
     <MESSAGE value="Ajustando ordenação" />
     <MESSAGE value="Adicionando a possibilidade de descartar uma carta" />
     <MESSAGE value="Add option to see enemy card and to descart card" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add option to see enemy card and to descart card" />
+    <MESSAGE value="Update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
   </component>
 </project>

@@ -8,8 +8,15 @@ namespace UserData {
         public static async void updateUserFields(Dictionary<string, string> data) {
             List<Task> tasks = new List<Task>();
             foreach (KeyValuePair<string, string> entry in data) {
-                Task task = DatabaseAPI.getDatabase().Child("users").Child(DatabaseAPI.user.UserId).Child(entry.Key).SetValueAsync(entry.Value);
-                PlayerPrefs.SetString(entry.Key, entry.Value);
+                Task task;
+                if (entry.Key != "wins") {
+                    task = DatabaseAPI.getDatabase().Child("users").Child(DatabaseAPI.user.UserId).Child(entry.Key).SetValueAsync(entry.Value);
+                    PlayerPrefs.SetString(entry.Key, entry.Value);
+                }
+                else {
+                    task = DatabaseAPI.getDatabase().Child("users").Child(DatabaseAPI.user.UserId).Child(entry.Key).SetValueAsync(int.Parse(entry.Value));
+                    PlayerPrefs.SetInt(entry.Key, int.Parse(entry.Value));
+                }
                 tasks.Add(task);
             }
 

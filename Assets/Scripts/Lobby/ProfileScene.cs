@@ -39,7 +39,7 @@ namespace Lobby {
             
             register.text = $"Registrado em : {taskOne.Result.Value}";
 
-            Task<DataSnapshot> taskTwo = DatabaseAPI.getDatabase().Child("users").OrderByChild("wins").GetValueAsync();
+            Task<DataSnapshot> taskTwo = DatabaseAPI.getDatabase().Child("users").OrderByChild("wins").LimitToLast(3).GetValueAsync();
             yield return new WaitUntil(() => taskTwo.IsCompleted);
             
             DataSnapshot snapshot = taskTwo.Result;

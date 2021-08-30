@@ -50,7 +50,7 @@ namespace Room {
             if (_userInterface.enemyLife <= 0) {
                 PlayerPrefs.SetInt("playerWins", PlayerPrefs.GetInt("playerWins", 0) + 1);
                 PlayerPrefs.Save();
-                DatabaseAPI.getDatabase().Child("users").Child(DatabaseAPI.user.UserId).Child("wins").SetValueAsync(PlayerPrefs.GetInt("playerWins").ToString());
+                DatabaseAPI.getDatabase().Child("users").Child(DatabaseAPI.user.UserId).Child("wins").SetValueAsync(PlayerPrefs.GetInt("playerWins"));
                 SceneManager.LoadScene("Lobby");
             } 
             if (_userInterface.life <= 0) {
@@ -85,7 +85,7 @@ namespace Room {
             if (_userInterface.enemyLife <= 0) {
                 PlayerPrefs.SetInt("playerWins", PlayerPrefs.GetInt("playerWins", 0) + 1);
                 PlayerPrefs.Save();
-                DatabaseAPI.getDatabase().Child("users").Child(DatabaseAPI.user.UserId).Child("wins").SetValueAsync(PlayerPrefs.GetInt("playerWins").ToString());
+                DatabaseAPI.getDatabase().Child("users").Child(DatabaseAPI.user.UserId).Child("wins").SetValueAsync(PlayerPrefs.GetInt("playerWins"));
                 SceneManager.LoadScene("Lobby");
                 yield break;
             } 
