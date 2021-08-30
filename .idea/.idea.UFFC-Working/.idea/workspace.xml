@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/ProfileScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/ProfileScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserData/ProfileManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserData/ProfileManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,14 +124,8 @@
       <workItem from="1630130032550" duration="2904000" />
       <workItem from="1630164639229" duration="26864000" />
       <workItem from="1630256744140" duration="20648000" />
-      <workItem from="1630287970856" duration="1415000" />
-    </task>
-    <task id="LOCAL-00018" summary="Creating login and register">
-      <created>1629602404839</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1629602404839</updated>
+      <workItem from="1630287970856" duration="1827000" />
+      <workItem from="1630290661528" duration="723000" />
     </task>
     <task id="LOCAL-00019" summary="Adjusts">
       <created>1629602679836</created>
@@ -471,12 +463,20 @@
       <option name="project" value="LOCAL" />
       <updated>1630277234652</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Fix order">
+      <created>1630289393352</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1630289393352</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
@@ -513,11 +513,11 @@
     <MESSAGE value="Update lobby image and fix a bug" />
     <MESSAGE value="Adjusts" />
     <MESSAGE value="Rank criado" />
-    <MESSAGE value="Fix order" />
     <MESSAGE value="Ajustando ordenação" />
     <MESSAGE value="Adicionando a possibilidade de descartar uma carta" />
     <MESSAGE value="Add option to see enemy card and to descart card" />
     <MESSAGE value="Update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
+    <MESSAGE value="Fix order" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix order" />
   </component>
 </project>
