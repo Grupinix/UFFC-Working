@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserData/ProfileManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserData/ProfileManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/bandejao/bandejao.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Templates/cards/bandejao/bandejao.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/bandejao/bandejÆo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Templates/cards/bandejao/bandejÆo.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,14 +129,8 @@
       <workItem from="1630164639229" duration="26864000" />
       <workItem from="1630256744140" duration="20648000" />
       <workItem from="1630287970856" duration="1827000" />
-      <workItem from="1630290661528" duration="723000" />
-    </task>
-    <task id="LOCAL-00019" summary="Adjusts">
-      <created>1629602679836</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1629602679836</updated>
+      <workItem from="1630290661528" duration="1339000" />
+      <workItem from="1630377838956" duration="735000" />
     </task>
     <task id="LOCAL-00020" summary="ProfileManager">
       <created>1629690266233</created>
@@ -470,7 +468,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630289393352</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Update README.md">
+      <created>1630291393705</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1630291393706</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,8 +521,8 @@
     <MESSAGE value="Ajustando ordenação" />
     <MESSAGE value="Adicionando a possibilidade de descartar uma carta" />
     <MESSAGE value="Add option to see enemy card and to descart card" />
-    <MESSAGE value="Update README.md" />
     <MESSAGE value="Fix order" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix order" />
+    <MESSAGE value="Update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
   </component>
 </project>

@@ -14,7 +14,7 @@ namespace UserData {
                     PlayerPrefs.SetString(entry.Key, entry.Value);
                 }
                 else {
-                    task = DatabaseAPI.getDatabase().Child("users").Child(DatabaseAPI.user.UserId).Child(entry.Key).SetValueAsync(int.Parse(entry.Value));
+                    task = DatabaseAPI.getDatabase().Child("users").Child(DatabaseAPI.user.UserId).Child(entry.Key).SetValueAsync(long.Parse(entry.Value));
                     PlayerPrefs.SetInt(entry.Key, int.Parse(entry.Value));
                 }
                 tasks.Add(task);
