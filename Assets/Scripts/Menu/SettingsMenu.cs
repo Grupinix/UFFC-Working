@@ -34,6 +34,8 @@ namespace Menu {
             _sound.playMusic(0);
         }
 
+        // Carrega uma nova cena
+
         private void playEvent() {
             SceneManager.LoadScene(authScene);
         }
@@ -44,16 +46,22 @@ namespace Menu {
             _sound.setVolume(value);
         }
 
+        // Vai para as configurações
+
         private void settingsEvent() {
             menuPanel.SetActive(false);
             settingsPanel.SetActive(true);
         }
 
+        // Volta para o menu principal
+
         private void backEvent() {
             settingsPanel.SetActive(false);
             menuPanel.SetActive(true);
         }
-    
+
+        // Termina o aplicativo
+
         private void exitEvent() {
             Application.Quit();
         }

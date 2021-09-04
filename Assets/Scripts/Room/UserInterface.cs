@@ -46,6 +46,8 @@ namespace Room {
             _turn = GetComponent<Turn>();
         }
 
+        // Classe para abrir menu para atacar
+
         public void openCardAttackView(int cardId) {
             if (cardId == 9999) {
                 return;
@@ -56,6 +58,8 @@ namespace Room {
             cardAttackImage.material = materials[cardId];
         }
 
+        // Classe para verfiricar uma carta selecionada na mão do adversário
+        
         public void openCardEnemyView(int cardId) {
             if (cardId == 9999) {
                 return;
@@ -65,6 +69,8 @@ namespace Room {
             cardAttackPanel.SetActive(false);
             enemyImage.GetComponent<Image>().material = materials[cardId];
         }
+
+        // Classe para verfiricar uma carta selecionada na sua mão
 
         public void openCardView(int cardId) {
             if (cardId == 9999) {
@@ -77,6 +83,8 @@ namespace Room {
             cardImage.material = materials[cardId];
         }
 
+        // Descarta carta da mão
+
         public void descartar() {
             if (!_turn.userTurn) {
                 return;
@@ -85,6 +93,8 @@ namespace Room {
             cardInfoPanel.SetActive(false);
         }
         
+        // Utilizar a carta de sua mão
+
         public void castCard() {
             if (!_turn.userTurn) {
                 return;
@@ -136,6 +146,8 @@ namespace Room {
             cardInfoPanel.SetActive(false);
             _deckController.removerCarta(_actualCardId);
         }
+
+        // Expõe os valores de mana do jogador 
 
         private int[] hasMana(CardStatus cardStatus) {
             int redManaActual = _redManaInPool;

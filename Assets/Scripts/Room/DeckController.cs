@@ -81,6 +81,8 @@ namespace Room {
             }
         }
 
+        // Checa se existe colisão com algum objeto na cena
+
         private void checkHit(Ray ray, bool pc) {
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit)) {
@@ -245,6 +247,8 @@ namespace Room {
             }
         }
         
+        // Classe para mover a carta para a mão
+
         private void getCard() {
             if (_deckListCards.Count > 0 && cards.Count < 5) {
                 int randCardIndex = Random.Range(0, _deckListCards.Count);
@@ -266,6 +270,8 @@ namespace Room {
             }
         }
 
+        // Modificar tamanho do objeto deck
+        
         private void resizeDeck() {
             resizeBoxSize(transform);
             resizeBoxSize(enemyDeck.transform);
@@ -281,6 +287,8 @@ namespace Room {
                 objTransform.GetComponent<Renderer>().enabled = false;
             }
         }
+
+        // Classe para remover uma carta da mão
 
         public void removerCarta(int cardId) {
             int remove = 9999;
@@ -306,6 +314,8 @@ namespace Room {
             reorganizeCards();
         }
         
+        // Classe para reorganizar as cartas na mão
+
         private void reorganizeCards(){
             for(int i = 1; i < cards.Count; i++){
                 Vector3 position = calcDistanceHandPosition(i, cards.Count + 1);
@@ -323,6 +333,8 @@ namespace Room {
             return Vector3.Lerp(_minPosition, _maxPosition, distance);
         }
 
+        // Adiciona carta do deck para a mão
+        
         private void addCard(CardProperties card){
             cards.Add(card);
             reorganizeCards();
