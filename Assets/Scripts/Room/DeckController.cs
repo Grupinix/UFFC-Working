@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using APIs;
 using JsonClasses;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UserData;
 using Random = UnityEngine.Random;
 
@@ -163,6 +164,20 @@ namespace Room {
                             DatabaseAPI.getDatabase().Child("rooms").Child(_turn._nameOfRoom).UpdateChildrenAsync(new Dictionary<string, object> {
                                 {"event", JsonUtility.ToJson(_turn.getField())}
                             });
+                            if (_userInterface.enemyLife <= 0) {
+                                PlayerPrefs.SetInt("playerWins", PlayerPrefs.GetInt("playerWins", 0) + 1);
+                                PlayerPrefs.Save();
+                                ProfileManager.updateUserFields(new Dictionary<string, object> {
+                                    {"wins", long.Parse(PlayerPrefs.GetInt("playerWins").ToString())}
+                                });
+                                SceneManager.LoadScene("Lobby");
+                                return;
+                            } 
+                            if (_userInterface.life <= 0) {
+                                PlayerPrefs.SetInt("playerLoses", PlayerPrefs.GetInt("playerLoses", 0) + 1);
+                                PlayerPrefs.Save();
+                                SceneManager.LoadScene("Lobby");
+                            }
                         });
                         return;
                     }
@@ -210,6 +225,20 @@ namespace Room {
                             DatabaseAPI.getDatabase().Child("rooms").Child(_turn._nameOfRoom).UpdateChildrenAsync(new Dictionary<string, object> {
                                 {"event", JsonUtility.ToJson(_turn.getField())}
                             });
+                            if (_userInterface.enemyLife <= 0) {
+                                PlayerPrefs.SetInt("playerWins", PlayerPrefs.GetInt("playerWins", 0) + 1);
+                                PlayerPrefs.Save();
+                                ProfileManager.updateUserFields(new Dictionary<string, object> {
+                                    {"wins", long.Parse(PlayerPrefs.GetInt("playerWins").ToString())}
+                                });
+                                SceneManager.LoadScene("Lobby");
+                                return;
+                            } 
+                            if (_userInterface.life <= 0) {
+                                PlayerPrefs.SetInt("playerLoses", PlayerPrefs.GetInt("playerLoses", 0) + 1);
+                                PlayerPrefs.Save();
+                                SceneManager.LoadScene("Lobby");
+                            }
                         });
                     }
                 }
