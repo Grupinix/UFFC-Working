@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Linq;
 using System.Threading.Tasks;
 using APIs;
 using Firebase.Database;
@@ -19,21 +17,26 @@ namespace Lobby {
         [SerializeField] private GameObject parent;
         [SerializeField] private GameObject element;
 
-        private void Start() {
-            reloadRooms();
+        private DatabaseReference _roomReference;
+
+        private void Awake() {
             GameObject.FindGameObjectsWithTag("music")[0].GetComponent<Sound>().playMusic(0);
         }
 
+        private void Start() {
+            _roomReference = DatabaseAPI.getDatabase().Child("rooms");
+            _roomReference.ValueChanged += handleRoomChanged;
+        }
+        
+        private void OnDisable() {
+            if (_roomReference != null) {
+                _roomReference.ValueChanged -= handleRoomChanged;
+                _roomReference = null;
+            }
+        }
+        
         public void loadChangeDeckScene() {
             SceneManager.LoadScene("ChangeDeck");
-        }
-
-        public void reloadRooms() {
-            foreach (Transform child in parent.transform) {
-                Destroy(child.gameObject);
-            }
-
-            StartCoroutine(loadingRooms());
         }
 
         public void carregarPerfil() {
@@ -69,19 +72,26 @@ namespace Lobby {
             PlayerPrefs.Save();
             SceneManager.LoadScene(waitScene);
         }
-
-        private IEnumerator loadingRooms() {
-            Task<DataSnapshot> task = DatabaseAPI.getDatabase().Child("rooms").OrderByChild("roomName").GetValueAsync();
-
-            yield return new WaitUntil(() => task.IsCompleted);
-
-            DataSnapshot snapshot = task.Result;
-
-            foreach (DataSnapshot childSnapshot in snapshot.Children.Reverse()) {
-                if (childSnapshot.Child("read").Value.ToString() == "true") {
+        
+        private void handleRoomChanged(object sender, ValueChangedEventArgs args) {
+            if (args.DatabaseError != null) {
+                Debug.LogError(args.DatabaseError.Message);
+                return;
+            }
+            
+            foreach (Transform child in parent.transform) {
+                Destroy(child.gameObject);
+            }
+            
+            foreach (DataSnapshot childSnapshot in args.Snapshot.Children) {
+                if (!childSnapshot.Exists 
+                    || !childSnapshot.Child("read").Exists
+                    || !childSnapshot.Child("roomName").Exists
+                    || !childSnapshot.Child("uid").Exists
+                    || childSnapshot.Child("read").Value.ToString() == "true") {
                     continue;
                 }
-                
+
                 string roomName = childSnapshot.Child("roomName").Value.ToString();
                 string uid = childSnapshot.Child("uid").Value.ToString();
 

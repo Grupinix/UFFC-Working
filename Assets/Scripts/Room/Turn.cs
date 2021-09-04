@@ -23,13 +23,27 @@ namespace Room {
 
         public bool userTurn;
 
-        private void Start() {
-            GameObject.FindGameObjectsWithTag("music")[0].GetComponent<Sound>().playMusic(1);
-            _nameOfRoom = PlayerPrefs.GetString("room", null);
-            StartCoroutine(getSeccondPlayer());
+        private DatabaseReference _turnReference;
 
-            StartCoroutine(turnCheckEvent());
+        private void Awake() {
+            GameObject.FindGameObjectsWithTag("music")[0].GetComponent<Sound>().playMusic(1);
+
+            StartCoroutine(getSeccondPlayer());
+        }
+
+        private void Start() {
+            _nameOfRoom = PlayerPrefs.GetString("room", null);
             _userInterface = GetComponent<UserInterface>();
+
+            _turnReference = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("turn");
+            _turnReference.ValueChanged += handleTurnChanged;
+        }
+        
+        private void OnDisable() {
+            if (_turnReference != null) {
+                _turnReference.ValueChanged -= handleTurnChanged;
+                _turnReference = null;
+            }
         }
 
         public void passarTurno() {
@@ -203,22 +217,18 @@ namespace Room {
             _userInterface.attVidaDisplay();
         }
 
-        private IEnumerator turnCheckEvent() {
-            Task<DataSnapshot> turn = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("turn").GetValueAsync();
-
-            yield return new WaitUntil(() => turn.IsCompleted);
-            if (!turn.Result.Exists) {
-                yield break;
+        private void handleTurnChanged(object sender, ValueChangedEventArgs args) {
+            if (args.DatabaseError != null) {
+                Debug.LogError(args.DatabaseError.Message);
+                return;
             }
-
-            string playerTurn = turn.Result.Value.ToString();
-            if (playerTurn != _oldPlayerTurn) {
-                _oldPlayerTurn = playerTurn;
-                StartCoroutine(turnEvent(playerTurn));
+            
+            string playerTurn = args.Snapshot.Value.ToString();
+            if (playerTurn == _oldPlayerTurn) {
+                return;
             }
-
-            yield return new WaitForSeconds(2);
-            StartCoroutine(turnCheckEvent());
+            _oldPlayerTurn = playerTurn;
+            StartCoroutine(turnEvent(playerTurn));
         }
     }
 }
