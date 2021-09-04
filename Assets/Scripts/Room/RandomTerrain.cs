@@ -4,6 +4,9 @@ using UnityEngine;
 using Random = System.Random;
 
 namespace Room {
+    
+    // Escolhe um terreno aleatório
+    
     public class RandomTerrain : MonoBehaviour {
         [SerializeField] private List<Terrain> terrains;
         [SerializeField] private GameObject waterObject;
