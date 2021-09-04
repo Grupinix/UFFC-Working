@@ -9,9 +9,9 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: AQUAS_Lite_Water
   m_Shader: {fileID: 4800000, guid: d54a881b830cae544a72985daaece999, type: 3}
-  m_ShaderKeywords: _ENABLEPROBERELFECTIONS_ON _ENABLEREALTIMEREFLECTIONS_ON _ENABLEREFLECTIONS_ON
+  m_ShaderKeywords: _ENABLEREALTIMEREFLECTIONS_ON _ENABLEREFLECTIONS_ON
   m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -77,7 +77,7 @@ Material:
     - _Distortion: 0.244
     - _DstBlend: 0
     - _EnableCustomFog: 0
-    - _EnableProbeRelfections: 1
+    - _EnableProbeRelfections: 0
     - _EnableRealtimeReflections: 1
     - _EnableReflections: 1
     - _Fade: 2
