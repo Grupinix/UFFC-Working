@@ -5,24 +5,19 @@ using UnityEngine;
 
 namespace UserData {
     public static class ProfileManager {
-        public static async void updateUserFields(Dictionary<string, string> data) {
-            List<Task> tasks = new List<Task>();
-            foreach (KeyValuePair<string, string> entry in data) {
-                Task task;
+        public static async void updateUserFields(IDictionary<string, object> data) {
+            foreach (KeyValuePair<string, object> entry in data) {
                 if (entry.Key != "wins") {
-                    task = DatabaseAPI.getDatabase().Child("users").Child(DatabaseAPI.user.UserId).Child(entry.Key).SetValueAsync(entry.Value);
-                    PlayerPrefs.SetString(entry.Key, entry.Value);
+                    PlayerPrefs.SetString(entry.Key, entry.Value.ToString());
                 }
                 else {
-                    task = DatabaseAPI.getDatabase().Child("users").Child(DatabaseAPI.user.UserId).Child(entry.Key).SetValueAsync(long.Parse(entry.Value));
-                    PlayerPrefs.SetInt(entry.Key, int.Parse(entry.Value));
+                    PlayerPrefs.SetInt(entry.Key, int.Parse(entry.Value.ToString()));
                 }
-                tasks.Add(task);
             }
-
-            
-            await Task.WhenAll(tasks.ToArray());
             PlayerPrefs.Save();
+
+            Task task = DatabaseAPI.getDatabase().Child("users").Child(DatabaseAPI.user.UserId).UpdateChildrenAsync(data);
+            await Task.WhenAll(task);
         }
     }
 }

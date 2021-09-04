@@ -89,12 +89,12 @@ namespace APIs {
                     warningRegisterText.text = "Erro ao define nome";
                 }
                 else {
-                    Dictionary<string, string> data = new Dictionary<string, string> {
+                    IDictionary<string, object> data = new Dictionary<string, object> {
                         {"playerName", displayName},
                         {"email", DatabaseAPI.user.Email},
                         {"lastDataSeen", DateTime.Now.ToString("dd/MM/yyyy")},
                         {"registerData", DateTime.Now.ToString("dd/MM/yyyy")},
-                        {"wins", "0"}
+                        {"wins", 0L}
                     };
                     ProfileManager.updateUserFields(data);
                     SceneManager.LoadScene(lobbySceneName);

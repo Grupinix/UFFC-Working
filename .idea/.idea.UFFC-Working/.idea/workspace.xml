@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/APIs/LoginAuth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/APIs/LoginAuth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/APIs/RegisterAuth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/APIs/RegisterAuth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserData/ProfileManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserData/ProfileManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +67,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3501903" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -84,7 +87,7 @@
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
-      <option name="listenPortForConnections" value="false" />
+      <option name="listenPortForConnections" value="true" />
       <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
@@ -132,14 +135,8 @@
       <workItem from="1630526436427" duration="1200000" />
       <workItem from="1630621016915" duration="597000" />
       <workItem from="1630713939187" duration="5785000" />
-      <workItem from="1630727806630" duration="2122000" />
-    </task>
-    <task id="LOCAL-00025" summary="Start turn syste,">
-      <created>1629849635680</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1629849635680</updated>
+      <workItem from="1630727806630" duration="2866000" />
+      <workItem from="1630766287952" duration="853000" />
     </task>
     <task id="LOCAL-00026" summary="Ops">
       <created>1629849657486</created>
@@ -477,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630727391741</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Try to fix">
+      <created>1630730006078</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1630730006079</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,7 +504,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Fix position" />
     <MESSAGE value="Prepare to create turn system" />
     <MESSAGE value="Remoção das luzes nas cartas e breve finalizando do sistema de turnos no Firebase." />
     <MESSAGE value="Add logo and start to create battle system" />
@@ -525,6 +528,7 @@
     <MESSAGE value="Sending musics to git..." />
     <MESSAGE value="Desse modo caso a data se perca ela será criada novamente" />
     <MESSAGE value="fix mistake" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix mistake" />
+    <MESSAGE value="Try to fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Try to fix" />
   </component>
 </project>

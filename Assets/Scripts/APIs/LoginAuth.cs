@@ -51,7 +51,7 @@ namespace APIs {
         }
 
         private IEnumerator goToLoged() {
-            Dictionary<string, string> data = new Dictionary<string, string> {
+            IDictionary<string, object> data = new Dictionary<string, object> {
                 {"lastDataSeen", DateTime.Now.ToString("dd/MM/yyyy")}
             };
             ProfileManager.updateUserFields(data);
@@ -80,7 +80,7 @@ namespace APIs {
                 case AuthError.InvalidCredential:
                     return "Senha incorreta";
                 default:
-                    return "Error no firebase";
+                    return "Credenciais inválidas";
             }
         }
     }
