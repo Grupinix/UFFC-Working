@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using APIs;
 using Firebase.Database;
@@ -6,6 +8,7 @@ using Menu;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Random = System.Random;
 
 namespace Lobby {
     public class Lobby : MonoBehaviour {
@@ -17,6 +20,8 @@ namespace Lobby {
         [SerializeField] private GameObject parent;
         [SerializeField] private GameObject element;
 
+        [SerializeField] private int terrains;
+        
         private DatabaseReference _roomReference;
 
         private void Awake() {
@@ -59,14 +64,18 @@ namespace Lobby {
         }
 
         private async void createRoomOnDatabase(string uid, string roomName, string waitScene) {
-            Task taskSetZero = DatabaseAPI.getDatabase().Child("rooms").Child(uid).RemoveValueAsync();
-            Task taskSetOne = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("uid").SetValueAsync(uid);
-            Task taskSetTwo = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("read").SetValueAsync("false");
-            Task taskSetTree = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("roomName").SetValueAsync(roomName);
-            Task taskSetFour = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("turn").SetValueAsync(uid);
-            Task taskSetFive = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("event").SetValueAsync(JsonUtility.ToJson(new CardEvent()));
-
-            await Task.WhenAll(taskSetZero, taskSetOne, taskSetTwo, taskSetTree, taskSetFour, taskSetFive);
+            Random random = new Random(DateTime.Now.Millisecond);
+            int choice = random.Next(terrains);
+            IDictionary<string, object> data = new Dictionary<string, object> {
+                {"uid", uid},
+                {"read", "false"},
+                {"roomName", roomName},
+                {"turn", uid},
+                {"event", JsonUtility.ToJson(new CardEvent())},
+                {"map", long.Parse(choice.ToString())}
+            };
+            Task task = DatabaseAPI.getDatabase().Child("rooms").Child(uid).SetRawJsonValueAsync(JsonUtility.ToJson(data));
+            await Task.WhenAll(task);
 
             PlayerPrefs.SetString("room", uid);
             PlayerPrefs.Save();

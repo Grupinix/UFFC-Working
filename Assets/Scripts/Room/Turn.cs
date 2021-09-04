@@ -158,7 +158,6 @@ namespace Room {
         }
 
         // Inseri a carta na lista do campo de batalha
-
         public void inserirCarta(int cardId) {
             for (int i = 0; i < 3; i++) {
                 CardProperties cardProperties = allyCards[i].GetComponent<CardProperties>();
@@ -199,21 +198,6 @@ namespace Room {
                 return;
             }
             
-            if (_userInterface.enemyLife <= 0) {
-                PlayerPrefs.SetInt("playerWins", PlayerPrefs.GetInt("playerWins", 0) + 1);
-                PlayerPrefs.Save();
-                ProfileManager.updateUserFields(new Dictionary<string, object> {
-                    {"wins", long.Parse(PlayerPrefs.GetInt("playerWins").ToString())}
-                });
-                SceneManager.LoadScene("Lobby");
-                return;
-            } 
-            if (_userInterface.life <= 0) {
-                PlayerPrefs.SetInt("playerLoses", PlayerPrefs.GetInt("playerLoses", 0) + 1);
-                PlayerPrefs.Save();
-                SceneManager.LoadScene("Lobby");
-                return;
-            }
             _oldEvent = cardEvent.id;
             setField(cardEvent);
         }

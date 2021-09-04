@@ -1,19 +1,27 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using APIs;
+using Firebase.Database;
 using UnityEngine;
-using Random = System.Random;
 
 namespace Room {
     
     // Escolhe um terreno aleatório
-    
     public class RandomTerrain : MonoBehaviour {
         [SerializeField] private List<Terrain> terrains;
         [SerializeField] private GameObject waterObject;
 
         private void Start() {
-            Random random = new Random(DateTime.Now.Millisecond);
-            int choice = random.Next(terrains.Count);
+            StartCoroutine(setMap());
+        }
+
+        private IEnumerator setMap() {
+            Task<DataSnapshot> task = DatabaseAPI.getDatabase().Child("rooms").Child(PlayerPrefs.GetString("room", null)).Child("map").GetValueAsync();
+
+            yield return new WaitUntil(() => task.IsCompleted);
+
+            int choice = int.Parse(task.Result.Value.ToString());
             if (choice != 1) {
                 waterObject.SetActive(false);
             }

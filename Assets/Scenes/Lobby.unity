@@ -515,6 +515,7 @@ MonoBehaviour:
   inputField: {fileID: 1262375821}
   parent: {fileID: 1975589582}
   element: {fileID: 3556047551611374013, guid: 57949f65c1b70715fbb54f13cd85f69e, type: 3}
+  terrains: 2
 --- !u!4 &560307523
 Transform:
   m_ObjectHideFlags: 0

@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using Default;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UserData;
 
@@ -19,7 +21,9 @@ namespace Room {
         private int _actualCardId;
 
         public int life = 20;
+        public int oldLife = 20;
         public int enemyLife = 20;
+        public int oldEnemyLife = 20;
         [SerializeField] private List<Material> materials;
         [SerializeField] private GameObject cardInfoPanel;
         [SerializeField] private Image cardImage;
@@ -44,6 +48,31 @@ namespace Room {
         private void Start() {
             _deckController = deck.GetComponent<DeckController>();
             _turn = GetComponent<Turn>();
+        }
+
+        private void Update() {
+            if (enemyLife != oldEnemyLife) {
+                if (enemyLife > 0) {
+                    oldEnemyLife = enemyLife;
+                    return;
+                }
+                PlayerPrefs.SetInt("playerWins", PlayerPrefs.GetInt("playerWins", 0) + 1);
+                PlayerPrefs.Save();
+                ProfileManager.updateUserFields(new Dictionary<string, object> {
+                    {"wins", long.Parse(PlayerPrefs.GetInt("playerWins").ToString())}
+                });
+                SceneManager.LoadScene("Lobby");
+                return;
+            } 
+            if (oldLife != life && life <= 0) {
+                if (life > 0) {
+                    oldLife = life;
+                    return;
+                }
+                PlayerPrefs.SetInt("playerLoses", PlayerPrefs.GetInt("playerLoses", 0) + 1);
+                PlayerPrefs.Save();
+                SceneManager.LoadScene("Lobby");
+            }
         }
 
         // Classe para abrir menu para atacar
