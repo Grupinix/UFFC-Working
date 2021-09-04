@@ -224,7 +224,15 @@ namespace Room {
             }
 
             if (!args.Snapshot.Exists) {
-                _turnReference.SetValueAsync(_nameOfRoom);
+                string nextPlayerUidTurn;
+                if (_oldPlayerTurn == DatabaseAPI.user.UserId) {
+                    nextPlayerUidTurn = DatabaseAPI.user.UserId == _nameOfRoom ? _playerTwoUid : _nameOfRoom;
+                }
+                else {
+                    nextPlayerUidTurn = DatabaseAPI.user.UserId == _nameOfRoom ? _nameOfRoom : _playerTwoUid;
+                }
+
+                _turnReference.SetValueAsync(nextPlayerUidTurn);
                 return;
             }
             
