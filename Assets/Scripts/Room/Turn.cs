@@ -14,7 +14,7 @@ namespace Room {
         [SerializeField] private Button turno;
         public List<GameObject> allyCards;
         public List<GameObject> enemyCards;
-
+        
         private string _oldPlayerTurn;
         private string _nameOfRoom;
         private string _playerTwoUid;
@@ -27,8 +27,6 @@ namespace Room {
 
         private void Awake() {
             GameObject.FindGameObjectsWithTag("music")[0].GetComponent<Sound>().playMusic(1);
-
-            StartCoroutine(getSeccondPlayer());
         }
 
         private void Start() {
@@ -53,15 +51,22 @@ namespace Room {
         }
 
         private IEnumerator goToNextTurn() {
+            if (_playerTwoUid == null) {
+                yield return getSeccondPlayer();
+            }
+            
             string nextPlayerUidTurn = DatabaseAPI.user.UserId == _nameOfRoom ? _playerTwoUid : _nameOfRoom;
+            Debug.Log(_nameOfRoom);
+            Debug.Log(_playerTwoUid);
+            Debug.Log(nextPlayerUidTurn);
+            
+            IDictionary<string, object> data = new Dictionary<string, object> {
+                {"event", JsonUtility.ToJson(getField())},
+                {"turn", nextPlayerUidTurn}
+            };
+            Task task = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).UpdateChildrenAsync(data);
 
-
-            Task taskOne = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("event").SetValueAsync(JsonUtility.ToJson(getField()));
-            yield return new WaitUntil(() => taskOne.IsCompleted);
-
-
-            Task taskTwo = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("turn").SetValueAsync(nextPlayerUidTurn);
-            yield return new WaitUntil(() => taskTwo.IsCompleted);
+            yield return new WaitUntil(() => task.IsCompleted);
 
             if (_userInterface.enemyLife <= 0) {
                 PlayerPrefs.SetInt("playerWins", PlayerPrefs.GetInt("playerWins", 0) + 1);
@@ -232,7 +237,10 @@ namespace Room {
                     nextPlayerUidTurn = DatabaseAPI.user.UserId == _nameOfRoom ? _nameOfRoom : _playerTwoUid;
                 }
 
-                _turnReference.SetValueAsync(nextPlayerUidTurn);
+                IDictionary<string, object> data = new Dictionary<string, object> {
+                    {"turn", nextPlayerUidTurn}
+                };
+                DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).UpdateChildrenAsync(data);
                 return;
             }
             

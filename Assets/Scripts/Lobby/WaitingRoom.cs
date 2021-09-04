@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using APIs;
 using Firebase.Database;
 using UnityEngine;
@@ -7,13 +8,13 @@ namespace Lobby {
     public class WaitingRoom : MonoBehaviour {
         [SerializeField] private string roomSceneName;
         
-        
         private DatabaseReference _roomVerify;
-
+        private string _nameOfRoom;
+        
         private void Start() { 
-            string nameOfRoom = PlayerPrefs.GetString("room", null);
+            _nameOfRoom = PlayerPrefs.GetString("room", null);
 
-            _roomVerify = DatabaseAPI.getDatabase().Child("rooms").Child(nameOfRoom).Child("read");
+            _roomVerify = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("read");
             _roomVerify.ValueChanged += handleRoomStatusChange;
         }
         
@@ -31,7 +32,10 @@ namespace Lobby {
             }
             
             if (!args.Snapshot.Exists) {
-                _roomVerify.SetValueAsync("false");
+                IDictionary<string, object> data = new Dictionary<string, object> {
+                    {"read", "false"}
+                };
+                DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).UpdateChildrenAsync(data);
                 return;
             }
 

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Desse modo caso a data se perca ela será criada novamente">
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,12 +22,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Lobby/WaitingRoom.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Room/Turn.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Lobby/Lobby.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/ProjectSettings/TagManager.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -135,14 +131,8 @@
       <workItem from="1630377838956" duration="799000" />
       <workItem from="1630526436427" duration="1200000" />
       <workItem from="1630621016915" duration="597000" />
-      <workItem from="1630713939187" duration="5768000" />
-    </task>
-    <task id="LOCAL-00024" summary="Add deep_in_mind">
-      <created>1629840115567</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1629840115568</updated>
+      <workItem from="1630713939187" duration="5785000" />
+      <workItem from="1630727806630" duration="2122000" />
     </task>
     <task id="LOCAL-00025" summary="Start turn syste,">
       <created>1629849635680</created>
@@ -480,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630727352797</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="fix mistake">
+      <created>1630727391741</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1630727391741</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +500,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Show card when click" />
     <MESSAGE value="Fix position" />
     <MESSAGE value="Prepare to create turn system" />
     <MESSAGE value="Remoção das luzes nas cartas e breve finalizando do sistema de turnos no Firebase." />
@@ -528,6 +524,7 @@
     <MESSAGE value="Sound system" />
     <MESSAGE value="Sending musics to git..." />
     <MESSAGE value="Desse modo caso a data se perca ela será criada novamente" />
-    <option name="LAST_COMMIT_MESSAGE" value="Desse modo caso a data se perca ela será criada novamente" />
+    <MESSAGE value="fix mistake" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix mistake" />
   </component>
 </project>
