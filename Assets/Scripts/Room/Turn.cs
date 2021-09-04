@@ -44,6 +44,8 @@ namespace Room {
             }
         }
 
+        // Passa o turno do jogador atual
+        
         public void passarTurno() {
             turno.gameObject.SetActive(false);
             userTurn = false;
@@ -131,6 +133,8 @@ namespace Room {
             DeckController.canBuy = true;
         }
 
+        // Pega o terreno para ser usado na partida
+   
         private CardEvent getField() {
             if (DatabaseAPI.user.UserId == _nameOfRoom) {
                 return generateCardEvent(allyCards, enemyCards, _userInterface.life, _userInterface.enemyLife);
@@ -164,6 +168,8 @@ namespace Room {
             return cardEvent;
         }
 
+        // Verifica se o campo de batalha está cheio
+
         public bool campoCheio() {
             for (int i = 0; i < 3; i++) {
                 CardProperties cardProperties = allyCards[i].GetComponent<CardProperties>();
@@ -174,6 +180,8 @@ namespace Room {
 
             return true;
         }
+
+        // Inseri a carta na lista do campo de batalha
 
         public void inserirCarta(int cardId) {
             for (int i = 0; i < 3; i++) {
@@ -186,6 +194,8 @@ namespace Room {
             }
         }
 
+        // Defini o terreno para ser usado na partida
+    
         private void setField(CardEvent cardEvent) {
             if (DatabaseAPI.user.UserId == _nameOfRoom) {
                 setCardToField(allyCards, enemyCards, cardEvent, cardEvent.vidaPlayerOne, cardEvent.vidaPlayerTwo);
@@ -194,6 +204,8 @@ namespace Room {
                 setCardToField(enemyCards, allyCards, cardEvent, cardEvent.vidaPlayerTwo, cardEvent.vidaPlayerOne);
             }
         }
+
+        // Inseri a carta no campo de batalha
 
         private void setCardToField(List<GameObject> listOne, List<GameObject> listTwo, CardEvent cardEvent, int lifeOne, int lifeTwo) {
             string[] cardsOne = cardEvent.cardsPlayerOne.Split('x');
