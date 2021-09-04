@@ -9,10 +9,20 @@ namespace Room {
     
     public class RandomTerrain : MonoBehaviour {
         [SerializeField] private List<Terrain> terrains;
+        [SerializeField] private GameObject waterObject;
 
         private void Start() {
             Random random = new Random(DateTime.Now.Millisecond);
-            terrains[random.Next(terrains.Count)].gameObject.layer = LayerMask.NameToLayer("TerrainActive");
+            int choice = random.Next(terrains.Count);
+            if (choice != 1) {
+                waterObject.SetActive(false);
+            }
+            terrains[choice].gameObject.layer = LayerMask.NameToLayer("TerrainActive");
+            for (int i = 0; i < terrains.Count; i++) {
+                if (i != choice) {
+                    terrains[i].gameObject.SetActive(false);
+                }
+            }
         }
     }
 }

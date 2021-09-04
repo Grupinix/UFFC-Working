@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using APIs;
 using JsonClasses;
 using UnityEngine;
 using UserData;
@@ -144,6 +145,9 @@ namespace Room {
                             if (indice == -999) {
                                 _userInterface.enemyLife -= cardProperties.cardPower;
                                 _userInterface.attVidaDisplay();
+                                DatabaseAPI.getDatabase().Child("rooms").Child(_turn._nameOfRoom).UpdateChildrenAsync(new Dictionary<string, object> {
+                                    {"event", JsonUtility.ToJson(_turn.getField())}
+                                });
                                 return;
                             }
                             CardProperties cardEnemy = _turn.enemyCards[indice].GetComponent<CardProperties>();
@@ -158,6 +162,9 @@ namespace Room {
                                 cardProperties.cardId = 9999;
                                 cardProperties.setMaterial();
                             }
+                            DatabaseAPI.getDatabase().Child("rooms").Child(_turn._nameOfRoom).UpdateChildrenAsync(new Dictionary<string, object> {
+                                {"event", JsonUtility.ToJson(_turn.getField())}
+                            });
                         });
                         return;
                     }
@@ -185,6 +192,9 @@ namespace Room {
                             if (indice == -999) {
                                 _userInterface.enemyLife -= cardProperties.cardPower;
                                 _userInterface.attVidaDisplay();
+                                DatabaseAPI.getDatabase().Child("rooms").Child(_turn._nameOfRoom).UpdateChildrenAsync(new Dictionary<string, object> {
+                                    {"event", JsonUtility.ToJson(_turn.getField())}
+                                });
                                 return;
                             }
                             CardProperties cardEnemy = _turn.enemyCards[indice].GetComponent<CardProperties>();
@@ -199,6 +209,9 @@ namespace Room {
                                 cardProperties.cardId = 9999;
                                 cardProperties.setMaterial();
                             }
+                            DatabaseAPI.getDatabase().Child("rooms").Child(_turn._nameOfRoom).UpdateChildrenAsync(new Dictionary<string, object> {
+                                {"event", JsonUtility.ToJson(_turn.getField())}
+                            });
                         });
                     }
                 }
