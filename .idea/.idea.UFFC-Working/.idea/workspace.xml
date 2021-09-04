@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Setup lightningdata baked">
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Change settings">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AQUAS-Lite/Materials/AQUAS_Lite_Water.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AQUAS-Lite/Materials/AQUAS_Lite_Water.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AQUAS-Lite/Materials/AQUAS_Lite_Water_Backface.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AQUAS-Lite/Materials/AQUAS_Lite_Water_Backface.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Room.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/Paradise.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Terrains/Paradise.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Terrains/ground.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Terrains/ground.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +26,7 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Room/RandomTerrain.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -139,14 +143,7 @@
       <workItem from="1630727806630" duration="2866000" />
       <workItem from="1630766287952" duration="2932000" />
       <workItem from="1630774597218" duration="134000" />
-      <workItem from="1630777350747" duration="832000" />
-    </task>
-    <task id="LOCAL-00029" summary="Fix terrain problems">
-      <created>1629866700052</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1629866700052</updated>
+      <workItem from="1630777350747" duration="2498000" />
     </task>
     <task id="LOCAL-00030" summary="Redo turn system">
       <created>1629870127943</created>
@@ -484,7 +481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630777515311</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="Change settings">
+      <created>1630778673405</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1630778673405</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,7 +511,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Terrain settings" />
     <MESSAGE value="Fix small mistake" />
     <MESSAGE value="Turn system working" />
     <MESSAGE value="Ataque criado" />
@@ -532,6 +535,7 @@
     <MESSAGE value="Update save methods" />
     <MESSAGE value="Added new Terrain" />
     <MESSAGE value="Setup lightningdata baked" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setup lightningdata baked" />
+    <MESSAGE value="Change settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change settings" />
   </component>
 </project>
