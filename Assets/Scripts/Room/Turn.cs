@@ -222,6 +222,11 @@ namespace Room {
                 Debug.LogError(args.DatabaseError.Message);
                 return;
             }
+
+            if (!args.Snapshot.Exists) {
+                _turnReference.SetValueAsync(_nameOfRoom);
+                return;
+            }
             
             string playerTurn = args.Snapshot.Value.ToString();
             if (playerTurn == _oldPlayerTurn) {

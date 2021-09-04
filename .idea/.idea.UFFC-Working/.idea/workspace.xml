@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Sound system">
+    <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="Sending musics to git...">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lobby.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +23,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Lobby/WaitingRoom.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Room/Turn.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/Assets/Scripts/Lobby/Lobby.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///home/yurinogueira/Unity/UFFC-Working/ProjectSettings/TagManager.asset" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -135,14 +136,7 @@
       <workItem from="1630377838956" duration="799000" />
       <workItem from="1630526436427" duration="1200000" />
       <workItem from="1630621016915" duration="597000" />
-      <workItem from="1630713939187" duration="4938000" />
-    </task>
-    <task id="LOCAL-00022" summary="Removendo função não utilizada">
-      <created>1629700555657</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1629700555657</updated>
+      <workItem from="1630713939187" duration="5728000" />
     </task>
     <task id="LOCAL-00023" summary="Removendo outras funções inúteis.">
       <created>1629700898965</created>
@@ -480,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630715821484</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Sending musics to git...">
+      <created>1630726570682</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1630726570682</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -503,7 +504,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Deck" />
     <MESSAGE value="Resize oponent deck too" />
     <MESSAGE value="Show card when click" />
     <MESSAGE value="Fix position" />
@@ -528,6 +528,7 @@
     <MESSAGE value="Update README.md" />
     <MESSAGE value="Fix somethings" />
     <MESSAGE value="Sound system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sound system" />
+    <MESSAGE value="Sending musics to git..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Sending musics to git..." />
   </component>
 </project>
