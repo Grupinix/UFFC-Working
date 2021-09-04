@@ -9,7 +9,13 @@ namespace Room {
 
         private void Start() {
             Random random = new Random(DateTime.Now.Millisecond);
-            terrains[random.Next(terrains.Count)].gameObject.layer = LayerMask.NameToLayer("TerrainActive");
+            int choice = random.Next(terrains.Count);
+            terrains[choice].gameObject.layer = LayerMask.NameToLayer("TerrainActive");
+            for (int i = 0; i < terrains.Count; i++) {
+                if (i != choice) {
+                    terrains[i].gameObject.SetActive(false);
+                }
+            }
         }
     }
 }
