@@ -19,6 +19,8 @@ namespace Menu {
         [SerializeField] private Button exitButton;
         [SerializeField] private Button backButton;
 
+        private Sound _sound;
+
         private void Start() {
             soundSlider.value = PlayerPrefs.GetFloat("gameSound", soundSlider.value);
 
@@ -27,6 +29,9 @@ namespace Menu {
             exitButton.onClick.AddListener(exitEvent);
             backButton.onClick.AddListener(backEvent);
             soundSlider.onValueChanged.AddListener(soundEvent);
+            
+            _sound = GameObject.FindGameObjectsWithTag("music")[0].GetComponent<Sound>();
+            _sound.playMusic(0);
         }
 
         private void playEvent() {
@@ -36,6 +41,7 @@ namespace Menu {
         private void soundEvent(float value) {
             PlayerPrefs.SetFloat("gameSound", value);
             PlayerPrefs.Save();
+            _sound.setVolume(value);
         }
 
         private void settingsEvent() {

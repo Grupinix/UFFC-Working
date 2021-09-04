@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using APIs;
 using Firebase.Database;
 using JsonClasses;
+using Menu;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -23,6 +24,7 @@ namespace Room {
         public bool userTurn;
 
         private void Start() {
+            GameObject.FindGameObjectsWithTag("music")[0].GetComponent<Sound>().playMusic(1);
             _nameOfRoom = PlayerPrefs.GetString("room", null);
             StartCoroutine(getSeccondPlayer());
 

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using APIs;
 using Firebase.Database;
 using JsonClasses;
+using Menu;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -20,6 +21,7 @@ namespace Lobby {
 
         private void Start() {
             reloadRooms();
+            GameObject.FindGameObjectsWithTag("music")[0].GetComponent<Sound>().playMusic(0);
         }
 
         public void loadChangeDeckScene() {
