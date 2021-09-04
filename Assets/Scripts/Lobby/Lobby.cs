@@ -74,7 +74,7 @@ namespace Lobby {
                 {"event", JsonUtility.ToJson(new CardEvent())},
                 {"map", long.Parse(choice.ToString())}
             };
-            Task task = DatabaseAPI.getDatabase().Child("rooms").Child(uid).SetRawJsonValueAsync(JsonUtility.ToJson(data));
+            Task task = DatabaseAPI.getDatabase().Child("rooms").Child(uid).UpdateChildrenAsync(data);
             await Task.WhenAll(task);
 
             PlayerPrefs.SetString("room", uid);
