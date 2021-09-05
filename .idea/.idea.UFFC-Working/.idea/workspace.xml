@@ -3,27 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a9675372-41b5-4bfc-b558-c247c5ca0637" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UFFC-Working/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/APIs/DatabaseAPI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/APIs/DatabaseAPI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/APIs/FirebaseInit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/APIs/FirebaseInit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/APIs/LoginAuth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/APIs/LoginAuth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/APIs/RegisterAuth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/APIs/RegisterAuth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Default/CardStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Default/CardStatus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Default/SetAmount.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Default/SetAmount.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Default/Zoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Default/Zoom.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/JsonClasses/CardProperties.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/DeckChange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/DeckChange.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/Lobby.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/ProfileScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/ProfileScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lobby/WaitingRoom.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/SettingsMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/SettingsMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/Sound.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/Sound.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/DeckController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/RandomTerrain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/RandomTerrain.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/Turn.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Room/UserInterface.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserData/ProfileManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserData/ProfileManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UserData/UserDeck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UserData/UserDeck.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,14 +137,8 @@
       <workItem from="1630766287952" duration="2932000" />
       <workItem from="1630774597218" duration="134000" />
       <workItem from="1630777350747" duration="18722000" />
-      <workItem from="1630807608298" duration="3469000" />
-    </task>
-    <task id="LOCAL-00038" summary="Created CardDisplay prefab">
-      <created>1630088472864</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1630088472864</updated>
+      <workItem from="1630807608298" duration="4198000" />
+      <workItem from="1630813472643" duration="38000" />
     </task>
     <task id="LOCAL-00039" summary="Adjusts">
       <created>1630089115876</created>
@@ -502,7 +476,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630801783568</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Docs">
+      <created>1630811099521</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1630811099522</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -525,7 +506,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Update lobby image and fix a bug" />
     <MESSAGE value="Adjusts" />
     <MESSAGE value="Rank criado" />
     <MESSAGE value="Ajustando ordenação" />
@@ -550,6 +530,7 @@
     <MESSAGE value="Update decklogic" />
     <MESSAGE value="Fix a small bug" />
     <MESSAGE value="New Assets" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Assets" />
+    <MESSAGE value="Docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Docs" />
   </component>
 </project>
