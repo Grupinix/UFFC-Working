@@ -72,7 +72,8 @@ namespace Lobby {
                 {"roomName", roomName},
                 {"turn", uid},
                 {"event", JsonUtility.ToJson(new CardEvent())},
-                {"map", long.Parse(choice.ToString())}
+                {"map", long.Parse(choice.ToString())},
+                {"created", DatabaseAPI.currentTimeMillis() / 1000 + 150}
             };
             Task task = DatabaseAPI.getDatabase().Child("rooms").Child(uid).UpdateChildrenAsync(data);
             await Task.WhenAll(task);
@@ -97,7 +98,14 @@ namespace Lobby {
                     || !childSnapshot.Child("read").Exists
                     || !childSnapshot.Child("roomName").Exists
                     || !childSnapshot.Child("uid").Exists
+                    || !childSnapshot.Child("created").Exists
                     || childSnapshot.Child("read").Value.ToString() == "true") {
+                    continue;
+                }
+
+                long actualMillis = DatabaseAPI.currentTimeMillis();
+                long createdTime = long.Parse(childSnapshot.Child("created").Value.ToString());
+                if (actualMillis / 1000 >= createdTime) {
                     continue;
                 }
 

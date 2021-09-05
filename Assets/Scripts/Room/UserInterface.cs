@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Default;
 using UnityEngine;
@@ -42,8 +43,14 @@ namespace Room {
         public Button cardAttackButton;
         [SerializeField] private Image cardAttackImage;
 
+        [SerializeField] private GameObject gamePanel;
+        [SerializeField] private GameObject statusPanel;
+        [SerializeField] private Texture2D[] images;
+
         private DeckController _deckController;
         private Turn _turn;
+
+        private bool _status;
 
         private void Start() {
             _deckController = deck.GetComponent<DeckController>();
@@ -56,12 +63,11 @@ namespace Room {
                     oldEnemyLife = enemyLife;
                     return;
                 }
-                PlayerPrefs.SetInt("playerWins", PlayerPrefs.GetInt("playerWins", 0) + 1);
-                PlayerPrefs.Save();
-                ProfileManager.updateUserFields(new Dictionary<string, object> {
-                    {"wins", long.Parse(PlayerPrefs.GetInt("playerWins").ToString())}
-                });
-                SceneManager.LoadScene("Lobby");
+
+                if (!_status) {
+                    StartCoroutine(victory());
+                    _status = true;
+                }
                 return;
             } 
             if (oldLife != life && life <= 0) {
@@ -69,10 +75,39 @@ namespace Room {
                     oldLife = life;
                     return;
                 }
-                PlayerPrefs.SetInt("playerLoses", PlayerPrefs.GetInt("playerLoses", 0) + 1);
-                PlayerPrefs.Save();
-                SceneManager.LoadScene("Lobby");
+
+                if (!_status) {
+                    StartCoroutine(defeat());
+                    _status = true;
+                }
             }
+        }
+
+        private IEnumerator victory() {
+            statusPanel.SetActive(true);
+            gamePanel.SetActive(false);
+            statusPanel.GetComponent<RawImage>().texture = images[0];
+            
+            yield return new WaitForSeconds(5);
+
+            PlayerPrefs.SetInt("playerWins", PlayerPrefs.GetInt("playerWins", 0) + 1);
+            PlayerPrefs.Save();
+            ProfileManager.updateUserFields(new Dictionary<string, object> {
+                {"wins", long.Parse(PlayerPrefs.GetInt("playerWins").ToString())}
+            });
+            SceneManager.LoadScene("Lobby");
+        }
+        
+        private IEnumerator defeat() {
+            statusPanel.SetActive(true);
+            gamePanel.SetActive(false);
+            statusPanel.GetComponent<RawImage>().texture = images[1];
+            
+            yield return new WaitForSeconds(5);
+
+            PlayerPrefs.SetInt("playerLoses", PlayerPrefs.GetInt("playerLoses", 0) + 1);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("Lobby");
         }
 
         // Classe para abrir menu para atacar
