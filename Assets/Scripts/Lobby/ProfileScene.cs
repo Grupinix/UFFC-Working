@@ -9,6 +9,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Lobby {
+    
+    /**
+     * Classe responsável pela cena "Perfil"
+     */
     public class ProfileScene : MonoBehaviour {
 
         [SerializeField] private Text nickname;
@@ -19,6 +23,7 @@ namespace Lobby {
         [SerializeField] private Text derrotas;
         [SerializeField] private List<Text> ranks;
         
+        /** "ação" para voltar a cena "Lobby" */
         public void voltarProLobby() {
             SceneManager.LoadScene("Lobby");
         }
@@ -33,6 +38,7 @@ namespace Lobby {
             StartCoroutine(loadRegisterAndRank());
         }
 
+        /** Carrega no Firebase os 3 jogadores com mais vitórias */
         private IEnumerator loadRegisterAndRank() {
             Task<DataSnapshot> taskOne = DatabaseAPI.getDatabase().Child("users").Child(DatabaseAPI.user.UserId).Child("registerData").GetValueAsync();
             yield return new WaitUntil(() => taskOne.IsCompleted);

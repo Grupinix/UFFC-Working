@@ -11,6 +11,11 @@ using UnityEngine.UI;
 using Random = System.Random;
 
 namespace Lobby {
+    
+    /**
+     * Classe responsável por gerenciar
+     * a cena "Lobby" e o seu fluxo
+     */
     public class Lobby : MonoBehaviour {
 
         [SerializeField] private string waitingSceneName;
@@ -40,18 +45,22 @@ namespace Lobby {
             }
         }
         
+        /** "ação" para carregar a cena de alteração de baralho "ChangeDeck" */
         public void loadChangeDeckScene() {
             SceneManager.LoadScene("ChangeDeck");
         }
 
+        /** "ação" para carregar a cena "Perfil" */
         public void carregarPerfil() {
             SceneManager.LoadScene("Perfil");
         }
 
+        /** "ação" para sair do jogo */
         public void sairDoJogo() {
             Application.Quit();
         }
 
+        /** "ação" para criar uma sala */
         public void createRoom() {
             string nameOfRoom = inputField.text;
             string userUid = DatabaseAPI.user.UserId;
@@ -63,6 +72,7 @@ namespace Lobby {
             createRoomOnDatabase(userUid, nameOfRoom, waitingSceneName);
         }
 
+        /** Cria no Firebase uma partida enviando todos os dados necessários */
         private async void createRoomOnDatabase(string uid, string roomName, string waitScene) {
             Random random = new Random(DateTime.Now.Millisecond);
             int choice = random.Next(terrains);
@@ -83,6 +93,10 @@ namespace Lobby {
             SceneManager.LoadScene(waitScene);
         }
         
+        /**
+         * Listener para verificar se alguma
+         * sala foi criada, deletada e/ou alterada
+         */
         private void handleRoomChanged(object sender, ValueChangedEventArgs args) {
             if (args.DatabaseError != null) {
                 Debug.LogError(args.DatabaseError.Message);
@@ -122,6 +136,11 @@ namespace Lobby {
             }
         }
 
+        /**
+         * Confirma a entrada em uma sala
+         * especifica e envia os dados
+         * para o FirebaseDatabase
+         */
         private async void loadRoom(string uid, string roomScene) {
             Task taskSet = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("playerTwo").SetValueAsync(DatabaseAPI.user.UserId);
             Task taskSetTwo = DatabaseAPI.getDatabase().Child("rooms").Child(uid).Child("read").SetValueAsync("true");

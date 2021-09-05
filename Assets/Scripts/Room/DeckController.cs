@@ -7,7 +7,14 @@ using UserData;
 using Random = UnityEngine.Random;
 
 namespace Room {
+    
+    /**
+     * Classe responsável por controlar o
+     * baralho do usuário enquanto
+     * ele estiver em partida
+     */
     public class DeckController : MonoBehaviour {
+
         private Vector3 _deckScale;
         private Vector3 _positionHand;
         private Vector3 _targetPosition;
@@ -25,7 +32,6 @@ namespace Room {
         [SerializeField] private GameObject hand;
         [SerializeField] private GameObject cardPrefab;
         
-        // animation variables
         [SerializeField] private float timeToShowPlayer;
         [SerializeField] private float dumbGetCard;
 
@@ -44,7 +50,7 @@ namespace Room {
         private List<CardProperties> cards = new List<CardProperties>();
 
         public static bool canBuy;
-
+        
         private void Start() {
             _camera = camObj.GetComponent<Camera>();
             _userInterface = manager.GetComponent<UserInterface>();
@@ -79,9 +85,14 @@ namespace Room {
                 checkHit(_camera.ScreenPointToRay(Input.mousePosition), true);
             }
         }
-
-        // Checa se existe colisão com algum objeto na cena
-
+        
+        /**
+         * Verifica se o usuário está "clicando"
+         * em algum objeto especifico do jogo
+         * para assim executar uma ação como
+         * por exemplo abrir um menu, comprar
+         * uma carta do baralho, e etc.
+         */
         private void checkHit(Ray ray, bool pc) {
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit)) {
@@ -218,8 +229,11 @@ namespace Room {
             }
         }
         
-        // Classe para mover a carta para a mão
-
+        /**
+         * Realiza uma animação movendo
+         * a carta do baralho até a
+         * mão do usuário
+         */
         private void getCard() {
             if (_deckListCards.Count > 0 && cards.Count < 5) {
                 int randCardIndex = Random.Range(0, _deckListCards.Count);
@@ -241,13 +255,21 @@ namespace Room {
             }
         }
 
-        // Modificar tamanho do objeto deck
-        
+        /**
+         * Modifica o tamanho dos objetos
+         * de baralho em jogo para simular
+         * que o seu tamanho está diminuindo
+         */
         private void resizeDeck() {
             resizeBoxSize(transform);
             resizeBoxSize(enemyDeck.transform);
         }
 
+        /**
+         * Diminui um objeto pela sua altura
+         * se baseando na quantidade de cartas
+         * restante no baralho do usuário
+         */
         private void resizeBoxSize(Transform objTransform) {
             Vector3 newSize = objTransform.localScale;
 
@@ -259,8 +281,7 @@ namespace Room {
             }
         }
 
-        // Classe para remover uma carta da mão
-
+        /** Remove uma carta da mão do usuário */
         public void removerCarta(int cardId) {
             int remove = 9999;
             for (int i = 0; i < cards.Count; i++) {
@@ -285,8 +306,7 @@ namespace Room {
             reorganizeCards();
         }
         
-        // Classe para reorganizar as cartas na mão
-
+        /** Reorganiza as cartas na mão do usuário */
         private void reorganizeCards(){
             for(int i = 1; i < cards.Count; i++){
                 Vector3 position = calcDistanceHandPosition(i, cards.Count + 1);
@@ -304,8 +324,7 @@ namespace Room {
             return Vector3.Lerp(_minPosition, _maxPosition, distance);
         }
 
-        // Adiciona carta do deck para a mão
-        
+        /** Adiciona uma carta do baralho até a mão do usuário */
         private void addCard(CardProperties card){
             cards.Add(card);
             reorganizeCards();

@@ -11,6 +11,10 @@ using UserData;
 
 namespace APIs {
     
+    /**
+     * Classe responsável pelo sistema
+     * de registro
+     */
     public class RegisterAuth : MonoBehaviour {
 
         [SerializeField] private InputField usernameInputField;
@@ -21,10 +25,15 @@ namespace APIs {
 
         [SerializeField] private string lobbySceneName;
 
+        /** "ação" para ser chamada pelo botão de "REGISTRAR" */
         public void registerButton() {
             StartCoroutine(startRegister(emailInputField.text, passwordInputField.text, usernameInputField.text));
         }
 
+        /**
+         * Inicia o cadastro do usuário de
+         * maneira assincrona
+         */
         private IEnumerator startRegister(string email, string password, string username) {
             if (!checkRegistrationFieldsAndReturnForErrors()) {
                 Task<FirebaseUser> registerTask = DatabaseAPI.getAuth().CreateUserWithEmailAndPasswordAsync(email, password);
@@ -39,6 +48,7 @@ namespace APIs {
             }
         }
 
+        /** Verifica se os campos foram preenchidos corretamente */
         private bool checkRegistrationFieldsAndReturnForErrors() {
             if (usernameInputField.text == "") {
                 warningRegisterText.text = "Insira um nome de usuário";
@@ -52,6 +62,7 @@ namespace APIs {
             return false;
         }
 
+        /** Converte um erro genérico em um erro do Firebase */
         private void handleRegisterErrors(AggregateException registerException) {
             FirebaseException firebaseException = registerException.GetBaseException() as FirebaseException;
             AuthError errorCode = (AuthError) firebaseException.ErrorCode;
@@ -59,6 +70,7 @@ namespace APIs {
             warningRegisterText.text = defineRegisterErrorMessage(errorCode);
         }
 
+        /** Retorna o erro de forma amigável ao usuário */
         private string defineRegisterErrorMessage(AuthError errorCode) {
             switch (errorCode) {
                 case AuthError.MissingEmail:
@@ -76,6 +88,7 @@ namespace APIs {
             }
         }
 
+        /** Finaliza o cadastro do usuário e atualiza o perfil do mesmo */
         private IEnumerator registerUser(Task<FirebaseUser> registerTask, string displayName) {
             DatabaseAPI.user = registerTask.Result;
 

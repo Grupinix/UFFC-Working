@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Default;
@@ -8,6 +7,12 @@ using UnityEngine.UI;
 using UserData;
 
 namespace Room {
+    
+    /**
+     * Classe responsável pela interface
+     * do usuário enquanto o mesmo
+     * estiver em uma partida
+     */
     public class UserInterface : MonoBehaviour {
 
         public bool canDropMana;
@@ -83,6 +88,10 @@ namespace Room {
             }
         }
 
+        /**
+         * Define que o usuário foi o
+         * vencedor da partida
+         */
         private IEnumerator victory() {
             statusPanel.SetActive(true);
             gamePanel.SetActive(false);
@@ -98,6 +107,10 @@ namespace Room {
             SceneManager.LoadScene("Lobby");
         }
         
+        /**
+         * Define que o usuário foi o
+         * perdedor da partida
+         */
         private IEnumerator defeat() {
             statusPanel.SetActive(true);
             gamePanel.SetActive(false);
@@ -110,8 +123,7 @@ namespace Room {
             SceneManager.LoadScene("Lobby");
         }
 
-        // Classe para abrir menu para atacar
-
+        /** "ação" para abrir o painel de ataque de uma carta */
         public void openCardAttackView(int cardId) {
             if (cardId == 9999) {
                 return;
@@ -122,8 +134,7 @@ namespace Room {
             cardAttackImage.material = materials[cardId];
         }
 
-        // Classe para verfiricar uma carta selecionada na mão do adversário
-        
+        /** "ação" para abrir o painel visualização de uma carta do oponente */
         public void openCardEnemyView(int cardId) {
             if (cardId == 9999) {
                 return;
@@ -134,8 +145,7 @@ namespace Room {
             enemyImage.GetComponent<Image>().material = materials[cardId];
         }
 
-        // Classe para verfiricar uma carta selecionada na sua mão
-
+        /** "ação" para abrir o painel visualização de uma carta da sua mão */
         public void openCardView(int cardId) {
             if (cardId == 9999) {
                 return;
@@ -147,8 +157,7 @@ namespace Room {
             cardImage.material = materials[cardId];
         }
 
-        // Descarta carta da mão
-
+        /** "ação" para descartar uma carta da sua mão */
         public void descartar() {
             if (!_turn.userTurn) {
                 return;
@@ -157,8 +166,7 @@ namespace Room {
             cardInfoPanel.SetActive(false);
         }
         
-        // Utilizar a carta de sua mão
-
+        /** "ação" para utilizar uma carta da sua mão */
         public void castCard() {
             if (!_turn.userTurn) {
                 return;
@@ -211,8 +219,7 @@ namespace Room {
             _deckController.removerCarta(_actualCardId);
         }
 
-        // Expõe os valores de mana do jogador 
-
+        /** Calcula os valores de mana exigidos por uma carta */
         private int[] hasMana(CardStatus cardStatus) {
             int redManaActual = _redManaInPool;
             int blueManaActual = _blueManaInPool;
@@ -281,6 +288,7 @@ namespace Room {
             };
         }
 
+        /** "ação" para redefinir a mana atual do usuário */
         public void resetMana() {
             _redManaInPool = _redManaGen;
             redMana.text = _redManaInPool.ToString();
@@ -290,6 +298,7 @@ namespace Room {
             greenMana.text = _greenManaInPool.ToString();
         }
         
+        /** "ação" para atualizar a vida dos jogadores */
         public void attVidaDisplay() {
             textoVida.text = life.ToString();
             textoVidaInimiga.text = enemyLife.ToString();
@@ -297,14 +306,17 @@ namespace Room {
             barraDeVidaInimiga.value = enemyLife;
         }
 
+        /** "ação" para encerrar o jogo */
         public void closeGame() {
             Application.Quit();
         }
 
+        /** "ação" para fechar o painel de visualização de uma carta na mão */
         public void closePanel() {
             cardInfoPanel.SetActive(false);
         }
-
+        
+        /** "ação" para fechar o painel de ataque de uma carta */
         public void closeAttackPanel() {
             cardAttackPanel.SetActive(false);
         }

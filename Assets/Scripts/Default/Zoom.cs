@@ -1,7 +1,14 @@
 using UnityEngine;
 
 namespace Default {
+    
+    /**
+     * Classe responsável pelo sistema
+     * de zoom in e zoom out da cena
+     * de montagem do baralho
+     */
     public class Zoom : MonoBehaviour {
+
         [SerializeField] private float zoomOutMin = 1;
         [SerializeField] private float zoomOutMax = 8;
         [SerializeField] private Transform zoomTransform;

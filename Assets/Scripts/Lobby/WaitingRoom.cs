@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,6 +8,12 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Lobby {
+    
+    /**
+     * Classe responsável por simular
+     * uma sala de espera, enquanto um
+     * segundo jogador não entra na partida
+     */
     public class WaitingRoom : MonoBehaviour {
         [SerializeField] private string roomSceneName;
         [SerializeField] private Text time;
@@ -40,6 +45,7 @@ namespace Lobby {
             }
         }
 
+        /** "ação" para carregar a cena "Lobby" */
         public void loadLobby() {
             SceneManager.LoadScene("Lobby");
         }
@@ -51,6 +57,7 @@ namespace Lobby {
             }
         }
 
+        /** Recupera do FirebaseDatabase o horário em que a sala foi criada */
         private IEnumerator createdTime() {
             Task<DataSnapshot> task = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("created").GetValueAsync();
 
@@ -59,6 +66,7 @@ namespace Lobby {
             _currentTimePassed = long.Parse(task.Result.Value.ToString());
         }
 
+        /** Listener para verificar se algum oponente entrou na sala */
         private void handleRoomStatusChange(object sender, ValueChangedEventArgs args) {
             if (args.DatabaseError != null) {
                 Debug.LogError(args.DatabaseError.Message);

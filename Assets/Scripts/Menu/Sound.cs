@@ -1,8 +1,12 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 namespace Menu {
+    
+    /**
+     * Classe responsável por controlar
+     * o volume do jogo e a musica
+     */
     public class Sound : MonoBehaviour {
 
         [SerializeField] private AudioClip[] musics;
@@ -26,11 +30,13 @@ namespace Menu {
             _volume = PlayerPrefs.GetFloat("gameSound", 0.6f);
         }
 
+        /** "ação" para definir o volume do jogo */
         public void setVolume(float value) {
             _volume = value;
             _audioSource.volume = value;
         }
 
+        /** "ação" para alterar a faixa musical do jogo */
         public void playMusic(int music) {
             if (_oldMusic == music) {
                 return;
@@ -39,6 +45,12 @@ namespace Menu {
             _oldMusic = music;
         }
 
+        /**
+         * Assincronamente aplica um efeito
+         * de "fade out" na musica atual do
+         * jogo e logo após isso encerra a
+         * mesma e substitui por uma outra
+         */
         private IEnumerator fadeOut(AudioSource audioSource, float duration, int music) {
             float startVolume = audioSource.volume;
  
@@ -52,6 +64,10 @@ namespace Menu {
             StartCoroutine(fadeIn(audioSource, duration));
         }
         
+        /**
+         * Assincronamente aplica um efeito
+         * de "fade in" na musica atual do jogo
+         */
         private IEnumerator fadeIn(AudioSource audioSource, float duration) {
             audioSource.volume = 0;
             audioSource.Play();

@@ -6,11 +6,15 @@ using Firebase.Database;
 using JsonClasses;
 using Menu;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UserData;
 
 namespace Room {
+    
+    /**
+     * Classe responsável por gerenciar
+     * em tempo real o sistema de turnos
+     * da partida
+     */
     public class Turn : MonoBehaviour {
         [SerializeField] private Button turno;
         public List<GameObject> allyCards;
@@ -56,14 +60,14 @@ namespace Room {
             }
         }
 
-        // Passa o turno do jogador atual
-        
+        /** "ação" responsável por passar o turno para o próximo jogador */
         public void passarTurno() {
             turno.gameObject.SetActive(false);
             userTurn = false;
             StartCoroutine(goToNextTurn());
         }
 
+        /** Define o turno como do outro jogador de maneira assincrona */
         private IEnumerator goToNextTurn() {
             if (_playerTwoUid == null) {
                 yield return getSeccondPlayer();
@@ -79,6 +83,7 @@ namespace Room {
             yield return new WaitUntil(() => task.IsCompleted);
         }
 
+        /** Carrega de maneira assincrona a UUID do segundo jogador */
         private IEnumerator getSeccondPlayer() {
             Task<DataSnapshot> taskSet = DatabaseAPI.getDatabase().Child("rooms").Child(_nameOfRoom).Child("playerTwo").GetValueAsync();
             yield return new WaitUntil(() => taskSet.IsCompleted);
@@ -89,6 +94,11 @@ namespace Room {
             _playerTwoUid = taskSet.Result.Value.ToString();
         }
 
+        /**
+         * Inicia o turno do jogador definindo
+         * variáveis padrões para o mesmo poder
+         * realizar ações
+         */
         private void turnEvent(string playerTurn) {
             if (playerTurn != DatabaseAPI.user.UserId) {
                 return;
@@ -108,7 +118,12 @@ namespace Room {
             DeckController.canBuy = true;
         }
 
-        // Pega o terreno para ser usado na partida
+        /**
+         * Transforma a condição atual da
+         * partida em um CardEvent e retorna
+         * se baseando em qual jogador é o
+         * segundo jogador
+         */
         public CardEvent getField() {
             if (DatabaseAPI.user.UserId == _nameOfRoom) {
                 return generateCardEvent(allyCards, enemyCards, _userInterface.life, _userInterface.enemyLife);
@@ -117,6 +132,11 @@ namespace Room {
             return generateCardEvent(enemyCards, allyCards, _userInterface.enemyLife, _userInterface.life);
         }
 
+        /**
+         * Transforma a condição atual da
+         * partida em um CardEvent e retorna
+         * o mesmo
+         */
         private CardEvent generateCardEvent(IReadOnlyList<GameObject> listOne, IReadOnlyList<GameObject> listTwo, int lifeOne, int lifeTwo) {
             CardEvent cardEvent = new CardEvent();
             string cardsOne = "";
@@ -144,8 +164,10 @@ namespace Room {
             return cardEvent;
         }
 
-        // Verifica se o campo de batalha está cheio
-
+        /**
+         * Verifica se o campo de batalha
+         * do usuário está cheio
+         */
         public bool campoCheio() {
             for (int i = 0; i < 3; i++) {
                 CardProperties cardProperties = allyCards[i].GetComponent<CardProperties>();
@@ -157,7 +179,10 @@ namespace Room {
             return true;
         }
 
-        // Inseri a carta na lista do campo de batalha
+        /**
+         * Insere uma carta no campo
+         * de batalha do usuário
+         */
         public void inserirCarta(int cardId) {
             for (int i = 0; i < 3; i++) {
                 CardProperties cardProperties = allyCards[i].GetComponent<CardProperties>();
@@ -173,6 +198,10 @@ namespace Room {
             }
         }
         
+        /**
+         * Listener responsável por verificar
+         * de qual jogador é o turno
+         */
         private void handleTurnChanged(object sender, ValueChangedEventArgs args) {
             if (args.DatabaseError != null) {
                 Debug.LogError(args.DatabaseError.Message);
@@ -187,6 +216,10 @@ namespace Room {
             turnEvent(playerTurn);
         }
 
+        /**
+         * Listener responsável por atualiza
+         * a condição e estado atual da partida
+         */
         private void handleEventChanged(object sender, ValueChangedEventArgs args) {
             if (args.DatabaseError != null) {
                 Debug.LogError(args.DatabaseError.Message);
@@ -202,7 +235,11 @@ namespace Room {
             setField(cardEvent);
         }
         
-        // Defini o terreno para ser usado na partida
+        /**
+         * Atualiza a condição atual da partida
+         * se baseando em um CardEvent verificando
+         * qual jogador é o segundo jogador
+         */
         private void setField(CardEvent cardEvent) {
             if (DatabaseAPI.user.UserId == _nameOfRoom) {
                 setCardToField(allyCards, enemyCards, cardEvent, cardEvent.vidaPlayerOne, cardEvent.vidaPlayerTwo);
@@ -211,7 +248,10 @@ namespace Room {
             setCardToField(enemyCards, allyCards, cardEvent, cardEvent.vidaPlayerTwo, cardEvent.vidaPlayerOne);
         }
 
-        // Inseri a carta no campo de batalha
+        /**
+         * Atualiza a condição atual da partida
+         * se baseando em um CardEvent
+         */
         private void setCardToField(IReadOnlyList<GameObject> listOne,IReadOnlyList<GameObject> listTwo, CardEvent cardEvent, int lifeOne, int lifeTwo) {
             string[] cardsOne = cardEvent.cardsPlayerOne.Split('x');
             string[] cardsTwo = cardEvent.cardsPlayerTwo.Split('x');

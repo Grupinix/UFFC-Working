@@ -7,7 +7,13 @@ using UnityEngine;
 
 namespace Room {
     
-    // Escolhe um terreno aleatório
+    /**
+     * Classe responsável por recuperar um
+     * valor salvo no FirebaseDatabase que
+     * foi definido aleatoriamente e então
+     * definir qual o terreno da partida se
+     * baseando nesse valor
+     */
     public class RandomTerrain : MonoBehaviour {
         [SerializeField] private List<Terrain> terrains;
         [SerializeField] private GameObject waterObject;
@@ -16,6 +22,10 @@ namespace Room {
             StartCoroutine(setMap());
         }
 
+        /**
+         * Carrega de maneira assincrona
+         * o terreno escolhido para o usuário
+         */
         private IEnumerator setMap() {
             Task<DataSnapshot> task = DatabaseAPI.getDatabase().Child("rooms").Child(PlayerPrefs.GetString("room", null)).Child("map").GetValueAsync();
 

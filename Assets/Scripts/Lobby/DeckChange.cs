@@ -5,11 +5,18 @@ using UnityEngine.SceneManagement;
 using UserData;
 
 namespace Lobby {
+    
+    /**
+     * Classe responsável por criar a área
+     * de modificação do baralho do
+     * usuário
+     */
     public class DeckChange : MonoBehaviour {
 
         [SerializeField] private GameObject parent;
         [SerializeField] private GameObject element;
 
+        /** "ação" para carregar a cena "Lobby" */
         public void loadLobbyScene() {
             SceneManager.LoadScene("Lobby");
         }

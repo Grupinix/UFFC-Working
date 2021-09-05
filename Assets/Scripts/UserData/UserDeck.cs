@@ -3,8 +3,14 @@ using Default;
 using UnityEngine;
 
 namespace UserData {
+    
+    /**
+     * Classe responsável por definir as
+     * cartas existentes em jogo
+     */
     public static class UserDeck {
 
+        /** Lista de cartas existentes */
         private static readonly List<CardStatus> CardsAlmostMap = new List<CardStatus> {
             new CardStatus(true, false, new[] {1, 0, 0}, new[] {0, 0, 0, 0}, 0, 0, 4),
             new CardStatus(true, false, new[] {1, 0, 0}, new[] {0, 0, 0, 0}, 0, 0, 4),
@@ -42,6 +48,11 @@ namespace UserData {
             }
         }
 
+        /**
+         * Retorna uma lista contendo
+         * as cartas do baralho de um
+         * usuário
+         */
         public static List<int> getDeckCards() {
             List<int> userDeck = new List<int>();
 
@@ -54,10 +65,18 @@ namespace UserData {
             return userDeck;
         }
 
+        /**
+         * Retorna o CardStatus de uma
+         * carta com o id informado
+         */
         public static CardStatus getCardStatus(int id) {
             return CardsAlmostMap[id];
         }
 
+        /**
+         * Retorna a quantidade de
+         * cartas existentes
+         */
         public static int getAmountOfCards() {
             return CardsAlmostMap.Count;
         }

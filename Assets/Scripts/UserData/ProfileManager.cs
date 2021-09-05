@@ -4,6 +4,12 @@ using APIs;
 using UnityEngine;
 
 namespace UserData {
+    
+    /**
+     * Classe responsável por salvar na
+     * FirebaseDatabase e localmente os
+     * dados base do usuário
+     */
     public static class ProfileManager {
         public static async void updateUserFields(IDictionary<string, object> data) {
             foreach (KeyValuePair<string, object> entry in data) {

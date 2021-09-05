@@ -11,6 +11,10 @@ using UserData;
 
 namespace APIs {
     
+    /**
+     * Classe responsável pelo sistema
+     * de login
+     */
     public class LoginAuth : MonoBehaviour {
 
         [SerializeField] private InputField emailInputField;
@@ -21,14 +25,24 @@ namespace APIs {
         [SerializeField] private string registerScene;
         [SerializeField] private string lobbyScene;
 
+        /** "ação" para ser chamada pelo botão de "LOGIN" */
         public void loginButton() {
             StartCoroutine(startLogin(emailInputField.text, passwordInputField.text));
         }
 
+        /** "ação" para ser chamada pelo botão de "REGISTRO" */
         public void register() {
             SceneManager.LoadScene(registerScene);
         }
 
+        /**
+         * Verifica de maneira assincrona se os
+         * dados inseridos pelo usuário são
+         * válidos
+         *
+         * @param   email       email do usuário
+         * @param   password    senha do usuário
+         */
         private IEnumerator startLogin(string email, string password) {
             Task<FirebaseUser> loginTask = DatabaseAPI.getAuth().SignInWithEmailAndPasswordAsync(email, password);
             yield return new WaitUntil(() => loginTask.IsCompleted);
@@ -41,6 +55,7 @@ namespace APIs {
             }
         }
 
+        /** Salva a instância do usuário para acesso futuro */
         private void loginUser(Task<FirebaseUser> loginTask) {
             DatabaseAPI.user = loginTask.Result;
 
@@ -50,6 +65,7 @@ namespace APIs {
             StartCoroutine(goToLoged());
         }
 
+        /** Atualiza o perfil do usuário e carrega a cena do "Lobby" */
         private IEnumerator goToLoged() {
             IDictionary<string, object> data = new Dictionary<string, object> {
                 {"lastDataSeen", DateTime.Now.ToString("dd/MM/yyyy")}
@@ -60,6 +76,7 @@ namespace APIs {
             SceneManager.LoadScene(lobbyScene);
         }
 
+        /** Converte um erro genérico em um erro do Firebase */
         private void handleLoginErrors(AggregateException loginException) {
             FirebaseException firebaseException = loginException.GetBaseException() as FirebaseException;
             AuthError errorCode = (AuthError) firebaseException.ErrorCode;
@@ -67,6 +84,7 @@ namespace APIs {
             warningLoginText.text = defineLoginErrorMessage(errorCode);
         }
 
+        /** Retorna o erro de forma amigável ao usuário */
         private string defineLoginErrorMessage(AuthError errorCode) {
             switch (errorCode) {
                 case AuthError.MissingEmail:

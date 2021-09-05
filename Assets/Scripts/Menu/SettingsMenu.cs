@@ -5,6 +5,11 @@ using UnityEngine.UI;
 using Button = UnityEngine.UI.Button;
 
 namespace Menu {
+    
+    /**
+     * Classe responsável pela cena "MainMenu"
+     * e pelo controle da mesma
+     */
     public class SettingsMenu : MonoBehaviour {
 
         [SerializeField] private string authScene;
@@ -34,34 +39,31 @@ namespace Menu {
             _sound.playMusic(0);
         }
 
-        // Carrega uma nova cena
-
+        /** Carrega a cena "Login" */
         private void playEvent() {
             SceneManager.LoadScene(authScene);
         }
 
+        /** Listener para a configuração de volume do jogo */
         private void soundEvent(float value) {
             PlayerPrefs.SetFloat("gameSound", value);
             PlayerPrefs.Save();
             _sound.setVolume(value);
         }
 
-        // Vai para as configurações
-
+        /** Desativa o painel do "MainMenu" e habilita o painel de configurações */
         private void settingsEvent() {
             menuPanel.SetActive(false);
             settingsPanel.SetActive(true);
         }
 
-        // Volta para o menu principal
-
+        /** Desativa o painel de configurações e habilita o painel do "MainMenu" */
         private void backEvent() {
             settingsPanel.SetActive(false);
             menuPanel.SetActive(true);
         }
 
-        // Termina o aplicativo
-
+        /** "ação" para sair do jogo */
         private void exitEvent() {
             Application.Quit();
         }

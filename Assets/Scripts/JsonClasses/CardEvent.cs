@@ -2,6 +2,12 @@ using System;
 
 namespace JsonClasses {
 
+    /**
+     * Classe serializavel responsável
+     * por definir as cartas em jogo,
+     * a vida dos ojogadores e o tipo
+     * de ação que ocorreu
+     */
     [Serializable]
     public class CardEvent {
 

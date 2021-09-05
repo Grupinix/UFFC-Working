@@ -6,6 +6,11 @@ using UserData;
 
 namespace JsonClasses {
 
+    /**
+     * Classe serializavel responsável
+     * por armazenar as propriedades
+     * de uma carta
+     */
     [Serializable]
     public class CardProperties : MonoBehaviour {
 
@@ -21,6 +26,7 @@ namespace JsonClasses {
 
         public bool ataque;
 
+        /** "ação" para definir a textura da carta */
         public void setMaterial(){
             Renderer img = carta.GetComponent<Renderer>();
             
@@ -37,6 +43,7 @@ namespace JsonClasses {
             cardDefense = cardStatus.cardDefense;
         }
 
+        /** "ação" para definir o poder padrão da carta */
         public void resetPower() {
             CardStatus cardStatus = UserDeck.getCardStatus(cardId);
             cardPower = cardStatus.cardPower;

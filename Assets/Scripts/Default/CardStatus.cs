@@ -1,4 +1,10 @@
 namespace Default {
+    
+    /**
+     * Objeto responsável por armazenar os
+     * detalhes de cada template de carta
+     * do jogo
+     */
     public class CardStatus {
 
         private readonly bool _isTerrain;
