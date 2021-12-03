@@ -1,41 +1,49 @@
 {
   "project_info": {
-    "project_number": "349831741296",
-    "firebase_url": "https://ultra-federal-fluminense-f1211-default-rtdb.firebaseio.com",
-    "project_id": "ultra-federal-fluminense-f1211",
-    "storage_bucket": "ultra-federal-fluminense-f1211.appspot.com"
+    "project_number": "555690569217",
+    "firebase_url": "https://ultra-federal-fluminense-33c3c-default-rtdb.firebaseio.com",
+    "project_id": "ultra-federal-fluminense-33c3c",
+    "storage_bucket": "ultra-federal-fluminense-33c3c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:349831741296:android:37650b93b0adffa46199b5",
+        "mobilesdk_app_id": "1:555690569217:android:f2ab644f80dfb38975da00",
         "android_client_info": {
-          "package_name": "br.uff.ic.grupinix.uffc.grupoverde20211"
+          "package_name": "br.com.omnissoftware.uffc"
         }
       },
       "oauth_client": [
         {
-          "client_id": "349831741296-21k6tvhrg6a049lkfnhh0ars5ul5mlrg.apps.googleusercontent.com",
+          "client_id": "555690569217-7btpt1je5lsi5j36vbc1nseebeqj424q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.omnissoftware.uffc",
+            "certificate_hash": "04eadb54559d93fe6948aa595fd7d8b8bc8bc558"
+          }
+        },
+        {
+          "client_id": "555690569217-ghuijac3psrf0e3brqnuf5e9d14uv940.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCih2CrFg-mUPEXFjAXMzLxhMNT0nDt-XA"
+          "current_key": "AIzaSyAlO3qwZ02R5OnW11LOzdNzfzc_j4Dtf6c"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "349831741296-21k6tvhrg6a049lkfnhh0ars5ul5mlrg.apps.googleusercontent.com",
+              "client_id": "555690569217-ghuijac3psrf0e3brqnuf5e9d14uv940.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "349831741296-knjdp4u5b30222f5h3k5ie6c99j72pke.apps.googleusercontent.com",
+              "client_id": "555690569217-t07nopcsbu7beqiqcs0p0pjhg3n0if09.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "br.uff.ic.grupinix.uffc.grupoverde20211"
+                "bundle_id": "br.com.omnissoftware.uffc"
               }
             }
           ]
