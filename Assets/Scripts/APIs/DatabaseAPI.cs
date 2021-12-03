@@ -25,6 +25,10 @@ namespace APIs  {
             return (long) (DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds;
         } 
         
+        public static void setAuth(FirebaseAuth auth) {
+            _auth = auth;
+        }
+
         /**
          * Retorna uma instância do
          * FirebaseAuth caso já exista e

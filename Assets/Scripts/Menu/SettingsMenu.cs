@@ -12,14 +12,11 @@ namespace Menu {
      */
     public class SettingsMenu : MonoBehaviour {
 
-        [SerializeField] private string authScene;
-
         [SerializeField] private GameObject settingsPanel;
         [SerializeField] private GameObject menuPanel;
 
         [SerializeField] private Slider soundSlider;
     
-        [SerializeField] private Button playButton;
         [SerializeField] private Button settingsButton;
         [SerializeField] private Button exitButton;
         [SerializeField] private Button backButton;
@@ -29,7 +26,6 @@ namespace Menu {
         private void Start() {
             soundSlider.value = PlayerPrefs.GetFloat("gameSound", soundSlider.value);
 
-            playButton.onClick.AddListener(playEvent);
             settingsButton.onClick.AddListener(settingsEvent);
             exitButton.onClick.AddListener(exitEvent);
             backButton.onClick.AddListener(backEvent);
@@ -37,11 +33,6 @@ namespace Menu {
             
             _sound = GameObject.FindGameObjectsWithTag("music")[0].GetComponent<Sound>();
             _sound.playMusic(0);
-        }
-
-        /** Carrega a cena "Login" */
-        private void playEvent() {
-            SceneManager.LoadScene(authScene);
         }
 
         /** Listener para a configuração de volume do jogo */

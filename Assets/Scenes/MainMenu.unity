@@ -275,6 +275,78 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &321764061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 321764062}
+  - component: {fileID: 321764064}
+  - component: {fileID: 321764063}
+  m_Layer: 5
+  m_Name: Loading
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &321764062
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321764061}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -3.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1292181528}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &321764063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321764061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: c457d49f8659d54a2ae214d03da57791, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &321764064
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321764061}
+  m_CullTransparentMesh: 1
 --- !u!1 &435001198
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,6 +1488,7 @@ RectTransform:
   - {fileID: 1297083402}
   - {fileID: 166891230}
   - {fileID: 231073080}
+  - {fileID: 321764062}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1614,7 +1687,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1432958659}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1616730738}
+        m_TargetAssemblyTypeName: APIs.SigninSampleScript, Assembly-CSharp
+        m_MethodName: OnSignInSilently
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1432958659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1784,7 +1869,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1616730736}
   - component: {fileID: 1616730735}
-  - component: {fileID: 1616730737}
+  - component: {fileID: 1616730738}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1804,11 +1889,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5de57ee481729036f9eaf408f7333b37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  authScene: Login
   settingsPanel: {fileID: 231073079}
   menuPanel: {fileID: 166891229}
   soundSlider: {fileID: 790049508}
-  playButton: {fileID: 1432958658}
   settingsButton: {fileID: 733486107}
   exitButton: {fileID: 1491188309}
   backButton: {fileID: 1017003095}
@@ -1826,7 +1909,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1616730737
+--- !u!114 &1616730738
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1835,7 +1918,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1616730734}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2299dfa0ae14947ba34121561184f33, type: 3}
+  m_Script: {fileID: 11500000, guid: d2d6dd221e917b92a9163bfb02b87912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnFirebaseInitialized:
@@ -1853,6 +1936,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  OnFirebaseSilentLogin:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 321764061}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  webClientId: 555690569217-ghuijac3psrf0e3brqnuf5e9d14uv940.apps.googleusercontent.com
+  lobbyScene: Lobby
+  loginScene: Login
 --- !u!1 &1663185129
 GameObject:
   m_ObjectHideFlags: 0
