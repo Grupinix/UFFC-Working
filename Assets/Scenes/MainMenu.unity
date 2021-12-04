@@ -1954,6 +1954,7 @@ MonoBehaviour:
   webClientId: 555690569217-ghuijac3psrf0e3brqnuf5e9d14uv940.apps.googleusercontent.com
   lobbyScene: Lobby
   loginScene: Login
+  checkDependencies: 1
 --- !u!1 &1663185129
 GameObject:
   m_ObjectHideFlags: 0

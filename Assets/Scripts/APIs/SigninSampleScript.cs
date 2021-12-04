@@ -36,10 +36,14 @@ namespace APIs {
 
         public UnityEvent OnFirebaseInitialized = new UnityEvent();
         public UnityEvent OnFirebaseSilentLogin = new UnityEvent();
+        public UnityEvent OnFirebaseLogin = new UnityEvent();
+        public UnityEvent OnFirebaseUnLogin = new UnityEvent();
+
 
         [SerializeField] private string webClientId;
         [SerializeField] private string lobbyScene;
         [SerializeField] private string loginScene;
+        [SerializeField] private bool checkDependencies = true;
 
         private GoogleSignInConfiguration configuration;
 
@@ -48,7 +52,10 @@ namespace APIs {
                 WebClientId = webClientId,
                 RequestIdToken = true
             };
-            CheckFirebaseDependencies();
+
+            if (checkDependencies) {
+                CheckFirebaseDependencies();
+            }
         }
 
         private void CheckFirebaseDependencies() {
@@ -64,10 +71,13 @@ namespace APIs {
         }
 
         public void OnSignIn() {
-            GoogleSignIn.Configuration = configuration;
-            GoogleSignIn.Configuration.UseGameSignIn = false;
-            GoogleSignIn.Configuration.RequestIdToken = true;
+            if (checkDependencies) {
+                GoogleSignIn.Configuration = configuration;
+                GoogleSignIn.Configuration.UseGameSignIn = false;
+                GoogleSignIn.Configuration.RequestIdToken = true;
+            }
 
+            OnFirebaseLogin.Invoke();
             GoogleSignIn.DefaultInstance.SignIn().ContinueWith(OnAuthenticationFinished);
         }
 
@@ -93,7 +103,7 @@ namespace APIs {
             DatabaseAPI.getAuth().SignInWithCredentialAsync(credential).ContinueWith(task => {
                 AggregateException ex = task.Exception;
                 if (ex != null) {
-                    // TODO add error logger
+                    OnFirebaseUnLogin.Invoke();
                 }
                 else {
                     StartCoroutine(loginUser(task));
@@ -104,7 +114,9 @@ namespace APIs {
         private IEnumerator loginUser(Task<FirebaseUser> loginTask) {
             DatabaseAPI.user = loginTask.Result;
             IDictionary<string, object> data = new Dictionary<string, object> {
-                {"lastDataSeen", DateTime.Now.ToString("dd/MM/yyyy")}
+                {"lastDataSeen", DateTime.Now.ToString("dd/MM/yyyy")},
+                {"email", DatabaseAPI.user.Email},
+                {"playerName", DatabaseAPI.user.DisplayName}
             };
             ProfileManager.updateUserFields(data);
             yield return new WaitForSeconds(1);
@@ -113,11 +125,13 @@ namespace APIs {
         }
 
         public void OnSignInSilently() {
-            GoogleSignIn.Configuration = configuration;
-            GoogleSignIn.Configuration.UseGameSignIn = false;
-            GoogleSignIn.Configuration.RequestIdToken = true;
-            OnFirebaseSilentLogin.Invoke();
+            if (checkDependencies) {
+                GoogleSignIn.Configuration = configuration;
+                GoogleSignIn.Configuration.UseGameSignIn = false;
+                GoogleSignIn.Configuration.RequestIdToken = true;
+            }
 
+            OnFirebaseSilentLogin.Invoke();
             GoogleSignIn.DefaultInstance.SignInSilently().ContinueWith(OnAuthenticationFinished);
         }
     }
